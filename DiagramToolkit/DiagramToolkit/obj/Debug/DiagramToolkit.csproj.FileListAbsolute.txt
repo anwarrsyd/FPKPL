@@ -1,0 +1,11 @@
+C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe.config
+C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe
+C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.pdb
+C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csprojResolveAssemblyReference.cache
+C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.CursorSet.resources
+C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.IconSet.resources
+C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.MainWindow.resources
+C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Properties.Resources.resources
+C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csproj.GenerateResource.Cache
+C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
+C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
