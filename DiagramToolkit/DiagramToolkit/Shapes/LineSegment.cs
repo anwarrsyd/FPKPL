@@ -5,7 +5,7 @@ using System.Drawing.Drawing2D;
 
 namespace DiagramToolkit.Shapes
 {
-    public class LineSegment : DrawingObject
+    public class LineSegment : DrawingObject, IObserver
     {
         private const double EPSILON = 3.0;
 
@@ -13,6 +13,8 @@ namespace DiagramToolkit.Shapes
         public Point Endpoint { get; set; }
 
         private Pen pen;
+        private IObservable vertex1;
+        private IObservable vertex2;
 
         public LineSegment()
         {
@@ -100,6 +102,30 @@ namespace DiagramToolkit.Shapes
         {
             this.Startpoint = new Point(this.Startpoint.X + xAmount, this.Startpoint.Y + yAmount);
             this.Endpoint = new Point(this.Endpoint.X + xAmount, this.Endpoint.Y + yAmount);
+        }
+
+        public void AddVertex(IObservable vertex)
+        {
+            if (vertex1 == null)
+            {
+                vertex1 = vertex;
+            }
+            else
+            {
+                vertex2 = vertex;
+            }
+        }
+
+        public void Update(IObservable vertex, int deltaX, int deltaY)
+        {
+            if (vertex == vertex1)
+            {
+                Startpoint = new Point(this.Startpoint.X + deltaX, this.Startpoint.Y + deltaY);
+            }
+            else
+            {
+                Endpoint = new Point(this.Endpoint.X + deltaX, this.Endpoint.Y + deltaY);
+            }
         }
     }
 }

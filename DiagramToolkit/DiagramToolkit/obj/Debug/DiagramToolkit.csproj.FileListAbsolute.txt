@@ -9,3 +9,14 @@ C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit
 C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csproj.GenerateResource.Cache
 C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
 C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
+E:\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe.config
+E:\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe
+E:\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.pdb
+E:\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csprojResolveAssemblyReference.cache
+E:\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.CursorSet.resources
+E:\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.IconSet.resources
+E:\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.MainWindow.resources
+E:\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Properties.Resources.resources
+E:\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csproj.GenerateResource.Cache
+E:\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
+E:\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb

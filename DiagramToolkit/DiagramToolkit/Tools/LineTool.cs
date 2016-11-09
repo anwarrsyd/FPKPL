@@ -10,7 +10,7 @@ namespace DiagramToolkit.Tools
     {
         private ICanvas canvas;
         private LineSegment lineSegment;
-        private DrawingObject startingObject, endingObject;
+        private Shapes.Rectangle startingObject, endingObject;
         public Cursor Cursor
         {
             get
@@ -44,11 +44,11 @@ namespace DiagramToolkit.Tools
         {
             if (e.Button == MouseButtons.Left)
             {
-                lineSegment = new LineSegment(new System.Drawing.Point(e.X, e.Y));
-                lineSegment.Endpoint = new System.Drawing.Point(e.X, e.Y);
+                lineSegment = new LineSegment(new Point(e.X, e.Y));
+                lineSegment.Endpoint = new Point(e.X, e.Y);
                 canvas.AddDrawingObject(lineSegment);
                 Debug.WriteLine(e.X + " " + e.Y);
-                startingObject = canvas.GetObjectAt(e.X, e.Y);
+                startingObject = (Shapes.Rectangle)canvas.GetObjectAt(e.X, e.Y);
             }
         }
 
@@ -58,7 +58,7 @@ namespace DiagramToolkit.Tools
             {
                 if (this.lineSegment != null)
                 {
-                    lineSegment.Endpoint = new System.Drawing.Point(e.X, e.Y);
+                    lineSegment.Endpoint = new Point(e.X, e.Y);
                 }
             }
         }
@@ -70,19 +70,23 @@ namespace DiagramToolkit.Tools
                 if (e.Button == MouseButtons.Left)
                 {
                     Point P = new Point();
-                    lineSegment.Endpoint = new System.Drawing.Point(e.X, e.Y);
+                    lineSegment.Endpoint = new Point(e.X, e.Y);
                     lineSegment.Select();
-                    endingObject = canvas.GetObjectAt(e.X, e.Y);
+                    endingObject = (Shapes.Rectangle)canvas.GetObjectAt(e.X, e.Y);
                     if (startingObject != null)
                     {
                         P = startingObject.GetIntersectionPoint(lineSegment.Startpoint, lineSegment.Endpoint);
+                        startingObject.Subscribe(lineSegment);
+                        lineSegment.AddVertex(startingObject);
                     }
-                    lineSegment.Startpoint = new System.Drawing.Point(P.X, P.Y);
+                    lineSegment.Startpoint = new Point(P.X, P.Y);
                     if (endingObject!= null)
                     {
                         P = endingObject.GetIntersectionPoint(lineSegment.Startpoint, lineSegment.Endpoint);
+                        endingObject.Subscribe(lineSegment);
+                        lineSegment.AddVertex(endingObject);
                     }
-                    lineSegment.Endpoint = new System.Drawing.Point(P.X, P.Y);
+                    lineSegment.Endpoint = new Point(P.X, P.Y);
                 }
                 else if (e.Button == MouseButtons.Right)
                 {
