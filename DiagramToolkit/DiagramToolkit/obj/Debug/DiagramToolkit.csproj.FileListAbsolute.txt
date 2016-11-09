@@ -9,3 +9,4 @@ C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit
 C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csproj.GenerateResource.Cache
 C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
 C:\Users\DOOM\Documents\diagram-toolkit-master\src\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
+E:\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe.config
