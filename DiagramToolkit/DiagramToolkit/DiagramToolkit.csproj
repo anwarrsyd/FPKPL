@@ -103,6 +103,13 @@
     <Compile Include="States\EditState.cs" />
     <Compile Include="States\PreviewState.cs" />
     <Compile Include="States\StaticState.cs" />
+    <Compile Include="ThirdParty\Accordion\Accordion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\Accordion\OpacityEx.cs" />
+    <Compile Include="ThirdParty\Accordion\ResizeBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ToolbarItems\ExampleToolbarItem.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -168,6 +175,96 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MenuItems\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Mobile\actionBar.png" />
+    <Content Include="Resources\Mobile\ActiveListItem.png" />
+    <Content Include="Resources\Mobile\ActiveTextField.png" />
+    <Content Include="Resources\Mobile\blueActionBar.png" />
+    <Content Include="Resources\Mobile\blueListItem.png" />
+    <Content Include="Resources\Mobile\blueTab.png" />
+    <Content Include="Resources\Mobile\borderBottomActionBar.png" />
+    <Content Include="Resources\Mobile\bottomMenuItem.png" />
+    <Content Include="Resources\Mobile\bounding-box.png" />
+    <Content Include="Resources\Mobile\box-shadow.png" />
+    <Content Include="Resources\Mobile\button.png" />
+    <Content Include="Resources\Mobile\checkbox.png" />
+    <Content Include="Resources\Mobile\collection.png" />
+    <Content Include="Resources\Mobile\combo.png" />
+    <Content Include="Resources\Mobile\contactIcon.png" />
+    <Content Include="Resources\Mobile\cursor.png" />
+    <Content Include="Resources\Mobile\dark-effect.png" />
+    <Content Include="Resources\Mobile\darkActionBar.png" />
+    <Content Include="Resources\Mobile\dialog.png" />
+    <Content Include="Resources\Mobile\dialogHeader.png" />
+    <Content Include="Resources\Mobile\diskette.png" />
+    <Content Include="Resources\Mobile\DownDatePicker.png" />
+    <Content Include="Resources\Mobile\dropdown.png" />
+    <Content Include="Resources\Mobile\edge-shadow.png" />
+    <Content Include="Resources\Mobile\fastscroll.png" />
+    <Content Include="Resources\Mobile\file.png" />
+    <Content Include="Resources\Mobile\focusedButton.png" />
+    <Content Include="Resources\Mobile\focusedCheckbox.png" />
+    <Content Include="Resources\Mobile\focusedCombo.png" />
+    <Content Include="Resources\Mobile\focusedDropdown.png" />
+    <Content Include="Resources\Mobile\FocusedListItem.png" />
+    <Content Include="Resources\Mobile\focusedSpinner.png" />
+    <Content Include="Resources\Mobile\focusedToggle.png" />
+    <Content Include="Resources\Mobile\focusRadio.png" />
+    <Content Include="Resources\Mobile\FocusTextField.png" />
+    <Content Include="Resources\Mobile\folder.png" />
+    <Content Include="Resources\Mobile\font.png" />
+    <Content Include="Resources\Mobile\googleSearch.png" />
+    <Content Include="Resources\Mobile\icon.png" />
+    <Content Include="Resources\Mobile\keyboard.png" />
+    <Content Include="Resources\Mobile\layout1.png" />
+    <Content Include="Resources\Mobile\leftSelectHandle.png" />
+    <Content Include="Resources\Mobile\light-effect.png" />
+    <Content Include="Resources\Mobile\linear-grad.png" />
+    <Content Include="Resources\Mobile\listHeader.png" />
+    <Content Include="Resources\Mobile\listItem.png" />
+    <Content Include="Resources\Mobile\menuItem.png" />
+    <Content Include="Resources\Mobile\middleMenuItem.png" />
+    <Content Include="Resources\Mobile\middleSelectHandle.png" />
+    <Content Include="Resources\Mobile\navigationBar.png" />
+    <Content Include="Resources\Mobile\offSwitch.png" />
+    <Content Include="Resources\Mobile\onSwitch.png" />
+    <Content Include="Resources\Mobile\phone.png" />
+    <Content Include="Resources\Mobile\picker.png" />
+    <Content Include="Resources\Mobile\plain-text.png" />
+    <Content Include="Resources\Mobile\pressedButton.png" />
+    <Content Include="Resources\Mobile\pressedCheckbox.png" />
+    <Content Include="Resources\Mobile\pressedCombo.png" />
+    <Content Include="Resources\Mobile\PressedDropdown.png" />
+    <Content Include="Resources\Mobile\pressedFastscroll.png" />
+    <Content Include="Resources\Mobile\PressedListItem.png" />
+    <Content Include="Resources\Mobile\pressedRadio.png" />
+    <Content Include="Resources\Mobile\pressedSpinner.png" />
+    <Content Include="Resources\Mobile\pressedTab.png" />
+    <Content Include="Resources\Mobile\pressedToggle.png" />
+    <Content Include="Resources\Mobile\progressBar.png" />
+    <Content Include="Resources\Mobile\progressScrubbers.png" />
+    <Content Include="Resources\Mobile\radial-grad.png" />
+    <Content Include="Resources\Mobile\radio.png" />
+    <Content Include="Resources\Mobile\rightSelectHandle.png" />
+    <Content Include="Resources\Mobile\screenHeader.png" />
+    <Content Include="Resources\Mobile\selectedTab.png" />
+    <Content Include="Resources\Mobile\shadow.png" />
+    <Content Include="Resources\Mobile\spinner1.png" />
+    <Content Include="Resources\Mobile\spinner2.png" />
+    <Content Include="Resources\Mobile\statusbar.png" />
+    <Content Include="Resources\Mobile\tab.png" />
+    <Content Include="Resources\Mobile\tablet.png" />
+    <Content Include="Resources\Mobile\textField.png" />
+    <Content Include="Resources\Mobile\toastFrame.png" />
+    <Content Include="Resources\Mobile\toggle.png" />
+    <Content Include="Resources\Mobile\UpDatePicker.png" />
+    <Content Include="Resources\Mobile\vector-diagonal-line-with-box-edges.png" />
+    <Content Include="Resources\Mobile\Zoom.png" />
+    <Content Include="Resources\Mobile\ZoomIn1.png" />
+    <Content Include="Resources\Mobile\ZoomIn2.png" />
+    <Content Include="Resources\Mobile\ZoomOut1.png" />
+    <Content Include="Resources\Mobile\ZoomOut2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

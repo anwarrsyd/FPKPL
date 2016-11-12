@@ -1,7 +1,8 @@
-﻿namespace DiagramToolKit
+﻿namespace DiagramToolkit
 {
     partial class MainWindow
     {
+
         /// <summary>
         /// Required designer variable.
         /// </summary>

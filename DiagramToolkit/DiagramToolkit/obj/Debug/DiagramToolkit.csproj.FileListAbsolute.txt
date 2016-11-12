@@ -20,3 +20,14 @@ E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\Diagr
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolKit.MainWindow.resources
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.pdb
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe.config
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.pdb
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csprojResolveAssemblyReference.cache
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.CursorSet.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.IconSet.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.MainWindow.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Properties.Resources.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csproj.GenerateResource.Cache
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
