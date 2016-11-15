@@ -14,7 +14,7 @@ namespace DiagramToolkit
             edges = new List<Edge>();
         }
 
-        public void Update(int x, int y)
+        public void BroadcastUpdate(int x, int y)
         {
             foreach(var edge in edges)
             {
@@ -26,6 +26,9 @@ namespace DiagramToolkit
             edges.Add((Edge)O);
         }
 
-        public abstract void Unsubscribe(IObserver O);
+        public void Unsubscribe(IObserver O)
+        {
+            edges.Remove((Edge)O);
+        }
     }
 }

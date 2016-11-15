@@ -47,7 +47,6 @@ namespace DiagramToolkit.Tools
                 lineSegment = new LineSegment(new Point(e.X, e.Y));
                 lineSegment.Endpoint = new Point(e.X, e.Y);
                 canvas.AddDrawingObject(lineSegment);
-                Debug.WriteLine(e.X + " " + e.Y);
                 if (canvas.GetObjectAt(e.X, e.Y) is Vertex)
                 {
                     startingObject = (Vertex)canvas.GetObjectAt(e.X, e.Y);
@@ -88,7 +87,7 @@ namespace DiagramToolkit.Tools
                         lineSegment.AddVertex(startingObject);
                         lineSegment.Startpoint = new Point(P.X, P.Y);
                     }
-                    if (endingObject!= null)
+                    if (endingObject != null)
                     {
                         P = endingObject.GetIntersectionPoint(lineSegment.Startpoint, lineSegment.Endpoint);
                         endingObject.Subscribe(lineSegment);

@@ -150,12 +150,7 @@ namespace DiagramToolkit.Shapes
             this.X += xAmount;
             this.Y += yAmount;
 
-            Update(xAmount, yAmount);
-        }
-
-        public override void Unsubscribe(IObserver O)
-        {
-            throw new NotImplementedException();
+            BroadcastUpdate(xAmount, yAmount);
         }
     }
 }
