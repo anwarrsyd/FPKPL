@@ -6,7 +6,7 @@ using System.Drawing.Drawing2D;
 
 namespace DiagramToolkit.Shapes
 {
-    public class Rectangle : DrawingObject, IObservable
+    public class Rectangle : Vertex
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -14,13 +14,10 @@ namespace DiagramToolkit.Shapes
         public int Height { get; set; }
 
         private Pen pen;
-        private List<IObserver> observers;
-
         public Rectangle()
         {
             this.pen = new Pen(Color.Black);
             pen.Width = 1.5f;
-            observers = new List<IObserver>();
         }
 
         public Rectangle(int x, int y) : this()
@@ -69,7 +66,7 @@ namespace DiagramToolkit.Shapes
 
             }
             //kanan atas sampe kanan bawah
-            A2 = this.Height;
+            A2 = -this.Height;
             B2 = 0;
             C1 = A1 * p1.X + B1 * p1.Y;
             C2 = A2 * (this.X+this.Width) + B2 * this.Y;
@@ -107,7 +104,7 @@ namespace DiagramToolkit.Shapes
             }
 
             //kiri bawah sampe kiri atas
-            A2 = -this.Height;
+            A2 = this.Height;
             B2 = 0;
             C1 = A1 * p1.X + B1 * p1.Y;
             C2 = A2 * this.X + B2 * (this.Y + this.Height);
@@ -152,19 +149,11 @@ namespace DiagramToolkit.Shapes
         {
             this.X += xAmount;
             this.Y += yAmount;
-            foreach (var observer in observers)
-            {
-                observer.Update(this, xAmount, yAmount);
-            }
+
+            Update(xAmount, yAmount);
         }
 
-        public void Subscribe(IObserver O)
-        {
-            observers.Add(O);
-
-        }
-
-        public void Unsubscribe(IObserver O)
+        public override void Unsubscribe(IObserver O)
         {
             throw new NotImplementedException();
         }

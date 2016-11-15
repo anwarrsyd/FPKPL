@@ -10,7 +10,7 @@ namespace DiagramToolkit.Tools
     {
         private ICanvas canvas;
         private LineSegment lineSegment;
-        private Shapes.Rectangle startingObject, endingObject;
+        private Vertex startingObject, endingObject;
         public Cursor Cursor
         {
             get
@@ -48,7 +48,10 @@ namespace DiagramToolkit.Tools
                 lineSegment.Endpoint = new Point(e.X, e.Y);
                 canvas.AddDrawingObject(lineSegment);
                 Debug.WriteLine(e.X + " " + e.Y);
-                startingObject = (Shapes.Rectangle)canvas.GetObjectAt(e.X, e.Y);
+                if (canvas.GetObjectAt(e.X, e.Y) is Vertex)
+                {
+                    startingObject = (Vertex)canvas.GetObjectAt(e.X, e.Y);
+                }
             }
         }
 
@@ -72,21 +75,26 @@ namespace DiagramToolkit.Tools
                     Point P = new Point();
                     lineSegment.Endpoint = new Point(e.X, e.Y);
                     lineSegment.Select();
-                    endingObject = (Shapes.Rectangle)canvas.GetObjectAt(e.X, e.Y);
+
+                    if (canvas.GetObjectAt(e.X, e.Y) is Vertex)
+                    {
+                        endingObject = (Vertex)canvas.GetObjectAt(e.X, e.Y);
+                    }
+
                     if (startingObject != null)
                     {
                         P = startingObject.GetIntersectionPoint(lineSegment.Startpoint, lineSegment.Endpoint);
                         startingObject.Subscribe(lineSegment);
                         lineSegment.AddVertex(startingObject);
+                        lineSegment.Startpoint = new Point(P.X, P.Y);
                     }
-                    lineSegment.Startpoint = new Point(P.X, P.Y);
                     if (endingObject!= null)
                     {
                         P = endingObject.GetIntersectionPoint(lineSegment.Startpoint, lineSegment.Endpoint);
                         endingObject.Subscribe(lineSegment);
                         lineSegment.AddVertex(endingObject);
+                        lineSegment.Endpoint = new Point(P.X, P.Y);
                     }
-                    lineSegment.Endpoint = new Point(P.X, P.Y);
                 }
                 else if (e.Button == MouseButtons.Right)
                 {

@@ -70,6 +70,7 @@
     </Compile>
     <Compile Include="DrawingObject.cs" />
     <Compile Include="DrawingState.cs" />
+    <Compile Include="Edge.cs" />
     <Compile Include="ICanvas.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="IconSet.Designer.cs">
@@ -114,6 +115,7 @@
     <Compile Include="Tools\SelectionTool.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Vertex.cs" />
     <EmbeddedResource Include="CursorSet.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CursorSet.Designer.cs</LastGenOutput>
