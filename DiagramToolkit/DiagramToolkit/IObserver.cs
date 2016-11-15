@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DiagramToolkit
 {
-    interface IObserver
+    public interface IObserver
     {
-        void Update(int deltaX, int deltaY);
+        void Update(IObservable vertex, int deltaX, int deltaY);
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DiagramToolkit
 {
-    interface IObservable
+    public interface IObservable
     {
         void Subscribe(IObserver O);
         void Unsubscribe(IObserver O);
