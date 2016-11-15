@@ -47,21 +47,33 @@ namespace DiagramToolkit
             acc.Insets = new Padding(5);
             acc.ControlBackColor = Color.White;
             acc.Width = 200;
-
+   
             //deklarasi panel pertama
+            //deklarasi size button
+            int tinggi = 100 ;
+            int lebar = 100;
             FlowLayoutPanel tlp = new FlowLayoutPanel { Dock = DockStyle.Fill, Padding = new Padding(5) };
             tlp.TabStop = true;
-            Button iniTombol = new Button { Text = "", Image = Image.FromFile("D:/Documents/Kuliah/Kuliah smt 7/Konstruksi Perangkat Lunak/fpfp/FPKPL/DiagramToolkit/DiagramToolkit/Resources/Mobile/checkbox.png"), FlatStyle = FlatStyle.Flat };
-            iniTombol.FlatAppearance.BorderSize = 0;
-            tlp.Controls.Add(iniTombol);
-            Button iniTombol2 = new Button { Text = "", Image = Image.FromFile("D:/Documents/Kuliah/Kuliah smt 7/Konstruksi Perangkat Lunak/fpfp/FPKPL/DiagramToolkit/DiagramToolkit/Resources/Mobile/checkbox.png"), FlatStyle = FlatStyle.Flat };
-            iniTombol2.FlatAppearance.BorderSize = 0;
-            tlp.Controls.Add(iniTombol2);
-            Button iniTombol3 = new Button { Text = "", Image = Image.FromFile("D:/Documents/Kuliah/Kuliah smt 7/Konstruksi Perangkat Lunak/fpfp/FPKPL/DiagramToolkit/DiagramToolkit/Resources/Mobile/checkbox.png"), FlatStyle = FlatStyle.Flat };//deklarasi tombol pake gambar dari drag solution explorer
-            iniTombol3.FlatAppearance.BorderSize = 0;
+            tlp.MaximumSize = new Size(new Point(300));
+            //deklrasi button baru
+            Button Phone    = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.phone), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
+            Button Keyboard = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap( Resources.Assets.keyboard), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
+            Button Tablet   = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.tablet), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
+            Button StatusBar= new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.statusbar), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
+            Button NavBar   = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.navigationBar), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
+            Button checkbox = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.checkbox), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
+
+            //penambahan button ke canvas
+            tlp.Controls.Add(Phone);
+            tlp.Controls.Add(Keyboard);
+            tlp.Controls.Add(Tablet);
+            tlp.Controls.Add(checkbox);
+            tlp.Controls.Add(StatusBar);
+            tlp.Controls.Add(NavBar);
+
             tlp.Dock = DockStyle.Fill;
 
-            acc.Add(tlp, "General", "Enter the client's information.", 0, true);//memasukkan panel pertama
+            acc.Add(tlp, "Android", "Enter the client's information.", 0, true);//memasukkan panel pertama
 
             acc.Add(new TextBox { Dock = DockStyle.Fill, Multiline = true, BackColor = Color.White }, "Memo", "Additional Client Info", 1, true, contentBackColor: Color.Transparent);//menambahkan panel kedua
 
