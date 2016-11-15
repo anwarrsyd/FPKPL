@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace DiagramToolkit.Tools
 {
-    public class RectangleTool : ToolStripButton, ITool
+    public class RectangleTool : Button, ITool
     {
         private ICanvas canvas;
         private Rectangle rectangle;
@@ -33,9 +33,6 @@ namespace DiagramToolkit.Tools
         public RectangleTool()
         {
             this.Name = "Rectangle tool";
-            this.ToolTipText = "Rectangle tool";
-            this.Image = IconSet.bounding_box;
-            this.CheckOnClick = true;
         }
 
         public void ToolMouseDown(object sender, MouseEventArgs e)
