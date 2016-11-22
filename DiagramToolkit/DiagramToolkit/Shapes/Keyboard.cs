@@ -6,7 +6,7 @@ using System.Drawing.Drawing2D;
 
 namespace DiagramToolkit.Shapes
 {
-    public class Rectangle : Vertex
+    public class Keyboard : Vertex
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -14,19 +14,19 @@ namespace DiagramToolkit.Shapes
         public int Height { get; set; }
 
         private Pen pen;
-        public Rectangle()
+        public Keyboard()
         {
             this.pen = new Pen(Color.Black);
             pen.Width = 1.5f;
         }
 
-        public Rectangle(int x, int y) : this()
+        public Keyboard(int x, int y) : this()
         {
             this.X = x;
             this.Y = y;
         }
 
-        public Rectangle(int x, int y, int width, int height) : this(x, y)
+        public  Keyboard(int x, int y, int width, int height) : this(x, y)
         {
             this.Width = width;
             this.Height = height;
@@ -57,7 +57,7 @@ namespace DiagramToolkit.Shapes
             {
                 double x = (B2 * C1 - B1 * C2) / det;
                 double y = (A1 * C2 - A2 * C1) / det;
-                if ( Math.Min(p1.X, p2.X) <= x && x <= Math.Max(p1.X, p2.X) )
+                if (Math.Min(p1.X, p2.X) <= x && x <= Math.Max(p1.X, p2.X))
                 {
                     P.X = (int)x;
                     P.Y = (int)y;
@@ -69,7 +69,7 @@ namespace DiagramToolkit.Shapes
             A2 = -this.Height;
             B2 = 0;
             C1 = A1 * p1.X + B1 * p1.Y;
-            C2 = A2 * (this.X+this.Width) + B2 * this.Y;
+            C2 = A2 * (this.X + this.Width) + B2 * this.Y;
             det = A1 * B2 - A2 * B1;
             if (det != 0)
             {
@@ -128,7 +128,7 @@ namespace DiagramToolkit.Shapes
         {
             this.pen.Color = Color.Black;
             this.pen.DashStyle = DashStyle.Solid;
-            var img = new Bitmap(Resources.Assets.phone);
+            var img = new Bitmap(Resources.Assets.keyboard);
             Graphics.DrawImage(img, X, Y, Width, Height);
         }
 
@@ -136,7 +136,7 @@ namespace DiagramToolkit.Shapes
         {
             this.pen.Color = Color.Blue;
             this.pen.DashStyle = DashStyle.Solid;
-            var img = new Bitmap(Resources.Assets.phone);
+            var img = new Bitmap(Resources.Assets.keyboard);
             Graphics.DrawImage(img, X, Y, Width, Height);
         }
 
@@ -144,7 +144,7 @@ namespace DiagramToolkit.Shapes
         {
             this.pen.Color = Color.Red;
             this.pen.DashStyle = DashStyle.DashDot;
-            var img = new Bitmap(Resources.Assets.phone);
+            var img = new Bitmap(Resources.Assets.keyboard);
             Graphics.DrawImage(img, X, Y, Width, Height);
         }
 

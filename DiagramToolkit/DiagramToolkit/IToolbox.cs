@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,5 +15,7 @@ namespace DiagramToolkit
         void AddTool(ITool tool);
         void RemoveTool(ITool tool);
         ITool ActiveTool { get; set; }
+        Size MaximumSize { get; set; }
+        bool TabStop { get; set; }
     }
 }

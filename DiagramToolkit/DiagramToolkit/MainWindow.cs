@@ -66,8 +66,9 @@ namespace DiagramToolkit
             int tinggi = 100;
             int lebar = 100;
             tlp = new DefaultToolbox();
-            //tlp.TabStop = true;
-            //tlp.MaximumSize = new Size(new Point(300));
+            tlp.TabStop = true;
+            tlp.MaximumSize = new Size(new Point(300));
+          
             //deklrasi button baru
             Tools.RectangleTool phone = new Tools.RectangleTool();
             phone.BackgroundImage = new Bitmap(Resources.Assets.phone);
@@ -75,15 +76,16 @@ namespace DiagramToolkit
             phone.Width = lebar;
             phone.BackgroundImageLayout = ImageLayout.Zoom;
             Tools.LineTool lain = new Tools.LineTool();
-            lain.BackgroundImage = Resources.Assets.keyboard;
+            lain.BackgroundImage = Resources.Assets.vector_diagonal_line_with_box_edges;
             lain.Height = tinggi;
             lain.Width = lebar;
             lain.BackgroundImageLayout = ImageLayout.Zoom;
             tlp.AddTool(lain);
             Tools.SelectionTool pilih = new Tools.SelectionTool();
-            pilih.BackgroundImage = Resources.Assets.statusbar;
             pilih.Height = tinggi;
             pilih.Width = lebar;
+            pilih.Image = null;
+            pilih.BackgroundImage = Resources.Assets.cursor;
             pilih.BackgroundImageLayout = ImageLayout.Zoom;
             tlp.AddTool(pilih);
             //Button Phone    = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.phone), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
