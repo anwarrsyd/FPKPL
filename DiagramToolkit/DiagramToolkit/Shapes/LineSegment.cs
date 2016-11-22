@@ -37,25 +37,30 @@ namespace DiagramToolkit.Shapes
         public override void RenderOnStaticView()
         {
             pen.Color = Color.Black;
-            pen.Width = 1.5f;
+            pen.Width = 4f;
             pen.DashStyle = DashStyle.Solid;
 
             if (this.Graphics != null)
             {
                 this.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                pen.EndCap = LineCap.ArrowAnchor;
+
                 this.Graphics.DrawLine(pen, this.Startpoint, this.Endpoint);
+                
             }
         }
 
         public override void RenderOnEditingView()
         {
             pen.Color = Color.Blue;
-            pen.Width = 1.5f;
+            pen.Width = 4f;
             pen.DashStyle = DashStyle.Solid;
 
             if (this.Graphics != null)
             {
                 this.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                pen.EndCap = LineCap.ArrowAnchor;
+
                 this.Graphics.DrawLine(pen, this.Startpoint, this.Endpoint);
             }
         }
@@ -63,12 +68,14 @@ namespace DiagramToolkit.Shapes
         public override void RenderOnPreview()
         {
             pen.Color = Color.Red;
-            pen.Width = 1.5f;
+            pen.Width = 4f;
             pen.DashStyle = DashStyle.DashDotDot;
 
             if (this.Graphics != null)
             {
                 this.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                pen.EndCap = LineCap.ArrowAnchor;
+
                 this.Graphics.DrawLine(pen, this.Startpoint, this.Endpoint);
             }
         }

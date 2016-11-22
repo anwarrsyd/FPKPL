@@ -31,3 +31,15 @@ C:\D\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe
 C:\D\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.pdb
 C:\D\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
 C:\D\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe.config
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.pdb
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csprojResolveAssemblyReference.cache
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.CursorSet.resources
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.IconSet.resources
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.MainWindow.resources
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Properties.Resources.resources
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Assets.resources
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csproj.GenerateResource.Cache

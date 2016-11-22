@@ -98,6 +98,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Assets.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Assets.resx</DependentUpon>
+    </Compile>
     <Compile Include="Shapes\LineSegment.cs" />
     <Compile Include="Shapes\Rectangle.cs" />
     <Compile Include="States\EditState.cs" />
@@ -136,6 +141,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Assets.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Assets.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -169,6 +178,270 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MenuItems\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\actionBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\ActiveListItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\ActiveTextField.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\blueActionBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\blueListItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\blueTab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\borderBottomActionBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\bottomMenuItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\bounding-box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\box-shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\checkbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\collection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\combo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\contactIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\darkActionBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\dark-effect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\dialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\dialogHeader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\DownDatePicker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\dropdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\edge-shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\fastscroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\focusedButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\focusedCheckbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\focusedCombo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\focusedDropdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\FocusedListItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\focusedSpinner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\focusedToggle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\focusRadio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\FocusTextField.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\font.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\googleSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\keyboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\layout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\leftSelectHandle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\light-effect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\linear-grad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\listHeader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\listItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\menuItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\middleMenuItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\middleSelectHandle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\navigationBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\offSwitch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\onSwitch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\picker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\plain-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\pressedButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\pressedCheckbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\pressedCombo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\PressedDropdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\pressedFastscroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\PressedListItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\pressedRadio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\pressedSpinner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\pressedTab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\pressedToggle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\progressBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\progressScrubbers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\radial-grad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\radio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\rightSelectHandle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\screenHeader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\selectedTab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\spinner1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\spinner2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\statusbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\tab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\tablet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\textField.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\toastFrame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\toggle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\UpDatePicker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\vector-diagonal-line-with-box-edges.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\Zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\ZoomIn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\ZoomIn2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\ZoomOut1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile\ZoomOut2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
