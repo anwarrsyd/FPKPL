@@ -6,12 +6,12 @@ using System.Windows.Forms;
 
 namespace DiagramToolkit.Tools
 {
-    public class LineTool : ToolStripButton, ITool
+    public class LineTool : Button, ITool
     {
         private ICanvas canvas;
         private LineSegment lineSegment;
         private Vertex startingObject, endingObject;
-        public Cursor Cursor
+        public Cursor iniCursor
         {
             get
             {
@@ -35,9 +35,6 @@ namespace DiagramToolkit.Tools
         public LineTool()
         {
             this.Name = "Stateful Line tool";
-            this.ToolTipText = "Stateful Line tool";
-            this.Image = IconSet.diagonal_line;
-            this.CheckOnClick = true;
         }
 
         public void ToolMouseDown(object sender, MouseEventArgs e)

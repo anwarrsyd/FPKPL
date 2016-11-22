@@ -4,10 +4,9 @@ using System.Windows.Forms;
 
 namespace DiagramToolkit
 {
-    public class DefaultToolbox : ToolStrip, IToolbox
+    public class DefaultToolbox : FlowLayoutPanel, IToolbox
     {
         private ITool activeTool;
-
         public ITool ActiveTool
         {
             get
@@ -21,52 +20,39 @@ namespace DiagramToolkit
             }
         }
 
-        public event ToolSelectedEventHandler ToolSelected;
-
-        public void AddSeparator()
-        {
-            this.Items.Add(new ToolStripSeparator());
-        }
+        public event buttonClicked ToolSelected;
 
         public void AddTool(ITool tool)
         {
             Debug.WriteLine(tool.Name + " is added into toolbox.");
 
-            if (tool is ToolStripButton)
+            if (tool is Button)
             {
-                ToolStripButton toggleButton = (ToolStripButton)tool;
-
-                if (toggleButton.CheckOnClick)
-                {
-                    toggleButton.CheckedChanged += toggleButton_CheckedChanged;
-                }
-
-                this.Items.Add(toggleButton);
+                Button toolButton = (Button)tool;
+                toolButton.Click += toggleButton_CheckedChanged;
+                this.Controls.Add(toolButton);
             }
         }
 
         public void RemoveTool(ITool tool)
         {
-            foreach (ToolStripItem i in this.Items)
+            foreach (Button i in this.Controls)
             {
                 if (i is ITool)
                 {
                     if (i.Equals(tool))
                     {
-                        this.Items.Remove(i);
+                        this.Controls.Remove(i);
                     }
                 }
             }
         }
-
+        
         private void toggleButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (sender is ToolStripButton)
+            if (sender is Button)
             {
-                ToolStripButton button = (ToolStripButton)sender;
-
-                if (button.Checked)
-                {
+                Button button = (Button)sender;
                     if (button is ITool)
                     {
                         this.activeTool = (ITool)button;
@@ -76,8 +62,6 @@ namespace DiagramToolkit
                         {
                             ToolSelected(this.activeTool);
                         }
-
-                        UncheckInactiveToggleButtons();
                     }
                     else
                     {
@@ -86,19 +70,4 @@ namespace DiagramToolkit
                 }
             }
         }
-
-        private void UncheckInactiveToggleButtons()
-        {
-            foreach (ToolStripItem item in this.Items)
-            {
-                if (item != this.activeTool)
-                {
-                    if (item is ToolStripButton)
-                    {
-                        ((ToolStripButton)item).Checked = false;
-                    }
-                }
-            }
-        }
     }
-}

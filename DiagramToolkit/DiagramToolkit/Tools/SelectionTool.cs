@@ -7,14 +7,14 @@ using System.Windows.Forms;
 
 namespace DiagramToolkit.Tools
 {
-    public class SelectionTool : ToolStripButton, ITool
+    public class SelectionTool : Button, ITool
     {
         private ICanvas canvas;
         private DrawingObject selectedObject;
         private int xInitial;
         private int yInitial;
 
-        public Cursor Cursor
+        public Cursor iniCursor
         {
             get
             {
@@ -38,9 +38,7 @@ namespace DiagramToolkit.Tools
         public SelectionTool()
         {
             this.Name = "Selection tool";
-            this.ToolTipText = "Selection tool";
             this.Image = IconSet.cursor;
-            this.CheckOnClick = true;
         }
 
         public void ToolMouseDown(object sender, MouseEventArgs e)

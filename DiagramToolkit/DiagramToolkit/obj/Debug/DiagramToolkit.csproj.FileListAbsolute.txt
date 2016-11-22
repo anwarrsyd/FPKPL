@@ -55,3 +55,4 @@ D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fp\FPKPL\DiagramTool
 D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csproj.GenerateResource.Cache
 D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe
 D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.pdb
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.Assets.resources

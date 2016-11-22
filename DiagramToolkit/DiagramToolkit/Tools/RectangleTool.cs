@@ -9,7 +9,7 @@ namespace DiagramToolkit.Tools
         private ICanvas canvas;
         private Rectangle rectangle;
 
-        public Cursor Cursor
+        public Cursor iniCursor
         {
             get
             {

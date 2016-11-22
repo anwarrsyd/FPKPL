@@ -14,10 +14,14 @@ namespace DiagramToolkit
     public partial class MainWindow : Form
     {
         IEditor editor;
+        IToolbox tlp;
         ICanvas canvas1;
         //size form
         int tinggi = 600;
         int lebar = 1350;
+
+        public object phone { get; private set; }
+
         public MainWindow()
         {
             InitUI();
@@ -61,33 +65,45 @@ namespace DiagramToolkit
             //deklarasi size button
             int tinggi = 100;
             int lebar = 100;
-            FlowLayoutPanel tlp = new FlowLayoutPanel { Dock = DockStyle.Fill, Padding = new Padding(5) };
-            tlp.TabStop = true;
-            tlp.MaximumSize = new Size(new Point(300));
+            tlp = new DefaultToolbox();
+            //tlp.TabStop = true;
+            //tlp.MaximumSize = new Size(new Point(300));
             //deklrasi button baru
             Tools.RectangleTool phone = new Tools.RectangleTool();
             phone.BackgroundImage = new Bitmap(Resources.Assets.phone);
             phone.Height = tinggi;
             phone.Width = lebar;
             phone.BackgroundImageLayout = ImageLayout.Zoom;
+            Tools.LineTool lain = new Tools.LineTool();
+            lain.BackgroundImage = Resources.Assets.keyboard;
+            lain.Height = tinggi;
+            lain.Width = lebar;
+            lain.BackgroundImageLayout = ImageLayout.Zoom;
+            tlp.AddTool(lain);
+            Tools.SelectionTool pilih = new Tools.SelectionTool();
+            pilih.BackgroundImage = Resources.Assets.statusbar;
+            pilih.Height = tinggi;
+            pilih.Width = lebar;
+            pilih.BackgroundImageLayout = ImageLayout.Zoom;
+            tlp.AddTool(pilih);
             //Button Phone    = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.phone), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
-            Button Keyboard = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.keyboard), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
-            Button Tablet = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.tablet), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
-            Button StatusBar = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.statusbar), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
-            Button NavBar = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.navigationBar), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
-            Button checkbox = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.checkbox), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
+            //Button Keyboard = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.keyboard), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
+            //Button Tablet = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.tablet), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
+            //Button StatusBar = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.statusbar), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
+            //Button NavBar = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.navigationBar), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
+            //Button checkbox = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.checkbox), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
 
             //penambahan button ke canvas
-            tlp.Controls.Add(phone);
-            tlp.Controls.Add(Keyboard);
-            tlp.Controls.Add(Tablet);
-            tlp.Controls.Add(checkbox);
-            tlp.Controls.Add(StatusBar);
-            tlp.Controls.Add(NavBar);
+            tlp.AddTool(phone);
+            //tlp.Controls.Add(Keyboard);
+            //tlp.Controls.Add(Tablet);
+            //tlp.Controls.Add(checkbox);
+            //tlp.Controls.Add(StatusBar);
+            //tlp.Controls.Add(NavBar);
 
-            tlp.Dock = DockStyle.Fill;
+            //tlp.Dock = DockStyle.Fill;
 
-            acc.Add(tlp, "Android", "Enter the client's information.", 0, true);//memasukkan panel pertama
+            acc.Add((Control)tlp, "Android", "Enter the client's information.", 0, true);//memasukkan panel pertama
 
             acc.Add(new TextBox { Dock = DockStyle.Fill, Multiline = true, BackColor = Color.White }, "Memo", "Additional Client Info", 1, true, contentBackColor: Color.Transparent);//menambahkan panel kedua
 
@@ -102,8 +118,21 @@ namespace DiagramToolkit
             mainPanel.Panel2.Controls.Add(toolContainer);
             mainPanel.SplitterWidth = 15;
             mainPanel.SplitterDistance = 300;
+            
             Controls.Add(mainPanel);
             Controls.Add(MenuBar);
+            this.tlp.ToolSelected += Toolbox_ToolSelected;
+        }
+
+        private void Toolbox_ToolSelected(ITool tool)
+        {
+            if (this.editor != null)
+            {
+                System.Diagnostics.Debug.WriteLine("Listener is working");
+                ICanvas canvas = this.editor.GetSelectedCanvas();
+                canvas.SetActiveTool(tool);
+                tool.TargetCanvas = canvas;
+            }
         }
 
         private void InitializeComponent()

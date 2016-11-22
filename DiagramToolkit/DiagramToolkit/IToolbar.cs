@@ -9,6 +9,6 @@ namespace DiagramToolkit
     public interface IToolbar
     {
         void AddToolbarItem(IToolbarItem toolbarItem);
-        void AddSeparator();
+        //void AddSeparator();
     }
 }

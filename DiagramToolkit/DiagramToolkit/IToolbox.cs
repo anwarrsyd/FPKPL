@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace DiagramToolkit
 {
-    public delegate void ToolSelectedEventHandler(ITool tool);
+    public delegate void buttonClicked(ITool tool);
 
     public interface IToolbox
     {
-        event ToolSelectedEventHandler ToolSelected;
+        event buttonClicked ToolSelected;
         void AddTool(ITool tool);
         void RemoveTool(ITool tool);
-        void AddSeparator();
         ITool ActiveTool { get; set; }
     }
 }
