@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Svg;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,16 +17,23 @@ namespace DiagramToolkit
         IEditor editor;
         IToolbox tlp;
         ICanvas canvas1;
+
         //size form
         int tinggi = 600;
         int lebar = 1350;
 
         public object phone { get; private set; }
 
+        // The file path of the SVG image selected
+        private string selectedSVG;
+        // Instance reference for the svgDocument used and updated throughout the manipulation of the image.
+        // private SvgDocument svgDocument;
+
         public MainWindow()
         {
             InitUI();
         }
+
         private void InitUI()
         {
             editor = new DefaultEditor();
@@ -68,19 +76,27 @@ namespace DiagramToolkit
             tlp = new DefaultToolbox();
             tlp.TabStop = true;
             tlp.MaximumSize = new Size(new Point(300));
-          
+
             //deklrasi button baru
+            //tools.rectangletool phone = new tools.rectangletool();
+            //phone.backgroundimage = new bitmap(resources.assets.phone);
+            //phone.height = tinggi;
+            //phone.width = lebar;
+            //phone.backgroundimagelayout = imagelayout.zoom;
             Tools.RectangleTool phone = new Tools.RectangleTool();
-            phone.BackgroundImage = new Bitmap(Resources.Assets.phone);
+            selectedSVG = "wyre_dark01_info.svg";
+            phone.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
             phone.Height = tinggi;
             phone.Width = lebar;
             phone.BackgroundImageLayout = ImageLayout.Zoom;
+
             Tools.LineTool lain = new Tools.LineTool();
             lain.BackgroundImage = Resources.Assets.vector_diagonal_line_with_box_edges;
             lain.Height = tinggi;
             lain.Width = lebar;
             lain.BackgroundImageLayout = ImageLayout.Zoom;
             tlp.AddTool(lain);
+
             Tools.SelectionTool pilih = new Tools.SelectionTool();
             pilih.Height = tinggi;
             pilih.Width = lebar;
@@ -146,7 +162,6 @@ namespace DiagramToolkit
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "MainWindow";
             this.ResumeLayout(false);
-
         }
     }
 }

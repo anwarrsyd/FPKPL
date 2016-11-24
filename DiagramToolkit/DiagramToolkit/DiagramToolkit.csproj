@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Svg, Version=2.2.1.38382, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Svg.2.2.2\lib\net35\Svg.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -103,12 +107,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Assets.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\AssetSvg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssetSvg.resx</DependentUpon>
+    </Compile>
     <Compile Include="Shapes\Keyboard.cs" />
     <Compile Include="Shapes\LineSegment.cs" />
     <Compile Include="Shapes\Rectangle.cs" />
     <Compile Include="States\EditState.cs" />
     <Compile Include="States\PreviewState.cs" />
     <Compile Include="States\StaticState.cs" />
+    <Compile Include="Svg\SVGParser.cs" />
     <Compile Include="ThirdParty\Accordion\Accordion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +163,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Assets.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AssetSvg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AssetSvg.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -188,6 +203,7 @@
     <Folder Include="MenuItems\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ImageSvg\wyre_dark01_info.svg" />
     <Content Include="Resources\Mobile\actionBar.png" />
     <Content Include="Resources\Mobile\ActiveListItem.png" />
     <Content Include="Resources\Mobile\ActiveTextField.png" />

@@ -126,9 +126,11 @@ namespace DiagramToolkit.Shapes
 
         public override void RenderOnStaticView()
         {
+            // Svg.SVGParser.MaximumSize = new Size(pictConvertedImage.Width, pictConvertedImage.Height);
             this.pen.Color = Color.Black;
             this.pen.DashStyle = DashStyle.Solid;
-            var img = new Bitmap(Resources.Assets.phone);
+            var img = Svg.SVGParser.GetBitmapFromSVG("wyre_dark01_info.svg");
+            //var pictConvertedImage.Image = Svg.SVGParser.GetBitmapFromSVG("wyre_dark01_info.svg");
             Graphics.DrawImage(img, X, Y, Width, Height);
         }
 
@@ -136,7 +138,7 @@ namespace DiagramToolkit.Shapes
         {
             this.pen.Color = Color.Blue;
             this.pen.DashStyle = DashStyle.Solid;
-            var img = new Bitmap(Resources.Assets.phone);
+            var img = Svg.SVGParser.GetBitmapFromSVG("wyre_dark01_info.svg");
             Graphics.DrawImage(img, X, Y, Width, Height);
         }
 
@@ -144,7 +146,7 @@ namespace DiagramToolkit.Shapes
         {
             this.pen.Color = Color.Red;
             this.pen.DashStyle = DashStyle.DashDot;
-            var img = new Bitmap(Resources.Assets.phone);
+            var img = Svg.SVGParser.GetBitmapFromSVG("wyre_dark01_info.svg");
             Graphics.DrawImage(img, X, Y, Width, Height);
         }
 
