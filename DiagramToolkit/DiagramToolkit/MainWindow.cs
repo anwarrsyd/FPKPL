@@ -22,13 +22,6 @@ namespace DiagramToolkit
         int tinggi = 600;
         int lebar = 1350;
 
-        public object phone { get; private set; }
-
-        // The file path of the SVG image selected
-        private string selectedSVG;
-        // Instance reference for the svgDocument used and updated throughout the manipulation of the image.
-        // private SvgDocument svgDocument;
-
         public MainWindow()
         {
             InitUI();
@@ -83,21 +76,17 @@ namespace DiagramToolkit
             //phone.height = tinggi;
             //phone.width = lebar;
             //phone.backgroundimagelayout = imagelayout.zoom;
-            selectedSVG = "phone.svg";
-            Tools.RectangleTool phone = new Tools.RectangleTool(selectedSVG);
-            phone.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
-            phone.Height = tinggi;
-            phone.Width = lebar;
-            phone.BackgroundImageLayout = ImageLayout.Zoom;
-            tlp.AddTool(phone);
-
-            selectedSVG = "phone-blue.svg";
-            Tools.RectangleTool phoneBlue = new Tools.RectangleTool(selectedSVG);
-            phoneBlue.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
-            phoneBlue.Height = tinggi;
-            phoneBlue.Width = lebar;
-            phoneBlue.BackgroundImageLayout = ImageLayout.Zoom;
-            tlp.AddTool(phoneBlue);
+            newSVGTool("phone-line.svg");
+            newSVGTool("chatting.svg");
+            newSVGTool("image-feed.svg");
+            newSVGTool("insta-feed.svg");
+            newSVGTool("list.svg");
+            newSVGTool("login.svg");
+            newSVGTool("modal-popup.svg");
+            newSVGTool("product-detail.svg");
+            newSVGTool("user-feed.svg");
+            newSVGTool("video-detail.svg");
+            newSVGTool("post-with-image.svg");
 
             Tools.LineTool lain = new Tools.LineTool();
             lain.BackgroundImage = Resources.Assets.vector_diagonal_line_with_box_edges;
@@ -113,21 +102,6 @@ namespace DiagramToolkit
             pilih.BackgroundImage = Resources.Assets.cursor;
             pilih.BackgroundImageLayout = ImageLayout.Zoom;
             tlp.AddTool(pilih);
-            //Button Phone    = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.phone), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
-            //Button Keyboard = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.keyboard), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
-            //Button Tablet = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.tablet), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
-            //Button StatusBar = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.statusbar), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
-            //Button NavBar = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.navigationBar), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
-            //Button checkbox = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.checkbox), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
-
-            
-            //tlp.Controls.Add(Keyboard);
-            //tlp.Controls.Add(Tablet);
-            //tlp.Controls.Add(checkbox);
-            //tlp.Controls.Add(StatusBar);
-            //tlp.Controls.Add(NavBar);
-
-            //tlp.Dock = DockStyle.Fill;
 
             acc.Add((Control)tlp, "Android", "Enter the client's information.", 0, true);//memasukkan panel pertama
 
@@ -148,6 +122,16 @@ namespace DiagramToolkit
             Controls.Add(mainPanel);
             Controls.Add(MenuBar);
             this.tlp.ToolSelected += Toolbox_ToolSelected;
+        }
+
+        private void newSVGTool(String selectedSvg) {
+            string selectedSVG = selectedSvg;
+            Tools.RectangleTool svgTool = new Tools.RectangleTool(selectedSVG);
+            svgTool.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
+            svgTool.Height = 100;
+            svgTool.Width = 100;
+            svgTool.BackgroundImageLayout = ImageLayout.Zoom;
+            tlp.AddTool(svgTool);
         }
 
         private void Toolbox_ToolSelected(ITool tool)

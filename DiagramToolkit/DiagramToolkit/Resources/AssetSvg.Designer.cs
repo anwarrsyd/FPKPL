@@ -59,15 +59,5 @@ namespace DiagramToolkit.Resources {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] wyre_dark01_info {
-            get {
-                object obj = ResourceManager.GetObject("wyre_dark01_info", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }
