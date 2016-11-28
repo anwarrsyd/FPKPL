@@ -5,12 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Svg;
+using System.IO;
+using System.Reflection;
+using System.Diagnostics;
 
 namespace DiagramToolkit.Svg
 {
     public class SVGParser
     {
-        static string newPath = @"E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\ImageSvg\";
+        static string currentDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+        static string newPath = Path.Combine(currentDirectory, @"ImageSvg\");
         // static byte[] newPath = Resources.AssetSvg.wyre_dark01_info;
         // The maximum image size supported.
         public static Size MaximumSize { get; set; }
