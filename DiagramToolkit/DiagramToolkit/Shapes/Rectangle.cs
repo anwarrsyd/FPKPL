@@ -14,6 +14,7 @@ namespace DiagramToolkit.Shapes
         public int Height { get; set; }
 
         private Pen pen;
+        private String selectedSvg;
         public Rectangle()
         {
             this.pen = new Pen(Color.Black);
@@ -24,6 +25,13 @@ namespace DiagramToolkit.Shapes
         {
             this.X = x;
             this.Y = y;
+        }
+
+        public Rectangle(int x, int y, String selectedSvg) : this()
+        {
+            this.X = x;
+            this.Y = y;
+            this.selectedSvg = selectedSvg;
         }
 
         public Rectangle(int x, int y, int width, int height) : this(x, y)
@@ -126,27 +134,26 @@ namespace DiagramToolkit.Shapes
 
         public override void RenderOnStaticView()
         {
-            // Svg.SVGParser.MaximumSize = new Size(pictConvertedImage.Width, pictConvertedImage.Height);
             this.pen.Color = Color.Black;
             this.pen.DashStyle = DashStyle.Solid;
-            var img = Svg.SVGParser.GetBitmapFromSVG("wyre_dark01_info.svg");
-            //var pictConvertedImage.Image = Svg.SVGParser.GetBitmapFromSVG("wyre_dark01_info.svg");
+            var img = Svg.SVGParser.GetBitmapFromSVG(selectedSvg);
             Graphics.DrawImage(img, X, Y, Width, Height);
         }
 
         public override void RenderOnEditingView()
         {
-            this.pen.Color = Color.Blue;
+            this.pen.Color = Color.FromArgb(50,250,10);
             this.pen.DashStyle = DashStyle.Solid;
-            var img = Svg.SVGParser.GetBitmapFromSVG("wyre_dark01_info.svg");
+            var img = Svg.SVGParser.GetBitmapFromSVG(selectedSvg);
             Graphics.DrawImage(img, X, Y, Width, Height);
+            Graphics.DrawRectangle(this.pen, X, Y, Width, Height);
         }
 
         public override void RenderOnPreview()
         {
             this.pen.Color = Color.Red;
             this.pen.DashStyle = DashStyle.DashDot;
-            var img = Svg.SVGParser.GetBitmapFromSVG("wyre_dark01_info.svg");
+            var img = Svg.SVGParser.GetBitmapFromSVG(selectedSvg);
             Graphics.DrawImage(img, X, Y, Width, Height);
         }
 

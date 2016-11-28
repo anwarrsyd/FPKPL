@@ -21,7 +21,7 @@ namespace DiagramToolkit
             this.drawingObjects = new List<DrawingObject>();
             this.DoubleBuffered = true;
 
-            this.BackColor = Color.White;
+            this.BackColor = Color.FromArgb(51, 51, 51);
             this.Dock = DockStyle.Fill;
 
             this.Paint += DefaultCanvas_Paint;

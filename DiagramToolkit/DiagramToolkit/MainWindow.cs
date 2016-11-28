@@ -83,12 +83,21 @@ namespace DiagramToolkit
             //phone.height = tinggi;
             //phone.width = lebar;
             //phone.backgroundimagelayout = imagelayout.zoom;
-            Tools.RectangleTool phone = new Tools.RectangleTool();
-            selectedSVG = "wyre_dark01_info.svg";
+            selectedSVG = "phone.svg";
+            Tools.RectangleTool phone = new Tools.RectangleTool(selectedSVG);
             phone.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
             phone.Height = tinggi;
             phone.Width = lebar;
             phone.BackgroundImageLayout = ImageLayout.Zoom;
+            tlp.AddTool(phone);
+
+            selectedSVG = "phone-blue.svg";
+            Tools.RectangleTool phoneBlue = new Tools.RectangleTool(selectedSVG);
+            phoneBlue.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
+            phoneBlue.Height = tinggi;
+            phoneBlue.Width = lebar;
+            phoneBlue.BackgroundImageLayout = ImageLayout.Zoom;
+            tlp.AddTool(phoneBlue);
 
             Tools.LineTool lain = new Tools.LineTool();
             lain.BackgroundImage = Resources.Assets.vector_diagonal_line_with_box_edges;
@@ -111,8 +120,7 @@ namespace DiagramToolkit
             //Button NavBar = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.navigationBar), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
             //Button checkbox = new Button { Height = tinggi, Width = lebar, Text = "", BackgroundImage = new Bitmap(Resources.Assets.checkbox), BackgroundImageLayout = ImageLayout.Zoom, FlatStyle = FlatStyle.Flat };
 
-            //penambahan button ke canvas
-            tlp.AddTool(phone);
+            
             //tlp.Controls.Add(Keyboard);
             //tlp.Controls.Add(Tablet);
             //tlp.Controls.Add(checkbox);

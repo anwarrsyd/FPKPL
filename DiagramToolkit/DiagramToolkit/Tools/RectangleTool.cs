@@ -8,6 +8,7 @@ namespace DiagramToolkit.Tools
     {
         private ICanvas canvas;
         private Rectangle rectangle;
+        private String selectedSvg;
 
         public Cursor iniCursor
         {
@@ -30,16 +31,17 @@ namespace DiagramToolkit.Tools
             }
         }
 
-        public RectangleTool()
+        public RectangleTool(String selectedSvg)
         {
             this.Name = "Rectangle tool";
+            this.selectedSvg = selectedSvg;
         }
 
         public void ToolMouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                this.rectangle = new Rectangle(e.X, e.Y);
+                this.rectangle = new Rectangle(e.X, e.Y, selectedSvg);
                 this.canvas.AddDrawingObject(this.rectangle);
             }
         }
