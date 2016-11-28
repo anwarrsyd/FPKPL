@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="338px" height="600px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 4811 8540"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#999999;stroke-width:15.0334}
+    .fil9 {fill:none}
+    .fil5 {fill:#4D4D4D}
+    .fil6 {fill:gray}
+    .fil7 {fill:#999999}
+    .fil8 {fill:#B3B3B3}
+    .fil2 {fill:white}
+    .fil0 {fill:white}
+    .fil4 {fill:gray;fill-rule:nonzero}
+    .fil1 {fill:#B3B3B3;fill-rule:nonzero}
+    .fil3 {fill:#E6E6E6;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2320535526320">
+   <rect class="fil0" width="4811" height="8540"/>
+   <polygon class="fil1" points="4811,662 0,662 0,0 4811,0 "/>
+   <rect class="fil2" x="337" y="233" width="1914" height="196"/>
+   <rect class="fil0" x="4146" y="195" width="418.409" height="45.1022"/>
+   <rect class="fil0" x="4146" y="308" width="418.409" height="45.1022"/>
+   <rect class="fil0" x="4146" y="421" width="418.409" height="45.1022"/>
+   <g>
+    <polygon class="fil3" points="4442,3703 4442,1433 367,1433 367,3703 "/>
+    <path class="fil1" d="M4442 3703l0 -2270 -4075 0 0 2270 4075 0zm105 503c-1428,0 -2857,0 -4286,0l0 -3224 4286 0c0,1075 0,2150 0,3224z"/>
+    <polygon class="fil4" points="2108,2017 2108,3172 2957,2595 "/>
+   </g>
+   <rect class="fil5" x="367" y="4537" width="3191" height="177"/>
+   <rect class="fil6" x="367" y="4875" width="1210" height="129"/>
+   <g>
+    <rect class="fil7" x="3563" y="5281" width="251.003" height="97.9883"/>
+    <circle class="fil7" cx="3406" cy="5332" r="79"/>
+    <rect class="fil7" x="4222" y="5281" width="251.003" height="97.9883"/>
+    <circle class="fil7" cx="4065" cy="5332" r="79"/>
+   </g>
+   <g>
+    <rect class="fil8" x="320" y="5768" width="3534" height="125"/>
+    <rect class="fil8" x="320" y="6039" width="4026" height="125"/>
+    <rect class="fil8" x="320" y="6310" width="4135" height="125"/>
+    <rect class="fil8" x="320" y="6580" width="3578" height="125"/>
+    <rect class="fil8" x="320" y="6977" width="4171" height="125"/>
+    <rect class="fil8" x="320" y="7248" width="1507" height="125"/>
+   </g>
+   <g>
+    <path class="fil7" d="M352 7775l4107 0c9,0 18,4 24,10l0 0c6,6 10,15 10,24l0 338c0,10 -4,18 -10,24l0 0c-6,7 -15,10 -24,10l-4107 0c-9,0 -18,-3 -24,-10 -6,-6 -10,-14 -10,-24l0 -338c0,-9 4,-18 10,-24 6,-6 15,-10 24,-10zm0 15l4107 0c10,0 19,9 19,19l0 338c0,11 -9,19 -19,19l-4107 0c-10,0 -19,-8 -19,-19l0 -338c0,-10 9,-19 19,-19z"/>
+   </g>
+   <polyline class="fil9 str0" points="4252,7893 4341,7978 4252,8064 "/>
+  </g>
+ </g>
+</svg>

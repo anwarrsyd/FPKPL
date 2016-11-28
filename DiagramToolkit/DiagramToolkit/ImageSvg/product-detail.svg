@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="338px" height="600px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 3453 6129"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#CCCCCC;stroke-width:16.1864}
+    .str1 {stroke:white;stroke-width:16.1864}
+    .str4 {stroke:#CCCCCC;stroke-width:13.4884}
+    .str2 {stroke:#CCCCCC;stroke-width:32.3729}
+    .str5 {stroke:#CCCCCC;stroke-width:13.4884;stroke-linejoin:round}
+    .str3 {stroke:#CCCCCC;stroke-width:32.3729;stroke-linejoin:round}
+    .fil5 {fill:none}
+    .fil8 {fill:#4D4D4D}
+    .fil6 {fill:#666666}
+    .fil7 {fill:#B3B3B3}
+    .fil4 {fill:white}
+    .fil0 {fill:white}
+    .fil3 {fill:#B3B3B3;fill-rule:nonzero}
+    .fil1 {fill:white;fill-rule:nonzero}
+    .fil2 {fill:white;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2320283783248">
+   <rect class="fil0" width="3453" height="6129"/>
+   <polygon class="fil1" points="222,2946 222,670 3231,670 3231,2946 "/>
+   <polygon class="fil2 str0" points="3237,665 3237,665 216,665 216,2952 3237,2952 "/>
+   <polygon class="fil3" points="3453,475 0,475 0,0 3453,0 "/>
+   <rect class="fil4" x="512" y="167" width="1374" height="141"/>
+   <rect class="fil0" x="2976" y="140" width="300.32" height="32.3729"/>
+   <rect class="fil0" x="2976" y="221" width="300.32" height="32.3729"/>
+   <rect class="fil0" x="2976" y="302" width="300.32" height="32.3729"/>
+   <polyline class="fil5 str1" points="289,165 213,237 289,310 "/>
+   <g>
+    <path class="fil5 str2" d="M1315 1359l822 0c61,0 111,50 111,111l0 677c0,61 -50,110 -111,110l-822 0c-61,0 -111,-49 -111,-110l0 -677c0,-61 50,-111 111,-111z"/>
+    <polyline class="fil5 str3" points="1209,2163 1495,1869 1885,2257 "/>
+    <polyline class="fil5 str3" points="1602,1970 1895,1656 2249,2013 "/>
+    <circle class="fil5 str2" cx="1616" cy="1557" r="117"/>
+   </g>
+   <g>
+    <polygon class="fil1" points="1256,3749 1256,3037 2197,3037 2197,3749 "/>
+    <polygon class="fil2 str0" points="2199,3035 2199,3035 1254,3035 1254,3750 2199,3750 "/>
+    <g>
+     <path class="fil5 str4" d="M1598 3252l257 0c19,0 35,16 35,35l0 212c0,19 -16,34 -35,34l-257 0c-19,0 -35,-15 -35,-34l0 -212c0,-19 16,-35 35,-35z"/>
+     <polyline class="fil5 str5" points="1565,3504 1654,3412 1776,3533 "/>
+     <polyline class="fil5 str5" points="1688,3443 1779,3345 1890,3457 "/>
+     <circle class="fil5 str4" cx="1692" cy="3314" r="36"/>
+    </g>
+    <polygon class="fil1" points="218,3749 218,3037 1159,3037 1159,3749 "/>
+    <polygon class="fil2 str0" points="1161,3035 1161,3035 216,3035 216,3750 1161,3750 "/>
+    <g>
+     <path class="fil5 str4" d="M560 3252l257 0c19,0 35,16 35,35l0 212c0,19 -16,34 -35,34l-257 0c-19,0 -35,-15 -35,-34l0 -212c0,-19 16,-35 35,-35z"/>
+     <polyline class="fil5 str5" points="527,3504 616,3412 738,3533 "/>
+     <polyline class="fil5 str5" points="650,3443 741,3345 852,3457 "/>
+     <circle class="fil5 str4" cx="654" cy="3314" r="36"/>
+    </g>
+    <polygon class="fil1" points="2294,3749 2294,3037 3235,3037 3235,3749 "/>
+    <polygon class="fil2 str0" points="3237,3035 3237,3035 2292,3035 2292,3750 3237,3750 "/>
+    <g>
+     <path class="fil5 str4" d="M2636 3252l257 0c19,0 35,16 35,35l0 212c0,19 -16,34 -35,34l-257 0c-19,0 -35,-15 -35,-34l0 -212c0,-19 16,-35 35,-35z"/>
+     <polyline class="fil5 str5" points="2603,3504 2692,3412 2814,3533 "/>
+     <polyline class="fil5 str5" points="2726,3443 2817,3345 2928,3457 "/>
+     <circle class="fil5 str4" cx="2730" cy="3314" r="36"/>
+    </g>
+   </g>
+   <g>
+    <rect class="fil6" x="216" y="5358" width="3021" height="513" rx="43" ry="43"/>
+    <rect class="fil0" x="1268" y="5533" width="917" height="162"/>
+   </g>
+   <g>
+    <rect class="fil7" x="216" y="4259" width="2536.38" height="89.9499"/>
+    <rect class="fil7" x="216" y="4453" width="2890.05" height="89.9499"/>
+   </g>
+   <rect class="fil8" x="216" y="3963" width="2290" height="127"/>
+   <rect class="fil7" x="216" y="4944" width="868" height="210"/>
+  </g>
+ </g>
+</svg>
