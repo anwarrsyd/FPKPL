@@ -9,5 +9,6 @@ namespace DiagramToolkit
     public interface ICommand
     {
         void Execute();
+        void UnExecute();
     }
 }

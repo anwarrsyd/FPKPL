@@ -3,9 +3,9 @@
     partial class MainWindow
     {
 
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+        ///// <summary>
+        ///// Required designer variable.
+        ///// </summary>
         //private System.ComponentModel.IContainer components = null;
 
         ///// <summary>
@@ -29,8 +29,8 @@
         ///// </summary>
         //private void InitializeComponent()
         //{
-        //    this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-        //    this.toolStripContainer1.SuspendLayout();
+        //    this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
+        //    this.toolStripContainer.SuspendLayout();
         //    this.SuspendLayout();
         //    // 
         //    // toolStripContainer1
@@ -38,30 +38,30 @@
         //    // 
         //    // toolStripContainer1.ContentPanel
         //    // 
-        //    this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(624, 416);
-        //    this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-        //    this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-        //    this.toolStripContainer1.Name = "toolStripContainer1";
-        //    this.toolStripContainer1.Size = new System.Drawing.Size(624, 441);
-        //    this.toolStripContainer1.TabIndex = 1;
-        //    this.toolStripContainer1.Text = "toolStripContainer1";
+        //    this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(624, 416);
+        //    this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+        //    this.toolStripContainer.Location = new System.Drawing.Point(0, 0);
+        //    this.toolStripContainer.Name = "toolStripContainer";
+        //    this.toolStripContainer.Size = new System.Drawing.Size(624, 441);
+        //    this.toolStripContainer.TabIndex = 1;
+        //    this.toolStripContainer.Text = "toolStripContainer";
         //    // 
         //    // MainWindow
         //    // 
         //    this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
         //    this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         //    this.ClientSize = new System.Drawing.Size(624, 441);
-        //    this.Controls.Add(this.toolStripContainer1);
+        //    this.Controls.Add(this.toolStripContainer);
         //    this.Name = "MainWindow";
         //    this.Text = "Diagram Toolkit";
-        //    this.toolStripContainer1.ResumeLayout(false);
-        //    this.toolStripContainer1.PerformLayout();
+        //    this.toolStripContainer.ResumeLayout(false);
+        //    this.toolStripContainer.PerformLayout();
         //    this.ResumeLayout(false);
 
         //}
 
         //#endregion
-        //private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        //private System.Windows.Forms.ToolStripContainer toolStripContainer;
     }
 }
 

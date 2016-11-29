@@ -9,12 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Opulos.Core.UI;
+using DiagramToolkit.ToolbarItems;
 
 namespace DiagramToolkit
 {
     public partial class MainWindow : Form
     {
         IEditor editor;
+        IToolbar toolbar;
         IToolbox tlp;
         ICanvas canvas1;
 
@@ -29,6 +31,17 @@ namespace DiagramToolkit
 
         private void InitUI()
         {
+            // Generate Toolbar
+            // Initializing toolbar
+            toolbar = new DefaultToolbar();
+            ToolStripContainer toolStripContainer = new ToolStripContainer();
+            toolStripContainer.Height = 32;
+            toolStripContainer.TopToolStripPanel.Controls.Add((Control)this.toolbar);
+            toolbar.AddToolbarItem(new UndoToolbarItem());
+            toolbar.AddSeparator();
+            toolbar.AddToolbarItem(new RedoToolbarItem());
+            toolStripContainer.Dock = DockStyle.Top;
+
             editor = new DefaultEditor();
             MenuStrip MenuBar = new MenuStrip(); //genereate menu bar
             ToolStripMenuItem file = new ToolStripMenuItem("File"); //generate menu tool
@@ -118,8 +131,8 @@ namespace DiagramToolkit
             mainPanel.Panel2.Controls.Add(toolContainer);
             mainPanel.SplitterWidth = 15;
             mainPanel.SplitterDistance = 300;
-            
             Controls.Add(mainPanel);
+            Controls.Add(toolStripContainer);
             Controls.Add(MenuBar);
             this.tlp.ToolSelected += Toolbox_ToolSelected;
         }
@@ -143,17 +156,6 @@ namespace DiagramToolkit
                 canvas.SetActiveTool(tool);
                 tool.TargetCanvas = canvas;
             }
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // MainWindow
-            // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "MainWindow";
-            this.ResumeLayout(false);
         }
     }
 }

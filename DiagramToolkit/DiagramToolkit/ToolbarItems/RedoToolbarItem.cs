@@ -7,21 +7,21 @@ using System.Windows.Forms;
 
 namespace DiagramToolkit.ToolbarItems
 {
-    public class ExampleToolbarItem : ToolStripButton, IToolbarItem
+    public class RedoToolbarItem : ToolStripButton, IToolbarItem 
     {
         private ICommand command;
 
-        public ExampleToolbarItem()
+        public RedoToolbarItem()
         {
-            this.Name = "Example";
-            this.ToolTipText = "Example toolbaritem";
-            this.Image = IconSet.file;
+            this.Name = "Redo";
+            this.ToolTipText = "Redo Button";
+            this.Image = IconSet.Redo;
             this.DisplayStyle = ToolStripItemDisplayStyle.Image;
 
-            this.Click += ExampleToolbarItem_Click;
+            this.Click += RedoToolbarItem_Click;
         }
 
-        private void ExampleToolbarItem_Click(object sender, EventArgs e)
+        private void RedoToolbarItem_Click(object sender, EventArgs e)
         {
             if (command != null)
             {

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace DiagramToolkit
 {
-    public class DefaultToolbar : Button, IToolbar
+    public class DefaultToolbar : ToolStrip, IToolbar
     {
         public DefaultToolbar()
         {
@@ -21,12 +21,12 @@ namespace DiagramToolkit
 
         public void AddToolbarItem(IToolbarItem item)
         {
-            this.Controls.Add((Control)item);
+            this.Items.Add((ToolStripItem)item);
         }
 
-        //public void AddSeparator()
-        //{
-        //    this.Items.Add(new ToolStripSeparator());
-        //}
+        public void AddSeparator()
+        {
+            this.Items.Add(new ToolStripSeparator());
+        }
     }
 }

@@ -50,8 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\BlackCanvasBgCommand.cs" />
-    <Compile Include="Commands\WhiteCanvasBgCommand.cs" />
+    <Compile Include="Commands\DrawCommand.cs" />
+    <Compile Include="Commands\TranslateCommand.cs" />
     <Compile Include="CursorSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,7 +126,10 @@
     <Compile Include="ThirdParty\Accordion\ResizeBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ToolbarItems\ExampleToolbarItem.cs">
+    <Compile Include="ToolbarItems\RedoToolbarItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolbarItems\UndoToolbarItem.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Tools\LineTool.cs">
@@ -138,6 +141,7 @@
     <Compile Include="Tools\SelectionTool.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UndoRedo.cs" />
     <Compile Include="Vertex.cs" />
     <EmbeddedResource Include="CursorSet.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -203,6 +207,8 @@
     <Folder Include="MenuItems\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Redo-52.png" />
+    <None Include="Resources\Undo-52.png" />
     <None Include="ImageSvg\wyre_dark01_info.svg" />
     <Content Include="Resources\Mobile\actionBar.png" />
     <Content Include="Resources\Mobile\ActiveListItem.png" />
