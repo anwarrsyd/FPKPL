@@ -59,13 +59,13 @@ namespace DiagramToolkit
             toolStripContainer.TopToolStripPanel.Controls.Add((Control)this.toolbar);
             UndoToolbarItem undoItem = new UndoToolbarItem(undoRedo, (DefaultCanvas)canvas1);
             RedoToolbarItem redoItem = new RedoToolbarItem(undoRedo, (DefaultCanvas)canvas1);
-            SendToBackToolbarItem sendtobackItem = new SendToBackToolbarItem(undoRedo, (DefaultCanvas)canvas1);
-            BringToFrontToolbarItem bringtofrontItem = new BringToFrontToolbarItem(undoRedo, (DefaultCanvas)canvas1);
+//            SendToBackToolbarItem sendtobackItem = new SendToBackToolbarItem(undoRedo, (DefaultCanvas)canvas1);
+//            BringToFrontToolbarItem bringtofrontItem = new BringToFrontToolbarItem(undoRedo, (DefaultCanvas)canvas1);
             toolbar.AddToolbarItem(undoItem);
             toolbar.AddToolbarItem(redoItem);
             toolbar.AddSeparator();
-            toolbar.AddToolbarItem(sendtobackItem);
-            toolbar.AddToolbarItem(bringtofrontItem);
+//            toolbar.AddToolbarItem(sendtobackItem);
+//            toolbar.AddToolbarItem(bringtofrontItem);
 
             toolStripContainer.Dock = DockStyle.Top;
 
