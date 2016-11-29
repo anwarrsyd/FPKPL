@@ -40,6 +40,13 @@ namespace DiagramToolkit.Shapes
             this.Height = height;
         }
 
+        public Rectangle(int x, int y, int width, int height, String selectedSvg) : this(x, y)
+        {
+            this.Width = width;
+            this.Height = height;
+            this.selectedSvg = selectedSvg;
+        }
+
         public override bool Intersect(int xTest, int yTest)
         {
             if ((xTest >= X && xTest <= X + Width) && (yTest >= Y && yTest <= Y + Height))

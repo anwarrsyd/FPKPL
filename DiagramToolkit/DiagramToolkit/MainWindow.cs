@@ -76,17 +76,7 @@ namespace DiagramToolkit
             //phone.height = tinggi;
             //phone.width = lebar;
             //phone.backgroundimagelayout = imagelayout.zoom;
-            newSVGTool("phone-line.svg");
-            newSVGTool("chatting.svg");
-            newSVGTool("image-feed.svg");
-            newSVGTool("insta-feed.svg");
-            newSVGTool("list.svg");
-            newSVGTool("login.svg");
-            newSVGTool("modal-popup.svg");
-            newSVGTool("product-detail.svg");
-            newSVGTool("user-feed.svg");
-            newSVGTool("video-detail.svg");
-            newSVGTool("post-with-image.svg");
+            
 
             Tools.LineTool lain = new Tools.LineTool();
             lain.BackgroundImage = Resources.Assets.vector_diagonal_line_with_box_edges;
@@ -122,11 +112,34 @@ namespace DiagramToolkit
             Controls.Add(mainPanel);
             Controls.Add(MenuBar);
             this.tlp.ToolSelected += Toolbox_ToolSelected;
+
+            newSVGToolPhone("phone-line.svg");
+            newSVGToolWireframe("chatting.svg");
+            newSVGToolWireframe("image-feed.svg");
+            newSVGToolWireframe("insta-feed.svg");
+            newSVGToolWireframe("list.svg");
+            newSVGToolWireframe("login.svg");
+            newSVGToolWireframe("modal-popup.svg");
+            newSVGToolWireframe("product-detail.svg");
+            newSVGToolWireframe("user-feed.svg");
+            newSVGToolWireframe("video-detail.svg");
+            newSVGToolWireframe("post-with-image.svg");
         }
 
-        private void newSVGTool(String selectedSvg) {
+        private void newSVGToolPhone(String selectedSvg) {
             string selectedSVG = selectedSvg;
-            Tools.RectangleTool svgTool = new Tools.RectangleTool(selectedSVG);
+            Tools.RectangleTool svgTool = new Tools.RectangleTool(190, 400, selectedSVG);
+            svgTool.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
+            svgTool.Height = 100;
+            svgTool.Width = 100;
+            svgTool.BackgroundImageLayout = ImageLayout.Zoom;
+            tlp.AddTool(svgTool);
+        }
+
+        private void newSVGToolWireframe(String selectedSvg)
+        {
+            string selectedSVG = selectedSvg;
+            Tools.RectangleTool svgTool = new Tools.RectangleTool(164, 290, selectedSVG);
             svgTool.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
             svgTool.Height = 100;
             svgTool.Width = 100;
