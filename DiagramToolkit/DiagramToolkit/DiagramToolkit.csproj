@@ -72,6 +72,12 @@
     <Compile Include="DefaultToolbox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="dialogresizecanvas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dialogresizecanvas.Designer.cs">
+      <DependentUpon>dialogresizecanvas.cs</DependentUpon>
+    </Compile>
     <Compile Include="DrawingObject.cs" />
     <Compile Include="DrawingState.cs" />
     <Compile Include="Edge.cs" />
@@ -142,6 +148,9 @@
     <EmbeddedResource Include="CursorSet.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CursorSet.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dialogresizecanvas.resx">
+      <DependentUpon>dialogresizecanvas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IconSet.resx">
       <Generator>ResXFileCodeGenerator</Generator>
