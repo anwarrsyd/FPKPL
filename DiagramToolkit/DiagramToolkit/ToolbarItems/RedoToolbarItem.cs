@@ -10,6 +10,8 @@ namespace DiagramToolkit.ToolbarItems
     public class RedoToolbarItem : ToolStripButton, IToolbarItem 
     {
         private ICommand command;
+        private UndoRedo undoRedo;
+        private DefaultCanvas defaultCanvas;
 
         public RedoToolbarItem()
         {
@@ -21,12 +23,21 @@ namespace DiagramToolkit.ToolbarItems
             this.Click += RedoToolbarItem_Click;
         }
 
+        public RedoToolbarItem(UndoRedo undoRedo, DefaultCanvas defaultCanvas)
+        {
+            this.Name = "Redo";
+            this.ToolTipText = "Redo Button";
+            this.Image = IconSet.Redo;
+            this.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            this.undoRedo = undoRedo;
+            this.defaultCanvas = defaultCanvas;
+            this.Click += RedoToolbarItem_Click;
+        }
+
         private void RedoToolbarItem_Click(object sender, EventArgs e)
         {
-            if (command != null)
-            {
-                this.command.Execute();
-            }
+            undoRedo.Redo(1);
+            defaultCanvas.Repaint();
         }
 
         public void SetCommand(ICommand command)

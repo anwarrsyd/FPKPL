@@ -34,18 +34,6 @@ namespace DiagramToolkit
 
         private void InitUI()
         {
-            // Generate Toolbar
-            // Initializing toolbar
-            toolbar = new DefaultToolbar();
-            ToolStripContainer toolStripContainer = new ToolStripContainer();
-            toolStripContainer.Height = 32;
-            toolStripContainer.TopToolStripPanel.Controls.Add((Control)this.toolbar);
-            UndoToolbarItem undoItem = new UndoToolbarItem(undoRedo);
-            toolbar.AddToolbarItem(undoItem);
-            undoItem.Click += UndoItem_Click;
-            toolbar.AddSeparator();
-            toolbar.AddToolbarItem(new RedoToolbarItem());
-            toolStripContainer.Dock = DockStyle.Top;
 
             editor = new DefaultEditor();
             MenuStrip MenuBar = new MenuStrip(); //genereate menu bar
@@ -63,6 +51,19 @@ namespace DiagramToolkit
             canvas1 = new DefaultCanvas(undoRedo);
             canvas1.Name = "Main";
             editor.AddCanvas(canvas1);
+
+            // Generate Toolbar
+            // Initializing toolbar
+            toolbar = new DefaultToolbar();
+            ToolStripContainer toolStripContainer = new ToolStripContainer();
+            toolStripContainer.Height = 32;
+            toolStripContainer.TopToolStripPanel.Controls.Add((Control)this.toolbar);
+            UndoToolbarItem undoItem = new UndoToolbarItem(undoRedo, (DefaultCanvas)canvas1);
+            toolbar.AddToolbarItem(undoItem);
+            undoItem.Click += UndoItem_Click;
+            toolbar.AddSeparator();
+            toolbar.AddToolbarItem(new RedoToolbarItem(undoRedo, (DefaultCanvas)canvas1));
+            toolStripContainer.Dock = DockStyle.Top;
 
             MenuBar.Items.Add(file);
             MenuBar.Items.Add(edit);

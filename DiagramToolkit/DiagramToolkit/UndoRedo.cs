@@ -30,7 +30,7 @@ namespace DiagramToolkit
                 if(redoCommands.Count != 0)
                 {
                     ICommand command = redoCommands.Pop();
-                    command.Execute();
+                    command.UnExecute();
                     undoCommands.Push(command);
                 }
             }
