@@ -15,6 +15,7 @@ namespace DiagramToolkit
 {
     public partial class MainWindow : Form
     {
+        SplitContainer mainPanel = new SplitContainer();
         IEditor editor;
         IToolbar toolbar;
         IToolbox tlp;
@@ -47,8 +48,12 @@ namespace DiagramToolkit
             ToolStripMenuItem file = new ToolStripMenuItem("File"); //generate menu tool
             ToolStripMenuItem edit = new ToolStripMenuItem("Edit");
             ToolStripMenuItem newFile = new ToolStripMenuItem("New");
+            newFile.Click += NewFile_Click; 
+            ToolStripMenuItem exit = new ToolStripMenuItem("Exit");
+            exit.Click += Exit_Click;
             ToolStripMenuItem undo = new ToolStripMenuItem("Undo");
             ToolStripMenuItem redo = new ToolStripMenuItem("Redo");
+            ToolStripMenuItem resizecanvas = new ToolStripMenuItem("Resize Canvas");
             ToolStripContainer toolContainer = new ToolStripContainer();
             toolContainer.ContentPanel.Controls.Add((Control)editor);
             canvas1 = new DefaultCanvas();
@@ -59,7 +64,10 @@ namespace DiagramToolkit
             MenuBar.Items.Add(edit);
             edit.DropDown.Items.Add(undo);
             edit.DropDown.Items.Add(redo);
+            edit.DropDown.Items.Add(resizecanvas);
+            resizecanvas.Click += Resizecanvas_Click;
             file.DropDown.Items.Add(newFile);
+            file.DropDown.Items.Add(exit);  
             MenuBar.Dock = DockStyle.Top;
 
             //set size form
@@ -89,17 +97,7 @@ namespace DiagramToolkit
             //phone.height = tinggi;
             //phone.width = lebar;
             //phone.backgroundimagelayout = imagelayout.zoom;
-            newSVGTool("phone-line.svg");
-            newSVGTool("chatting.svg");
-            newSVGTool("image-feed.svg");
-            newSVGTool("insta-feed.svg");
-            newSVGTool("list.svg");
-            newSVGTool("login.svg");
-            newSVGTool("modal-popup.svg");
-            newSVGTool("product-detail.svg");
-            newSVGTool("user-feed.svg");
-            newSVGTool("video-detail.svg");
-            newSVGTool("post-with-image.svg");
+            
 
             Tools.LineTool lain = new Tools.LineTool();
             lain.BackgroundImage = Resources.Assets.vector_diagonal_line_with_box_edges;
@@ -121,7 +119,7 @@ namespace DiagramToolkit
             acc.Add(new TextBox { Dock = DockStyle.Fill, Multiline = true, BackColor = Color.White }, "Memo", "Additional Client Info", 1, true, contentBackColor: Color.Transparent);//menambahkan panel kedua
 
             acc.Dock = DockStyle.Fill;
-            SplitContainer mainPanel = new SplitContainer();
+          
             mainPanel.Dock = DockStyle.Fill;
             mainPanel.Panel1.Controls.Add(acc);
             mainPanel.FixedPanel = FixedPanel.Panel1;
@@ -131,15 +129,60 @@ namespace DiagramToolkit
             mainPanel.Panel2.Controls.Add(toolContainer);
             mainPanel.SplitterWidth = 15;
             mainPanel.SplitterDistance = 300;
+
             Controls.Add(mainPanel);
             Controls.Add(toolStripContainer);
             Controls.Add(MenuBar);
             this.tlp.ToolSelected += Toolbox_ToolSelected;
+
+            newSVGToolPhone("phone-line.svg");
+            newSVGToolWireframe("chatting.svg");
+            newSVGToolWireframe("image-feed.svg");
+            newSVGToolWireframe("insta-feed.svg");
+            newSVGToolWireframe("list.svg");
+            newSVGToolWireframe("login.svg");
+            newSVGToolWireframe("modal-popup.svg");
+            newSVGToolWireframe("product-detail.svg");
+            newSVGToolWireframe("user-feed.svg");
+            newSVGToolWireframe("video-detail.svg");
+            newSVGToolWireframe("post-with-image.svg");
         }
 
-        private void newSVGTool(String selectedSvg) {
+        private void NewFile_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            //this.InitUI();
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+                        this.Close();
+        }
+
+        private void Resizecanvas_Click(object sender, EventArgs e)
+        {
+            dialogresizecanvas rubahukuran = new dialogresizecanvas();
+            rubahukuran.ShowDialog();
+            int lebarr= rubahukuran.lebar;
+            int tinggii = rubahukuran.tinggi;
+            //MessageBox.Show(lebarr.ToString() + " " + tinggii.ToString());
+            mainPanel.Panel2.AutoScrollMinSize = new Size(tinggii,lebarr);
+        }
+
+        private void newSVGToolPhone(String selectedSvg) {
             string selectedSVG = selectedSvg;
-            Tools.RectangleTool svgTool = new Tools.RectangleTool(selectedSVG);
+            Tools.RectangleTool svgTool = new Tools.RectangleTool(190, 400, selectedSVG);
+            svgTool.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
+            svgTool.Height = 100;
+            svgTool.Width = 100;
+            svgTool.BackgroundImageLayout = ImageLayout.Zoom;
+            tlp.AddTool(svgTool);
+        }
+
+        private void newSVGToolWireframe(String selectedSvg)
+        {
+            string selectedSVG = selectedSvg;
+            Tools.RectangleTool svgTool = new Tools.RectangleTool(164, 290, selectedSVG);
             svgTool.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
             svgTool.Height = 100;
             svgTool.Width = 100;

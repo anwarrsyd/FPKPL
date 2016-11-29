@@ -9,6 +9,7 @@ namespace DiagramToolkit.Tools
         private ICanvas canvas;
         private Rectangle rectangle;
         private String selectedSvg;
+        private int width, height;
 
         public Cursor iniCursor
         {
@@ -37,32 +38,44 @@ namespace DiagramToolkit.Tools
             this.selectedSvg = selectedSvg;
         }
 
+        public RectangleTool(int width, int height, String selectedSvg)
+        {
+            Name = "Rectangle tool";
+            this.selectedSvg = selectedSvg;
+            this.width = width;
+            this.height = height;
+        }
+
         public void ToolMouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                this.rectangle = new Rectangle(e.X, e.Y, selectedSvg);
+                this.rectangle = new Rectangle((int)e.X-width/2, (int)e.Y-height/2, width, height, selectedSvg);
                 this.canvas.AddDrawingObject(this.rectangle);
             }
         }
 
-        public void ToolMouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                if (this.rectangle != null)
-                {
-                    int width = e.X - this.rectangle.X;
-                    int height = e.Y - this.rectangle.Y;
-
-                    if (width > 0 && height > 0)
-                    {
-                        this.rectangle.Width = width;
-                        this.rectangle.Height = height;
-                    }
-                }
-            }
+        public void ToolMouseMove(object sender, MouseEventArgs e) {
+            //default
         }
+
+        //public void ToolMouseMove(object sender, MouseEventArgs e)
+        //{
+        //    if (e.Button == MouseButtons.Left)
+        //    {
+        //        if (this.rectangle != null)
+        //        {
+        //            int width = e.X - this.rectangle.X;
+        //            int height = e.Y - this.rectangle.Y;
+
+        //            if (width > 0 && height > 0)
+        //            {
+        //                this.rectangle.Width = width;
+        //                this.rectangle.Height = height;
+        //            }
+        //        }
+        //    }
+        //}
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
