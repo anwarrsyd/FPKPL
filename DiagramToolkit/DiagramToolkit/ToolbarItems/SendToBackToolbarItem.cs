@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,26 +7,28 @@ using System.Windows.Forms;
 
 namespace DiagramToolkit.ToolbarItems
 {
-    public class UndoToolbarItem : ToolStripButton, IToolbarItem
+    class SendToBackToolbarItem : ToolStripButton, IToolbarItem
     {
         private ICommand command;
         private UndoRedo undoRedo;
         private DefaultCanvas defaultCanvas;
 
-        public UndoToolbarItem(UndoRedo undoRedo, DefaultCanvas defaultCanvas)
+        public SendToBackToolbarItem(UndoRedo undoRedo, DefaultCanvas defaultCanvas)
         {
-            this.Name = "Undo";
-            this.ToolTipText = "Undo Button";
-            this.Image = IconSet.Undo;
+            this.Name = "Send to Back";
+            this.ToolTipText = "Send to Back Button";
+            this.Image = IconSet.SendToBack;
             this.DisplayStyle = ToolStripItemDisplayStyle.Image;
             this.undoRedo = undoRedo;
             this.defaultCanvas = defaultCanvas;
-            this.Click += UndoToolbarItem_Click;
+
+            this.Click += SendToBackToolbarItem_Click;
         }
-        private void UndoToolbarItem_Click(object sender, EventArgs e)
+
+        private void SendToBackToolbarItem_Click(object sender, EventArgs e)
         {
-            undoRedo.Undo(1);
-            defaultCanvas.Repaint();
+            //undoRedo.Redo(1);
+            //defaultCanvas.Repaint();
         }
     }
 }

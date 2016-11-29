@@ -34,7 +34,6 @@ namespace DiagramToolkit
 
         private void InitUI()
         {
-
             editor = new DefaultEditor();
             MenuStrip MenuBar = new MenuStrip(); //genereate menu bar
             ToolStripMenuItem file = new ToolStripMenuItem("File"); //generate menu tool
@@ -59,10 +58,15 @@ namespace DiagramToolkit
             toolStripContainer.Height = 32;
             toolStripContainer.TopToolStripPanel.Controls.Add((Control)this.toolbar);
             UndoToolbarItem undoItem = new UndoToolbarItem(undoRedo, (DefaultCanvas)canvas1);
+            RedoToolbarItem redoItem = new RedoToolbarItem(undoRedo, (DefaultCanvas)canvas1);
+            SendToBackToolbarItem sendtobackItem = new SendToBackToolbarItem(undoRedo, (DefaultCanvas)canvas1);
+            BringToFrontToolbarItem bringtofrontItem = new BringToFrontToolbarItem(undoRedo, (DefaultCanvas)canvas1);
             toolbar.AddToolbarItem(undoItem);
-            undoItem.Click += UndoItem_Click;
+            toolbar.AddToolbarItem(redoItem);
             toolbar.AddSeparator();
-            toolbar.AddToolbarItem(new RedoToolbarItem(undoRedo, (DefaultCanvas)canvas1));
+            toolbar.AddToolbarItem(sendtobackItem);
+            toolbar.AddToolbarItem(bringtofrontItem);
+
             toolStripContainer.Dock = DockStyle.Top;
 
             MenuBar.Items.Add(file);

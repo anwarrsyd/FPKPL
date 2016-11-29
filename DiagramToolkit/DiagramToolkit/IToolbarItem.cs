@@ -9,6 +9,6 @@ namespace DiagramToolkit
     public interface IToolbarItem
     {
         String Name { get; set; }
-        void SetCommand(ICommand command);
+        //void SetCommand(ICommand command);
     }
 }
