@@ -164,11 +164,10 @@ namespace DiagramToolkit.Shapes
             Graphics.DrawImage(img, X, Y, Width, Height);
         }
 
-        public override void Translate(int x, int y, int xAmount, int yAmount)
+        public override void Translate(int xAmount, int yAmount)
         {
             this.X += xAmount;
             this.Y += yAmount;
-
             BroadcastUpdate(xAmount, yAmount);
         }
     }

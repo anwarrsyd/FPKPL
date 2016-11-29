@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DiagramToolkit.Shapes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +9,23 @@ namespace DiagramToolkit.Commands
 {
     class TranslateCommand : ICommand
     {
+        private int xAmmount, yAmmount;
+        private Rectangle rectangle;
+
+        public TranslateCommand(int xAmmount, int yAmmount, Rectangle rectangle)
+        {
+            this.xAmmount = xAmmount;
+            this.yAmmount = yAmmount;
+            this.rectangle = rectangle;
+        }
         public void Execute()
         {
-            throw new NotImplementedException();
+            rectangle.Translate(xAmmount, yAmmount);
         }
 
         public void UnExecute()
         {
-            throw new NotImplementedException();
+            rectangle.Translate(-xAmmount, -yAmmount);
         }
     }
 }

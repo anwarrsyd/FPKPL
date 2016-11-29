@@ -1,5 +1,8 @@
-﻿using System;
+﻿using DiagramToolkit.Commands;
+using DiagramToolkit.Shapes;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +12,11 @@ namespace DiagramToolkit
 {
     public class UndoRedo
     {
-        private Stack<ICommand> _Undocommands = new Stack<ICommand>();
-        private Stack<ICommand> _Redocommands = new Stack<ICommand>();
+        private Stack<ICommand> undoCommands = new Stack<ICommand>();
+        private Stack<ICommand> redoCommands = new Stack<ICommand>();
 
         private DefaultCanvas _Container;
+        public event EventHandler EnableDisableUndoRedoFeature;
 
         public DefaultCanvas Container
         {
@@ -23,11 +27,11 @@ namespace DiagramToolkit
         {
             for(int i = 1; i <= levels; i++)
             {
-                if(_Redocommands.Count != 0)
+                if(redoCommands.Count != 0)
                 {
-                    ICommand command = _Redocommands.Pop();
+                    ICommand command = redoCommands.Pop();
                     command.Execute();
-                    _Undocommands.Push(command);
+                    undoCommands.Push(command);
                 }
             }
             if (EnableDisableUndoRedoFeature != null)
@@ -39,11 +43,11 @@ namespace DiagramToolkit
         {
             for(int i = 1; i <= levels; i++)
             {
-                if(_Undocommands.Count != 0)
+                if(undoCommands.Count != 0)
                 {
-                    ICommand command = _Undocommands.Pop();
+                    ICommand command = undoCommands.Pop();
                     command.Execute();
-                    _Redocommands.Push(command);
+                    redoCommands.Push(command);
                 }
             }
             if (EnableDisableUndoRedoFeature != null)
@@ -51,11 +55,23 @@ namespace DiagramToolkit
                 EnableDisableUndoRedoFeature(null, null);
             }
         }
-        
+
+        public void InsertInUnDoRedoForTranslate(int xAmmount, int yAmmount, Rectangle rectangle)
+        {
+            ICommand iCommand = new TranslateCommand(xAmmount, yAmmount, rectangle);
+            undoCommands.Push(iCommand);
+            redoCommands.Clear();
+            if (EnableDisableUndoRedoFeature != null)
+            {
+                EnableDisableUndoRedoFeature(null, null);
+            }
+        }
+        /*
+        #region unused
         public void InsertInUnDoRedoForInsert(FrameworkElement ApbOrDevice)
         {
             ICommand cmd = new InsertCommand(ApbOrDevice, Container);
-            _Undocommands.Push(cmd); _Redocommands.Clear();
+            undoCommands.Push(cmd); redoCommands.Clear();
             if (EnableDisableUndoRedoFeature != null)
             {
                 EnableDisableUndoRedoFeature(null, null);
@@ -65,7 +81,7 @@ namespace DiagramToolkit
         public void InsertInUnDoRedoForDelete(FrameworkElement ApbOrDevice)
         {
             ICommand cmd = new DeleteCommand(ApbOrDevice, Container);
-            _Undocommands.Push(cmd); _Redocommands.Clear();
+            undoCommands.Push(cmd); redoCommands.Clear();
             if (EnableDisableUndoRedoFeature != null)
             {
                 EnableDisableUndoRedoFeature(null, null);
@@ -75,7 +91,7 @@ namespace DiagramToolkit
         public void InsertInUnDoRedoForMove(Point margin, FrameworkElement UIelement)
         {
             ICommand cmd = new MoveCommand(new Thickness(margin.X, margin.Y, 0, 0), UIelement);
-            _Undocommands.Push(cmd); _Redocommands.Clear();
+            undoCommands.Push(cmd); redoCommands.Clear();
             if (EnableDisableUndoRedoFeature != null)
             {
                 EnableDisableUndoRedoFeature(null, null);
@@ -85,16 +101,17 @@ namespace DiagramToolkit
         public void InsertInUnDoRedoForResize(Point margin, double width, double height, FrameworkElement UIelement)
         {
             ICommand cmd = new ResizeCommand(new Thickness(margin.X, margin.Y, 0, 0), width, height, UIelement);
-            _Undocommands.Push(cmd); _Redocommands.Clear();
+            undoCommands.Push(cmd); redoCommands.Clear();
             if (EnableDisableUndoRedoFeature != null)
             {
                 EnableDisableUndoRedoFeature(null, null);
             }
         }
-
+        #endregion
+        */
         public bool IsUndoPossible()
         {
-            if (_Undocommands.Count != 0)
+            if (undoCommands.Count != 0)
             {
                 return true;
             }
@@ -107,7 +124,7 @@ namespace DiagramToolkit
         public bool IsRedoPossible()
         {
 
-            if (_Redocommands.Count != 0)
+            if (redoCommands.Count != 0)
             {
                 return true;
             }

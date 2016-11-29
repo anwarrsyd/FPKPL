@@ -28,7 +28,7 @@ namespace DiagramToolkit
         
         public abstract bool Intersect(int xTest, int yTest);
         public abstract Point GetIntersectionPoint(Point p1, Point p2); 
-        public abstract void Translate(int x, int y, int xAmount, int yAmount);
+        public abstract void Translate(int xAmount, int yAmount);
 
         public abstract void RenderOnPreview();
         public abstract void RenderOnEditingView();

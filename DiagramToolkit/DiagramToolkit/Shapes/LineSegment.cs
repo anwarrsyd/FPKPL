@@ -106,7 +106,7 @@ namespace DiagramToolkit.Shapes
             return m;
         }
 
-        public override void Translate(int x, int y, int xAmount, int yAmount)
+        public override void Translate(int xAmount, int yAmount)
         {
             this.Startpoint = new Point(this.Startpoint.X + xAmount, this.Startpoint.Y + yAmount);
             this.Endpoint = new Point(this.Endpoint.X + xAmount, this.Endpoint.Y + yAmount);

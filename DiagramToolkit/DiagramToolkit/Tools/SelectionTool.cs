@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using DiagramToolkit.Shapes;
+using System.Windows.Forms;
 
 namespace DiagramToolkit.Tools
 {
@@ -8,7 +9,9 @@ namespace DiagramToolkit.Tools
         private DrawingObject selectedObject;
         private int xInitial;
         private int yInitial;
-
+        private int cumulativeMoveX;
+        private int cumulativeMoveY;
+        private UndoRedo undoRedo;
         public Cursor iniCursor
         {
             get
@@ -32,6 +35,17 @@ namespace DiagramToolkit.Tools
 
         public SelectionTool()
         {
+            cumulativeMoveX = 0;
+            cumulativeMoveY = 0;
+            this.Name = "Selection tool";
+            this.Image = IconSet.cursor;
+        }
+
+        public SelectionTool(UndoRedo undoRedo)
+        {
+            cumulativeMoveX = 0;
+            cumulativeMoveY = 0;
+            this.undoRedo = undoRedo;
             this.Name = "Selection tool";
             this.Image = IconSet.cursor;
         }
@@ -59,15 +73,18 @@ namespace DiagramToolkit.Tools
                     int yAmount = e.Y - yInitial;
                     xInitial = e.X;
                     yInitial = e.Y;
-
-                    selectedObject.Translate(e.X, e.Y, xAmount, yAmount);
+                    cumulativeMoveX += xAmount;
+                    cumulativeMoveY += yAmount;
+                    selectedObject.Translate(xAmount, yAmount);
+                    if (selectedObject is Rectangle) undoRedo.InsertInUnDoRedoForTranslate(-xAmount, -yAmount, (Rectangle)selectedObject);
                 }
             }
         }
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
-            
+//            cumulativeMoveX = 0;
+//            cumulativeMoveY = 0;
         }
     }
 }

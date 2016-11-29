@@ -10,12 +10,25 @@ namespace DiagramToolkit
     {
         private ITool activeTool;
         private List<DrawingObject> drawingObjects;
-
+        private UndoRedo _undoRedo;
+        public UndoRedo undoRedo
+        {
+            get { return _undoRedo; }
+            set
+            {
+                _undoRedo = value;
+            }
+        }
         public DefaultCanvas()
         {
             Init();
         }
 
+        public DefaultCanvas(UndoRedo undoRedo)
+        {
+            Init();
+            this._undoRedo = undoRedo;
+        }
         private void Init()
         {
             this.drawingObjects = new List<DrawingObject>();

@@ -20,6 +20,7 @@ namespace DiagramToolkit
         IToolbar toolbar;
         IToolbox tlp;
         ICanvas canvas1;
+        UndoRedo undoRedo;
 
         //size form
         int tinggi = 600;
@@ -27,6 +28,7 @@ namespace DiagramToolkit
 
         public MainWindow()
         {
+            undoRedo = new UndoRedo();
             InitUI();
         }
 
@@ -38,7 +40,9 @@ namespace DiagramToolkit
             ToolStripContainer toolStripContainer = new ToolStripContainer();
             toolStripContainer.Height = 32;
             toolStripContainer.TopToolStripPanel.Controls.Add((Control)this.toolbar);
-            toolbar.AddToolbarItem(new UndoToolbarItem());
+            UndoToolbarItem undoItem = new UndoToolbarItem(undoRedo);
+            toolbar.AddToolbarItem(undoItem);
+            undoItem.Click += UndoItem_Click;
             toolbar.AddSeparator();
             toolbar.AddToolbarItem(new RedoToolbarItem());
             toolStripContainer.Dock = DockStyle.Top;
@@ -56,7 +60,7 @@ namespace DiagramToolkit
             ToolStripMenuItem resizecanvas = new ToolStripMenuItem("Resize Canvas");
             ToolStripContainer toolContainer = new ToolStripContainer();
             toolContainer.ContentPanel.Controls.Add((Control)editor);
-            canvas1 = new DefaultCanvas();
+            canvas1 = new DefaultCanvas(undoRedo);
             canvas1.Name = "Main";
             editor.AddCanvas(canvas1);
 
@@ -106,7 +110,7 @@ namespace DiagramToolkit
             lain.BackgroundImageLayout = ImageLayout.Zoom;
             tlp.AddTool(lain);
 
-            Tools.SelectionTool pilih = new Tools.SelectionTool();
+            Tools.SelectionTool pilih = new Tools.SelectionTool(undoRedo);
             pilih.Height = tinggi;
             pilih.Width = lebar;
             pilih.Image = null;
@@ -146,6 +150,11 @@ namespace DiagramToolkit
             newSVGToolWireframe("user-feed.svg");
             newSVGToolWireframe("video-detail.svg");
             newSVGToolWireframe("post-with-image.svg");
+        }
+
+        private void UndoItem_Click(object sender, EventArgs e)
+        {
+            undoRedo.Undo(1);
         }
 
         private void NewFile_Click(object sender, EventArgs e)
