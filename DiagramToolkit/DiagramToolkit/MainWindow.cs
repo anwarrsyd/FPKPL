@@ -36,6 +36,8 @@ namespace DiagramToolkit
         {
             editor = new DefaultEditor();
             MenuStrip MenuBar = new MenuStrip(); //genereate menu bar
+            //MenuBar.BackColor = Color.FromArgb(52, 60, 70);
+            //MenuBar.ForeColor = Color.White;
             ToolStripMenuItem file = new ToolStripMenuItem("File"); //generate menu tool
             ToolStripMenuItem edit = new ToolStripMenuItem("Edit");
             ToolStripMenuItem newFile = new ToolStripMenuItem("New");
@@ -123,7 +125,7 @@ namespace DiagramToolkit
             pilih.BackgroundImageLayout = ImageLayout.Zoom;
             tlp.AddTool(pilih);
 
-            acc.Add((Control)tlp, "Android", "Enter the client's information.", 0, true);//memasukkan panel pertama
+            acc.Add((Control)tlp, "Wireframes", "Enter the client's information.", 0, true);//memasukkan panel pertama
 
             acc.Add(new TextBox { Dock = DockStyle.Fill, Multiline = true, BackColor = Color.White }, "Memo", "Additional Client Info", 1, true, contentBackColor: Color.Transparent);//menambahkan panel kedua
 

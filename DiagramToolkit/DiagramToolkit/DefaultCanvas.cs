@@ -34,7 +34,7 @@ namespace DiagramToolkit
             this.drawingObjects = new List<DrawingObject>();
             this.DoubleBuffered = true;
 
-            this.BackColor = Color.FromArgb(51, 51, 51);
+            this.BackColor = Color.FromArgb(240, 242, 243);
             this.Dock = DockStyle.Fill;
 
             this.Paint += DefaultCanvas_Paint;

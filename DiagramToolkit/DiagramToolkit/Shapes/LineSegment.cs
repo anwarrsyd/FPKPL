@@ -37,7 +37,7 @@ namespace DiagramToolkit.Shapes
 
         public override void RenderOnStaticView()
         {
-            pen.Color = Color.Black;
+            pen.Color = Color.FromArgb(50, 130, 240);
             pen.Width = 4f;
             pen.DashStyle = DashStyle.Solid;
 
@@ -53,7 +53,7 @@ namespace DiagramToolkit.Shapes
 
         public override void RenderOnEditingView()
         {
-            pen.Color = Color.Blue;
+            pen.Color = Color.IndianRed;
             pen.Width = 4f;
             pen.DashStyle = DashStyle.Solid;
 

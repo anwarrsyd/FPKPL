@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\DrawCommand.cs" />
     <Compile Include="Commands\TranslateCommand.cs" />
     <Compile Include="CursorSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -118,7 +117,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AssetSvg.resx</DependentUpon>
     </Compile>
-    <Compile Include="Shapes\Keyboard.cs" />
     <Compile Include="Shapes\LineSegment.cs" />
     <Compile Include="Shapes\Rectangle.cs" />
     <Compile Include="States\EditState.cs" />
@@ -213,12 +211,12 @@
     <None Include="Resources\cursor.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ImageSvg\" />
     <Folder Include="MenuItems\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Redo-52.png" />
     <None Include="Resources\Undo-52.png" />
-    <None Include="ImageSvg\wyre_dark01_info.svg" />
     <Content Include="Resources\Mobile\actionBar.png" />
     <Content Include="Resources\Mobile\ActiveListItem.png" />
     <Content Include="Resources\Mobile\ActiveTextField.png" />

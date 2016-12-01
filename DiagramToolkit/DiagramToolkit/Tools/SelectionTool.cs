@@ -11,7 +11,6 @@ namespace DiagramToolkit.Tools
         private int yInitial;
         private int cumulativeMoveX;
         private int cumulativeMoveY;
-        private bool mouseDown;
         private UndoRedo undoRedo;
         public Cursor iniCursor
         {
@@ -44,7 +43,6 @@ namespace DiagramToolkit.Tools
 
         public SelectionTool(UndoRedo undoRedo)
         {
-            mouseDown = false;
             cumulativeMoveX = 0;
             cumulativeMoveY = 0;
             this.undoRedo = undoRedo;
@@ -59,7 +57,6 @@ namespace DiagramToolkit.Tools
 
             if (e.Button == MouseButtons.Left && canvas != null)
             {
-                mouseDown = true;
                 canvas.DeselectAllObjects();
                 selectedObject = canvas.SelectObjectAt(e.X, e.Y);
             }
@@ -79,16 +76,15 @@ namespace DiagramToolkit.Tools
                     cumulativeMoveX += xAmount;
                     cumulativeMoveY += yAmount;
                     selectedObject.Translate(xAmount, yAmount);
-                    
                 }
             }
         }
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
-            if (mouseDown) { 
+            if (selectedObject != null)
+            {
                 if (selectedObject is Rectangle) undoRedo.InsertInUnDoRedoForTranslate(-cumulativeMoveX, -cumulativeMoveY, (Rectangle)selectedObject);
-                mouseDown = false;
             }
             cumulativeMoveX = 0;
             cumulativeMoveY = 0;
