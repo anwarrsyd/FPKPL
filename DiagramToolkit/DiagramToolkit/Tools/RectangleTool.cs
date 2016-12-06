@@ -10,6 +10,8 @@ namespace DiagramToolkit.Tools
         private Rectangle rectangle;
         private String selectedSvg;
         private int width, height;
+        private UndoRedo undoredo;
+        private bool mousedown;
 
         public Cursor iniCursor
         {
@@ -38,18 +40,20 @@ namespace DiagramToolkit.Tools
             this.selectedSvg = selectedSvg;
         }
 
-        public RectangleTool(int width, int height, String selectedSvg)
+        public RectangleTool(int width, int height, String selectedSvg, UndoRedo undoredo)
         {
             Name = "Rectangle tool";
             this.selectedSvg = selectedSvg;
             this.width = width;
             this.height = height;
+            this.undoredo = undoredo;
         }
 
         public void ToolMouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
+                mousedown = true;
                 this.rectangle = new Rectangle((int)e.X-width/2, (int)e.Y-height/2, width, height, selectedSvg);
                 this.canvas.AddDrawingObject(this.rectangle);
             }
@@ -83,7 +87,13 @@ namespace DiagramToolkit.Tools
             {
                 if (e.Button == MouseButtons.Left)
                 {
+
                     this.rectangle.Select();
+                    if (mousedown)
+                    {
+                        undoredo.InsertInUnDoRedoForInsert(rectangle, canvas);
+                        mousedown = false;
+                    }
                 }
                 else if (e.Button == MouseButtons.Right)
                 {

@@ -187,7 +187,7 @@ namespace DiagramToolkit
 
         private void newSVGToolPhone(String selectedSvg) {
             string selectedSVG = selectedSvg;
-            Tools.RectangleTool svgTool = new Tools.RectangleTool(190, 400, selectedSVG);
+            Tools.RectangleTool svgTool = new Tools.RectangleTool(190, 400, selectedSVG,undoRedo);
             svgTool.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
             svgTool.Height = 100;
             svgTool.Width = 100;
@@ -198,7 +198,7 @@ namespace DiagramToolkit
         private void newSVGToolWireframe(String selectedSvg)
         {
             string selectedSVG = selectedSvg;
-            Tools.RectangleTool svgTool = new Tools.RectangleTool(164, 290, selectedSVG);
+            Tools.RectangleTool svgTool = new Tools.RectangleTool(164, 290, selectedSVG, undoRedo);
             svgTool.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
             svgTool.Height = 100;
             svgTool.Width = 100;
