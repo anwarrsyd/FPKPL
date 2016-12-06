@@ -66,17 +66,17 @@ namespace DiagramToolkit
                 EnableDisableUndoRedoFeature(null, null);
             }
         }
-        /*
-        #region unused
-        public void InsertInUnDoRedoForInsert(FrameworkElement ApbOrDevice)
+
+        public void InsertInUnDoRedoForInsert(Rectangle rectangle, ICanvas canvas)
         {
-            ICommand cmd = new InsertCommand(ApbOrDevice, Container);
+            ICommand cmd = new InsertCommand(rectangle, canvas);
             undoCommands.Push(cmd); redoCommands.Clear();
             if (EnableDisableUndoRedoFeature != null)
             {
                 EnableDisableUndoRedoFeature(null, null);
             }
         }
+        /*
 
         public void InsertInUnDoRedoForDelete(FrameworkElement ApbOrDevice)
         {

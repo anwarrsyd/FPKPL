@@ -66,3 +66,20 @@ C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\S
 C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.pdb
 C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.xml
 C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.dialogresizecanvas.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe.config
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csprojResolveAssemblyReference.cache
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.CursorSet.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.dialogresizecanvas.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.IconSet.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.MainWindow.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Properties.Resources.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.Assets.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.AssetSvg.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csproj.GenerateResource.Cache
+D:\cobakpl\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe
+D:\cobakpl\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.pdb
+D:\cobakpl\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.dll
+D:\cobakpl\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.pdb
+D:\cobakpl\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.xml
