@@ -96,7 +96,11 @@ namespace DiagramToolkit.Tools
                 {
                     canvas.RemoveDrawingObject(this.lineSegment);
                 }
-            }
+            }            
+        }
+        public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

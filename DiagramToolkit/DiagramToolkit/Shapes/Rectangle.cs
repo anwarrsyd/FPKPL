@@ -13,18 +13,23 @@ namespace DiagramToolkit.Shapes
         public int Width { get; set; }
         public int Height { get; set; }
 
+        //untuk composite pattern
+        public List<DrawingObject> listChildObject;
+
         private Pen pen;
         private String selectedSvg;
         public Rectangle()
         {
             this.pen = new Pen(Color.Black);
             pen.Width = 1.5f;
+            listChildObject = new List<DrawingObject>();
         }
 
         public Rectangle(int x, int y) : this()
         {
             this.X = x;
             this.Y = y;
+            listChildObject = new List<DrawingObject>();
         }
 
         public Rectangle(int x, int y, String selectedSvg) : this()
@@ -32,12 +37,14 @@ namespace DiagramToolkit.Shapes
             this.X = x;
             this.Y = y;
             this.selectedSvg = selectedSvg;
+            listChildObject = new List<DrawingObject>();
         }
 
         public Rectangle(int x, int y, int width, int height) : this(x, y)
         {
             this.Width = width;
             this.Height = height;
+            listChildObject = new List<DrawingObject>();
         }
 
         public Rectangle(int x, int y, int width, int height, String selectedSvg) : this(x, y)
@@ -45,6 +52,7 @@ namespace DiagramToolkit.Shapes
             this.Width = width;
             this.Height = height;
             this.selectedSvg = selectedSvg;
+            listChildObject = new List<DrawingObject>();
         }
 
         public override bool Intersect(int xTest, int yTest)
@@ -168,7 +176,24 @@ namespace DiagramToolkit.Shapes
         {
             this.X += xAmount;
             this.Y += yAmount;
+            if (listChildObject.Count > 0)
+            {
+                foreach(DrawingObject obj in listChildObject)
+                {
+                    obj.Translate(xAmount, yAmount);
+                }
+            }
             BroadcastUpdate(xAmount, yAmount);
+        }
+        public void addComponent(DrawingObject child)
+        {
+            this.listChildObject.Add(child);
+            child.parentRectangle = this;
+        }
+        public void removeComponent(DrawingObject child)
+        {
+            this.listChildObject.Remove(child);
+            child.parentRectangle = null;
         }
     }
 }

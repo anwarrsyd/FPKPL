@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\AddComponentCommand.cs" />
     <Compile Include="Commands\TranslateCommand.cs" />
     <Compile Include="CursorSet.Designer.cs">
       <AutoGen>True</AutoGen>

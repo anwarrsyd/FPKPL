@@ -8,6 +8,7 @@ namespace DiagramToolkit.Tools
     {
         private ICanvas canvas;
         private Rectangle rectangle;
+        private Rectangle frameRectangle;
         private String selectedSvg;
         private int width, height;
 
@@ -50,8 +51,19 @@ namespace DiagramToolkit.Tools
         {
             if (e.Button == MouseButtons.Left)
             {
-                this.rectangle = new Rectangle((int)e.X-width/2, (int)e.Y-height/2, width, height, selectedSvg);
-                this.canvas.AddDrawingObject(this.rectangle);
+                if (canvas.GetObjectAt(e.X, e.Y) == null)
+                {
+                    this.rectangle = new Rectangle((int)e.X - width / 2, (int)e.Y - height / 2, width, height, selectedSvg);
+                    this.canvas.AddDrawingObject(this.rectangle);
+                }
+                else
+                {
+                    this.frameRectangle = (Rectangle)canvas.GetObjectAt(e.X, e.Y);
+                    this.rectangle = new Rectangle((int)e.X - width / 2, (int)e.Y - height / 2, width, height, selectedSvg);
+                    this.canvas.AddDrawingObject(this.rectangle);
+                    this.rectangle.parentRectangle = this.frameRectangle;
+                    frameRectangle.addComponent(this.rectangle);
+                }
             }
         }
 
@@ -90,6 +102,11 @@ namespace DiagramToolkit.Tools
                     canvas.RemoveDrawingObject(this.rectangle);
                 }
             }
+        }
+        
+        public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

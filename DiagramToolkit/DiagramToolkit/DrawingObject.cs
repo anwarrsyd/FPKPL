@@ -10,6 +10,9 @@ namespace DiagramToolkit
         public Guid ID { get; set; }
         public Graphics Graphics { get; set; }
 
+        //untuk composite pattern
+        public DrawingObject parentRectangle;
+
         public DrawingState State
         {
             get

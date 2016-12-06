@@ -1,5 +1,6 @@
 ﻿using DiagramToolkit.Shapes;
 using System.Windows.Forms;
+using System;
 
 namespace DiagramToolkit.Tools
 {
@@ -88,6 +89,11 @@ namespace DiagramToolkit.Tools
             }
             cumulativeMoveX = 0;
             cumulativeMoveY = 0;
+        }
+
+        public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

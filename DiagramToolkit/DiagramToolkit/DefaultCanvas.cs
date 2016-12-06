@@ -41,7 +41,15 @@ namespace DiagramToolkit
             this.MouseDown += DefaultCanvas_MouseDown;
             this.MouseUp += DefaultCanvas_MouseUp;
             this.MouseMove += DefaultCanvas_MouseMove;
+            this.MouseDoubleClick += DefaultCanvas_MouseDoubleClick;
+        }
 
+        private void DefaultCanvas_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.activeTool != null)
+            {
+
+            }
         }
 
         private void DefaultCanvas_MouseMove(object sender, MouseEventArgs e)
