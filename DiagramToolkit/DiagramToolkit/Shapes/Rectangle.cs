@@ -181,7 +181,12 @@ namespace DiagramToolkit.Shapes
                 foreach(DrawingObject obj in listChildObject)
                 {
                     obj.Translate(xAmount, yAmount);
+                    Debug.WriteLine("child geser " + xAmount.ToString() + " " + yAmount.ToString());
                 }
+            }
+            else
+            {
+                Debug.WriteLine("parent geser "+xAmount.ToString()+" "+yAmount.ToString());
             }
             BroadcastUpdate(xAmount, yAmount);
         }

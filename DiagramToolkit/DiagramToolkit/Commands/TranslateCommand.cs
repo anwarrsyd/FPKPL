@@ -21,25 +21,11 @@ namespace DiagramToolkit.Commands
         public void Execute()
         {
             rectangle.Translate(xAmmount, yAmmount);
-            if (rectangle.listChildObject.Count > 0)
-            {
-                foreach(DrawingObject obj in rectangle.listChildObject)
-                {
-                    obj.Translate(xAmmount, yAmmount);
-                }
-            }
         }
 
         public void UnExecute()
         {
             rectangle.Translate(-xAmmount, -yAmmount);
-            if (rectangle.listChildObject.Count > 0)
-            {
-                foreach (DrawingObject obj in rectangle.listChildObject)
-                {
-                    obj.Translate(-xAmmount, -yAmmount);
-                }
-            }
         }
     }
 }
