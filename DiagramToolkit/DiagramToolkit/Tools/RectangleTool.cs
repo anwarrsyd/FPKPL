@@ -54,7 +54,6 @@ namespace DiagramToolkit.Tools
         {
             if (e.Button == MouseButtons.Left)
             {
-<<<<<<< HEAD
                 if (canvas.GetObjectAt(e.X, e.Y) == null)
                 {
                     this.rectangle = new Rectangle((int)e.X - width / 2, (int)e.Y - height / 2, width, height, selectedSvg);
@@ -68,11 +67,9 @@ namespace DiagramToolkit.Tools
                     this.rectangle.parentRectangle = this.frameRectangle;
                     frameRectangle.addComponent(this.rectangle);
                 }
-=======
                 mousedown = true;
                 this.rectangle = new Rectangle((int)e.X-width/2, (int)e.Y-height/2, width, height, selectedSvg);
                 this.canvas.AddDrawingObject(this.rectangle);
->>>>>>> 0bc555c2bab7b9d470eddebf7fc084f9a76fdc6b
             }
         }
 
