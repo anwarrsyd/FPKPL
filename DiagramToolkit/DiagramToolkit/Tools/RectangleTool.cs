@@ -68,8 +68,6 @@ namespace DiagramToolkit.Tools
                     frameRectangle.addComponent(this.rectangle);
                 }
                 mousedown = true;
-                this.rectangle = new Rectangle((int)e.X-width/2, (int)e.Y-height/2, width, height, selectedSvg);
-                this.canvas.AddDrawingObject(this.rectangle);
             }
         }
 
