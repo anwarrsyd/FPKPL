@@ -66,8 +66,28 @@ C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\S
 C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.pdb
 C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.xml
 C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.dialogresizecanvas.resources
+<<<<<<< HEAD
 D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.dialogresizecanvas.resources
 D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.AssetSvg.resources
 D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.dll
 D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.pdb
 D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.xml
+=======
+D:\cobakpl\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe.config
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csprojResolveAssemblyReference.cache
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.CursorSet.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.dialogresizecanvas.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.IconSet.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.MainWindow.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Properties.Resources.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.Assets.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.AssetSvg.resources
+D:\cobakpl\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csproj.GenerateResource.Cache
+D:\cobakpl\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe
+D:\cobakpl\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.pdb
+D:\cobakpl\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.dll
+D:\cobakpl\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.pdb
+D:\cobakpl\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.xml
+>>>>>>> 0bc555c2bab7b9d470eddebf7fc084f9a76fdc6b
