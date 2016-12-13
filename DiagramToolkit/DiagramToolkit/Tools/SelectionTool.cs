@@ -1,6 +1,7 @@
-﻿using DiagramToolkit.Shapes;
+﻿using DiagramToolkit.Api.Shapes;
 using System.Windows.Forms;
 using System;
+using DiagramToolkit.Api;
 
 namespace DiagramToolkit.Tools
 {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DiagramToolkit.Api;
+using System;
 using System.Windows.Forms;
 
 namespace DiagramToolkit.MenuItems

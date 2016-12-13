@@ -1,4 +1,5 @@
-﻿using DiagramToolkit.Shapes;
+﻿using DiagramToolkit.Api;
+using DiagramToolkit.Api.Shapes;
 using System;
 using System.Windows.Forms;
 

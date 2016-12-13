@@ -1,5 +1,7 @@
-﻿using DiagramToolkit.Commands;
-using DiagramToolkit.Shapes;
+﻿using DiagramToolkit.Api;
+using DiagramToolkit.Api.Shapes;
+using DiagramToolkit.Commands;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -56,7 +58,7 @@ namespace DiagramToolkit
             }
         }
 
-        public void InsertInUnDoRedoForTranslate(int xAmmount, int yAmmount, Rectangle rectangle)
+        public void InsertInUnDoRedoForTranslate(int xAmmount, int yAmmount, Api.Shapes.Rectangle rectangle)
         {
             ICommand iCommand = new TranslateCommand(xAmmount, yAmmount, rectangle);
             undoCommands.Push(iCommand);

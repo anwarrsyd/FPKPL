@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="actionBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\actionBar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ActiveListItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\ActiveListItem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ActiveTextField" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\ActiveTextField.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blueActionBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\blueActionBar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blueListItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\blueListItem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blueTab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\blueTab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="borderBottomActionBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\borderBottomActionBar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bottomMenuItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\bottomMenuItem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bounding_box" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\bounding-box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="box_shadow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\box-shadow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\checkbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="collection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\collection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="combo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\combo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contactIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\contactIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\cursor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkActionBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\darkActionBar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dark_effect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\dark-effect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dialog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\dialog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dialogHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\dialogHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diskette" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\diskette.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DownDatePicker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\DownDatePicker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dropdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\dropdown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edge_shadow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\edge-shadow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fastscroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\fastscroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="focusedButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\focusedButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="focusedCheckbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\focusedCheckbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="focusedCombo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\focusedCombo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="focusedDropdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\focusedDropdown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FocusedListItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\FocusedListItem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="focusedSpinner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\focusedSpinner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="focusedToggle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\focusedToggle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="focusRadio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\focusRadio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FocusTextField" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\FocusTextField.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="font" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\font.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="googleSearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\googleSearch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="keyboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\keyboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="layout1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\layout1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leftSelectHandle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\leftSelectHandle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="light_effect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\light-effect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="linear_grad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\linear-grad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="listHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\listHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="listItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\listItem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\menuItem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="middleMenuItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\middleMenuItem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="middleSelectHandle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\middleSelectHandle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="navigationBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\navigationBar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="offSwitch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\offSwitch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="onSwitch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\onSwitch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\picker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plain_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\plain-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pressedButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\pressedButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pressedCheckbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\pressedCheckbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pressedCombo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\pressedCombo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PressedDropdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\PressedDropdown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pressedFastscroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\pressedFastscroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PressedListItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\PressedListItem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pressedRadio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\pressedRadio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pressedSpinner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\pressedSpinner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pressedTab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\pressedTab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pressedToggle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\pressedToggle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="progressBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\progressBar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="progressScrubbers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\progressScrubbers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="radial_grad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\radial-grad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="radio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\radio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rightSelectHandle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\rightSelectHandle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="screenHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\screenHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="selectedTab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\selectedTab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shadow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\shadow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spinner1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\spinner1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spinner2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\spinner2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="statusbar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\statusbar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\tab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tablet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\tablet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="textField" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\textField.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="toastFrame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\toastFrame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="toggle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\toggle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UpDatePicker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\UpDatePicker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vector_diagonal_line_with_box_edges" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\vector-diagonal-line-with-box-edges.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\Zoom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ZoomIn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\ZoomIn1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ZoomIn2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\ZoomIn2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ZoomOut1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\ZoomOut1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ZoomOut2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Mobile\ZoomOut2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

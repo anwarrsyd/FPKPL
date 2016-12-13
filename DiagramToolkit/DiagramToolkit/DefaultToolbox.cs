@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using DiagramToolkit.Api;
+
 
 namespace DiagramToolkit
 {
@@ -32,6 +34,23 @@ namespace DiagramToolkit
                 toolButton.Click += toggleButton_CheckedChanged;
                 this.Controls.Add(toolButton);
             }
+        }
+
+        public void Register(IPlugin plugin)
+        {
+            if (plugin != null)
+            {
+                Debug.WriteLine("Loading plugin: " + plugin.Name + "...");
+
+                if (plugin is ITool)
+                {
+                    ITool pluginTool = (ITool)plugin;
+                    AddTool(pluginTool);
+                }
+
+                Debug.WriteLine("Plugin " + plugin.Name + " is loaded successfuly.");
+            }
+
         }
 
         public void RemoveTool(ITool tool)

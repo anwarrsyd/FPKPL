@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Opulos.Core.UI;
 using DiagramToolkit.ToolbarItems;
+using DiagramToolkit.Api;
+using DiagramToolkit.Api.Svg;
+using System.IO;
+using System.Reflection;
 
 namespace DiagramToolkit
 {
@@ -20,6 +24,7 @@ namespace DiagramToolkit
         IToolbar toolbar;
         IToolbox tlp;
         ICanvas canvas1;
+        IPlugin[] plugins;
         UndoRedo undoRedo;
 
         //size form
@@ -29,9 +34,57 @@ namespace DiagramToolkit
         public MainWindow()
         {
             undoRedo = new UndoRedo();
+            LoadPlugin();
             InitUI();
         }
 
+        private void LoadPlugin()
+        {
+            string path = Application.StartupPath;
+
+            string[] pluginFiles = Directory.GetFiles(path, "*.DLL");
+            plugins = new IPlugin[pluginFiles.Length];
+
+            for (int i = 0; i < pluginFiles.Length; i++)
+            {
+                string args = pluginFiles[i].Substring(
+                    pluginFiles[i].LastIndexOf("\\") + 1,
+                    pluginFiles[i].IndexOf(".dll") -
+                    pluginFiles[i].LastIndexOf("\\") - 1);
+
+                Type type = null;
+
+                try
+                {
+                    Assembly asm = Assembly.Load(args);
+
+                    if (asm != null)
+                    {
+                        var pluginInterface = typeof(IPlugin);
+
+                        Type[] types = asm.GetTypes();
+
+                        foreach (Type t in types)
+                        {
+                            if (pluginInterface.IsAssignableFrom(t))
+                                type = t;
+                        }
+
+                    }
+
+                    if (type != null)
+                    {
+                        plugins[i] = (IPlugin)Activator.CreateInstance(type);
+                        //plugins[i].Host = this;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
         private void InitUI()
         {
             editor = new DefaultEditor();
@@ -110,12 +163,7 @@ namespace DiagramToolkit
             //phone.backgroundimagelayout = imagelayout.zoom;
             
 
-            Tools.LineTool lain = new Tools.LineTool();
-            lain.BackgroundImage = Resources.Assets.vector_diagonal_line_with_box_edges;
-            lain.Height = tinggi;
-            lain.Width = lebar;
-            lain.BackgroundImageLayout = ImageLayout.Zoom;
-            tlp.AddTool(lain);
+           
 
             Tools.SelectionTool pilih = new Tools.SelectionTool(undoRedo);
             pilih.Height = tinggi;
@@ -124,7 +172,13 @@ namespace DiagramToolkit
             pilih.BackgroundImage = Resources.Assets.cursor;
             pilih.BackgroundImageLayout = ImageLayout.Zoom;
             tlp.AddTool(pilih);
-
+            if (plugins != null)
+            {
+                for (int i = 0; i < this.plugins.Length; i++)
+                {
+                    this.tlp.Register(plugins[i]);
+                }
+            }
             acc.Add((Control)tlp, "Wireframes", "Enter the client's information.", 0, true);//memasukkan panel pertama
 
             acc.Add(new TextBox { Dock = DockStyle.Fill, Multiline = true, BackColor = Color.White }, "Memo", "Additional Client Info", 1, true, contentBackColor: Color.Transparent);//menambahkan panel kedua
@@ -188,7 +242,7 @@ namespace DiagramToolkit
         private void newSVGToolPhone(String selectedSvg) {
             string selectedSVG = selectedSvg;
             Tools.RectangleTool svgTool = new Tools.RectangleTool(190, 400, selectedSVG,undoRedo);
-            svgTool.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
+            svgTool.BackgroundImage = SVGParser.GetBitmapFromSVG(selectedSVG);
             svgTool.Height = 100;
             svgTool.Width = 100;
             svgTool.BackgroundImageLayout = ImageLayout.Zoom;
@@ -199,7 +253,7 @@ namespace DiagramToolkit
         {
             string selectedSVG = selectedSvg;
             Tools.RectangleTool svgTool = new Tools.RectangleTool(164, 290, selectedSVG, undoRedo);
-            svgTool.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
+            svgTool.BackgroundImage = SVGParser.GetBitmapFromSVG(selectedSVG);
             svgTool.Height = 100;
             svgTool.Width = 100;
             svgTool.BackgroundImageLayout = ImageLayout.Zoom;

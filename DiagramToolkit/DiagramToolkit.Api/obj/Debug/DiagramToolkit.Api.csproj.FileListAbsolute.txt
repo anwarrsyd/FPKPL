@@ -1,0 +1,8 @@
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit.Api\obj\Debug\DiagramToolkit.Api.csprojResolveAssemblyReference.cache
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Debug\DiagramToolkit.Api.dll
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Debug\DiagramToolkit.Api.pdb
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Debug\Svg.dll
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Debug\Svg.pdb
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Debug\Svg.xml
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit.Api\obj\Debug\DiagramToolkit.Api.dll
+C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit.Api\obj\Debug\DiagramToolkit.Api.pdb
