@@ -14,6 +14,7 @@ using DiagramToolkit.Api;
 using DiagramToolkit.Api.Svg;
 using System.IO;
 using System.Reflection;
+using System.Diagnostics;
 
 namespace DiagramToolkit
 {
@@ -94,6 +95,7 @@ namespace DiagramToolkit
             ToolStripMenuItem file = new ToolStripMenuItem("File"); //generate menu tool
             ToolStripMenuItem edit = new ToolStripMenuItem("Edit");
             ToolStripMenuItem newFile = new ToolStripMenuItem("New");
+            ToolStripMenuItem newplugin = new ToolStripMenuItem("Add Plugin");
             newFile.Click += NewFile_Click; 
             ToolStripMenuItem exit = new ToolStripMenuItem("Exit");
             exit.Click += Exit_Click;
@@ -131,9 +133,10 @@ namespace DiagramToolkit
             edit.DropDown.Items.Add(resizecanvas);
             resizecanvas.Click += Resizecanvas_Click;
             file.DropDown.Items.Add(newFile);
+            file.DropDown.Items.Add(newplugin);
             file.DropDown.Items.Add(exit);  
             MenuBar.Dock = DockStyle.Top;
-
+            newplugin.Click += Newplugin_Click;
             //set size form
             this.Height = this.tinggi;
             this.Width = this.lebar;
@@ -211,6 +214,37 @@ namespace DiagramToolkit
             newSVGToolWireframe("user-feed.svg");
             newSVGToolWireframe("video-detail.svg");
             newSVGToolWireframe("post-with-image.svg");
+        }
+
+        private void Newplugin_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openDialog = new OpenFileDialog();
+            openDialog.Filter = "Plugin File(*.dll)|*.dll;";
+            openDialog.ShowDialog();
+            
+            var namaFile = Path.GetFileName(openDialog.FileName);
+            try {
+                string targetPath = Application.StartupPath;
+                string destFile = System.IO.Path.Combine(targetPath, namaFile);
+                System.IO.File.Copy(openDialog.FileName, destFile, true);
+                MessageBox.Show("Add Plugin Success Application Will Restart!");
+                this.Controls.Clear();
+                ProcessStartInfo Info = new ProcessStartInfo();
+                Info.Arguments = "/C ping 127.0.0.1 -n 2 && \"" + Application.ExecutablePath + "\"";
+                Info.WindowStyle = ProcessWindowStyle.Hidden;
+                Info.CreateNoWindow = true;
+                Info.FileName = "cmd.exe";
+                Process.Start(Info);
+                Application.Exit();
+            }
+            catch
+            {
+                MessageBox.Show("ERROR");
+            }
+
+
+
         }
 
         private void UndoItem_Click(object sender, EventArgs e)
