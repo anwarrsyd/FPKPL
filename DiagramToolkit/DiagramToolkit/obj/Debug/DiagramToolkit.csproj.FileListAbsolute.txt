@@ -17,6 +17,7 @@ C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\S
 C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.xml
 C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
 C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
+<<<<<<< HEAD
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe.config
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
@@ -36,3 +37,24 @@ E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\Diagr
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.Api.pdb
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.pdb
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.xml
+=======
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe.config
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.pdb
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.Api.dll
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.dll
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.Api.pdb
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.pdb
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.xml
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csprojResolveAssemblyReference.cache
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.CursorSet.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.dialogresizecanvas.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.IconSet.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.MainWindow.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Properties.Resources.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.Assets.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.AssetSvg.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csproj.GenerateResource.Cache
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
+>>>>>>> 295d08c4d9ad30c889680b5616a4b55f91d5e813

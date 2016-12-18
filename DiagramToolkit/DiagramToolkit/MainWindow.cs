@@ -99,6 +99,11 @@ namespace DiagramToolkit
             //MenuBar.ForeColor = Color.White;
             ToolStripMenuItem file = new ToolStripMenuItem("File"); //generate menu tool
             ToolStripMenuItem edit = new ToolStripMenuItem("Edit");
+            ToolStripMenuItem arrange = new ToolStripMenuItem("Arrange");
+            ToolStripMenuItem sendToBack = new ToolStripMenuItem("Send to back");
+            sendToBack.Click += SendToBack_Click;
+            ToolStripMenuItem sendToFront = new ToolStripMenuItem("Send to front");
+            sendToFront.Click += SendToFront_Click;
             ToolStripMenuItem newFile = new ToolStripMenuItem("New");
             ToolStripMenuItem newplugin = new ToolStripMenuItem("Add Plugin");
             ToolStripMenuItem exportToImages = new ToolStripMenuItem("Export to Images");
@@ -123,20 +128,17 @@ namespace DiagramToolkit
             ToolStripContainer toolStripContainer = new ToolStripContainer();
             toolStripContainer.Height = 32;
             toolStripContainer.TopToolStripPanel.Controls.Add((System.Windows.Forms.Control)this.toolbar);
-            UndoToolbarItem undoItem = new UndoToolbarItem(undoRedo, (DefaultCanvas)canvas1);
-            RedoToolbarItem redoItem = new RedoToolbarItem(undoRedo, (DefaultCanvas)canvas1);
-//            SendToBackToolbarItem sendtobackItem = new SendToBackToolbarItem(undoRedo, (DefaultCanvas)canvas1);
-//            BringToFrontToolbarItem bringtofrontItem = new BringToFrontToolbarItem(undoRedo, (DefaultCanvas)canvas1);
+            UndoToolbarItem undoItem = new UndoToolbarItem(undoRedo, curCanvas);
+            RedoToolbarItem redoItem = new RedoToolbarItem(undoRedo, curCanvas);
             toolbar.AddToolbarItem(undoItem);
             toolbar.AddToolbarItem(redoItem);
             toolbar.AddSeparator();
-//            toolbar.AddToolbarItem(sendtobackItem);
-//            toolbar.AddToolbarItem(bringtofrontItem);
 
             toolStripContainer.Dock = DockStyle.Top;
 
             MenuBar.Items.Add(file);
             MenuBar.Items.Add(edit);
+            MenuBar.Items.Add(arrange);
             edit.DropDown.Items.Add(undo);
             edit.DropDown.Items.Add(redo);
             edit.DropDown.Items.Add(resizecanvas);
@@ -144,7 +146,9 @@ namespace DiagramToolkit
             file.DropDown.Items.Add(newFile);
             file.DropDown.Items.Add(newplugin);
             file.DropDown.Items.Add(exportToImages);
-            file.DropDown.Items.Add(exit);  
+            file.DropDown.Items.Add(exit);
+            arrange.DropDown.Items.Add(sendToBack);
+            arrange.DropDown.Items.Add(sendToFront);
             MenuBar.Dock = DockStyle.Top;
             newplugin.Click += Newplugin_Click;
             exportToImages.Click += ExportToImages_Click;
@@ -174,8 +178,7 @@ namespace DiagramToolkit
             //phone.backgroundimage = new bitmap(resources.assets.phone);
             //phone.height = tinggi;
             //phone.width = lebar;
-            //phone.backgroundimagelayout = imagelayout.zoom;
-
+            //phone.backgroundimagelayout = imagelayout.zoom;   
             Tools.SelectionTool pilih = new Tools.SelectionTool(undoRedo);
             pilih.Height = tinggi;
             pilih.Width = lebar;
@@ -222,6 +225,19 @@ namespace DiagramToolkit
             newSVGToolWireframe("user-feed.svg");
             newSVGToolWireframe("video-detail.svg");
             newSVGToolWireframe("post-with-image.svg");
+        }
+
+        private void SendToFront_Click(object sender, EventArgs e)
+        {
+            curCanvas.SendToFront(curCanvas.getActiveObject());
+        }
+
+        private void SendToBack_Click(object sender, EventArgs e)
+        {
+            DrawingObject obj;
+            obj = curCanvas.getActiveObject();
+            curCanvas.SendToBack(obj);
+            curCanvas.Repaint();
         }
 
         private void Newplugin_Click(object sender, EventArgs e)

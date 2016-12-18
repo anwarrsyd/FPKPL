@@ -101,7 +101,7 @@ namespace DiagramToolkit.Tools
                 if (e.Button == MouseButtons.Left)
                 {
 
-                    this.rectangle.Select();
+                    this.rectangle.iniSelect();
                     if (mousedown)
                     {
                         undoredo.InsertInUnDoRedoForInsert(rectangle, canvas);

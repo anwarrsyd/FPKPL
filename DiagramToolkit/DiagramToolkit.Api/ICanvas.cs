@@ -21,5 +21,9 @@ namespace DiagramToolkit.Api
         DrawingObject GetObjectAt(int x, int y);
         DrawingObject SelectObjectAt(int x, int y);
         void DeselectAllObjects();
+        DrawingObject getActiveObject();
+        void setActiveObject(DrawingObject obj);
+        void SendToBack(DrawingObject obj);
+        void SendToFront(DrawingObject obj);
     }
 }

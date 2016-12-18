@@ -2,10 +2,11 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace DiagramToolkit.Api
 {
-    public abstract class DrawingObject
+    public abstract class DrawingObject: Control
     {
         public Guid ID { get; set; }
         public Graphics Graphics { get; set; }
@@ -27,6 +28,7 @@ namespace DiagramToolkit.Api
         {
             ID = Guid.NewGuid();
             this.ChangeState(PreviewState.GetInstance()); //default initial state
+            this.parentRectangle = null;
         }
         
         public abstract bool Intersect(int xTest, int yTest);
@@ -47,7 +49,7 @@ namespace DiagramToolkit.Api
             this.state.Draw(this);
         }
 
-        public void Select()
+        public void iniSelect()
         {
             Debug.WriteLine("Object id=" + ID.ToString() + " is selected.");
             this.state.Select(this);

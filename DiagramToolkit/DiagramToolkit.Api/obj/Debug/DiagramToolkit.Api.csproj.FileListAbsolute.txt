@@ -6,6 +6,7 @@ C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Deb
 C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Debug\Svg.xml
 C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit.Api\obj\Debug\DiagramToolkit.Api.dll
 C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit.Api\obj\Debug\DiagramToolkit.Api.pdb
+<<<<<<< HEAD
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Debug\DiagramToolkit.Api.dll
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Debug\DiagramToolkit.Api.pdb
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Debug\Svg.dll
@@ -14,3 +15,13 @@ E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\Diagr
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit.Api\obj\Debug\DiagramToolkit.Api.csprojResolveAssemblyReference.cache
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit.Api\obj\Debug\DiagramToolkit.Api.dll
 E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit.Api\obj\Debug\DiagramToolkit.Api.pdb
+=======
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Debug\DiagramToolkit.Api.dll
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Debug\DiagramToolkit.Api.pdb
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Debug\Svg.dll
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Debug\Svg.pdb
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit.Api\bin\Debug\Svg.xml
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit.Api\obj\Debug\DiagramToolkit.Api.csprojResolveAssemblyReference.cache
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit.Api\obj\Debug\DiagramToolkit.Api.dll
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit.Api\obj\Debug\DiagramToolkit.Api.pdb
+>>>>>>> 295d08c4d9ad30c889680b5616a4b55f91d5e813
