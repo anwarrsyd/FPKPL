@@ -15,6 +15,9 @@ using DiagramToolkit.Api.Svg;
 using System.IO;
 using System.Reflection;
 using System.Diagnostics;
+using System.Windows.Media.Imaging;
+//using System.Windows.Media;
+using System.Windows.Controls;
 
 namespace DiagramToolkit
 {
@@ -27,6 +30,7 @@ namespace DiagramToolkit
         ICanvas canvas1;
         IPlugin[] plugins;
         UndoRedo undoRedo;
+        DefaultCanvas curCanvas;
 
         //size form
         int tinggi = 600;
@@ -86,6 +90,7 @@ namespace DiagramToolkit
                 }
             }
         }
+
         private void InitUI()
         {
             editor = new DefaultEditor();
@@ -96,6 +101,7 @@ namespace DiagramToolkit
             ToolStripMenuItem edit = new ToolStripMenuItem("Edit");
             ToolStripMenuItem newFile = new ToolStripMenuItem("New");
             ToolStripMenuItem newplugin = new ToolStripMenuItem("Add Plugin");
+            ToolStripMenuItem exportToImages = new ToolStripMenuItem("Export to Images");
             newFile.Click += NewFile_Click; 
             ToolStripMenuItem exit = new ToolStripMenuItem("Exit");
             exit.Click += Exit_Click;
@@ -103,17 +109,20 @@ namespace DiagramToolkit
             ToolStripMenuItem redo = new ToolStripMenuItem("Redo");
             ToolStripMenuItem resizecanvas = new ToolStripMenuItem("Resize Canvas");
             ToolStripContainer toolContainer = new ToolStripContainer();
-            toolContainer.ContentPanel.Controls.Add((Control)editor);
-            canvas1 = new DefaultCanvas(undoRedo);
-            canvas1.Name = "Main";
-            editor.AddCanvas(canvas1);
+            toolContainer.ContentPanel.Controls.Add((System.Windows.Forms.Control)editor);
+            //canvas1 = new DefaultCanvas(undoRedo);
+            //canvas1.Name = "Main";
+            //editor.AddCanvas(canvas1);
+            curCanvas = new DefaultCanvas(undoRedo);
+            curCanvas.Name = "Main";
+            editor.AddCanvas(curCanvas);
 
             // Generate Toolbar
             // Initializing toolbar
             toolbar = new DefaultToolbar();
             ToolStripContainer toolStripContainer = new ToolStripContainer();
             toolStripContainer.Height = 32;
-            toolStripContainer.TopToolStripPanel.Controls.Add((Control)this.toolbar);
+            toolStripContainer.TopToolStripPanel.Controls.Add((System.Windows.Forms.Control)this.toolbar);
             UndoToolbarItem undoItem = new UndoToolbarItem(undoRedo, (DefaultCanvas)canvas1);
             RedoToolbarItem redoItem = new RedoToolbarItem(undoRedo, (DefaultCanvas)canvas1);
 //            SendToBackToolbarItem sendtobackItem = new SendToBackToolbarItem(undoRedo, (DefaultCanvas)canvas1);
@@ -134,9 +143,11 @@ namespace DiagramToolkit
             resizecanvas.Click += Resizecanvas_Click;
             file.DropDown.Items.Add(newFile);
             file.DropDown.Items.Add(newplugin);
+            file.DropDown.Items.Add(exportToImages);
             file.DropDown.Items.Add(exit);  
             MenuBar.Dock = DockStyle.Top;
             newplugin.Click += Newplugin_Click;
+            exportToImages.Click += ExportToImages_Click;
             //set size form
             this.Height = this.tinggi;
             this.Width = this.lebar;
@@ -147,7 +158,7 @@ namespace DiagramToolkit
             acc.ContentMargin = new Padding(5, 5, 5, 5);
             acc.ContentPadding = new Padding(1);
             acc.Insets = new Padding(5);
-            acc.ControlBackColor = Color.White;
+            acc.ControlBackColor = System.Drawing.Color.White;
             acc.Width = 200;
 
             //deklarasi panel pertama
@@ -164,9 +175,6 @@ namespace DiagramToolkit
             //phone.height = tinggi;
             //phone.width = lebar;
             //phone.backgroundimagelayout = imagelayout.zoom;
-            
-
-           
 
             Tools.SelectionTool pilih = new Tools.SelectionTool(undoRedo);
             pilih.Height = tinggi;
@@ -182,9 +190,9 @@ namespace DiagramToolkit
                     this.tlp.Register(plugins[i]);
                 }
             }
-            acc.Add((Control)tlp, "Wireframes", "Enter the client's information.", 0, true);//memasukkan panel pertama
+            acc.Add((System.Windows.Forms.Control)tlp, "Wireframes", "Enter the client's information.", 0, true);//memasukkan panel pertama
 
-            acc.Add(new TextBox { Dock = DockStyle.Fill, Multiline = true, BackColor = Color.White }, "Memo", "Additional Client Info", 1, true, contentBackColor: Color.Transparent);//menambahkan panel kedua
+            acc.Add(new System.Windows.Forms.TextBox { Dock = DockStyle.Fill, Multiline = true, BackColor = Color.White }, "Memo", "Additional Client Info", 1, true, contentBackColor: Color.Transparent);//menambahkan panel kedua
 
             acc.Dock = DockStyle.Fill;
           
@@ -192,7 +200,7 @@ namespace DiagramToolkit
             mainPanel.Panel1.Controls.Add(acc);
             mainPanel.FixedPanel = FixedPanel.Panel1;
             mainPanel.MinimumSize = new Size(300, 200);
-            mainPanel.Panel2.BackColor = Color.White;
+            mainPanel.Panel2.BackColor = System.Drawing.Color.White;
             toolContainer.Dock = DockStyle.Fill;
             mainPanel.Panel2.Controls.Add(toolContainer);
             mainPanel.SplitterWidth = 15;
@@ -218,7 +226,6 @@ namespace DiagramToolkit
 
         private void Newplugin_Click(object sender, EventArgs e)
         {
-
             OpenFileDialog openDialog = new OpenFileDialog();
             openDialog.Filter = "Plugin File(*.dll)|*.dll;";
             openDialog.ShowDialog();
@@ -242,9 +249,6 @@ namespace DiagramToolkit
             {
                 MessageBox.Show("ERROR");
             }
-
-
-
         }
 
         private void UndoItem_Click(object sender, EventArgs e)
@@ -258,9 +262,43 @@ namespace DiagramToolkit
             //this.InitUI();
         }
 
+        private void ExportToImages_Click(object sender, EventArgs e)
+        {
+            curCanvas.DeselectAllObjects();
+            Bitmap bitmap = new Bitmap(curCanvas.Width, curCanvas.Height);
+            curCanvas.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "PNG Image Files (*.png)|*.png";
+            dialog.DefaultExt = "png";
+            dialog.AddExtension = true;
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                bitmap.Save(dialog.FileName, System.Drawing.Imaging.ImageFormat.Png);
+            }
+
+            //JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            //String filename = "hasilExport";
+
+            //RenderTargetBitmap renderBitmap = new RenderTargetBitmap(lebar, tinggi, 96d, 96d, System.Windows.Media.PixelFormats.Pbgra32);
+            //// needed otherwise the image output is black
+            //canvas1.measure(new Size(lebar, tinggi));
+            //canvas1.Arrange(new Rect(new Size(lebar, tinggi)));
+            //renderBitmap.Render(canvas1);
+
+            ////JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            //PngBitmapEncoder encoder = new PngBitmapEncoder();
+            //encoder.Frames.Add(BitmapFrame.Create(renderBitmap));
+
+            //using (FileStream file = File.Create(filename))
+            //{
+            //    encoder.Save(file);
+            //}
+        }
+
         private void Exit_Click(object sender, EventArgs e)
         {
-                        this.Close();
+            this.Close();
         }
 
         private void Resizecanvas_Click(object sender, EventArgs e)
