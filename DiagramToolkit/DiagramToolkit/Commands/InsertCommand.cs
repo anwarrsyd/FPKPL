@@ -20,15 +20,12 @@ namespace DiagramToolkit.Commands
 
         public void Execute()
         {
-
-            canvas.AddDrawingObject(rectangle);
-
+            canvas.RemoveDrawingObject(rectangle);
         }
 
         public void UnExecute()
         {
-
-            canvas.RemoveDrawingObject(rectangle);
+            canvas.AddDrawingObject(rectangle);
         }
     }
 }

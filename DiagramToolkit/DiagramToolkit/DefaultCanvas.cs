@@ -104,11 +104,13 @@ namespace DiagramToolkit
         public void AddDrawingObject(DrawingObject drawingObject)
         {
             this.drawingObjects.Add(drawingObject);
+            this.Repaint();
         }
 
         public void RemoveDrawingObject(DrawingObject drawingObject)
         {
             this.drawingObjects.Remove(drawingObject);
+            this.Repaint();
         }
 
         public DrawingObject GetObjectAt(int x, int y)
