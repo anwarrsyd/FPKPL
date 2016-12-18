@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\NewFileCommand.cs" />
     <Compile Include="Commands\TranslateCommand.cs" />
     <Compile Include="CursorSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -71,6 +72,7 @@
     <Compile Include="DefaultToolbox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Commands\DeleteCommand.cs" />
     <Compile Include="dialogresizecanvas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +182,7 @@
       <LastGenOutput>AssetSvg.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

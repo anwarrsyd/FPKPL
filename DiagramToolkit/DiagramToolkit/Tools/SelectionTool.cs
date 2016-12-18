@@ -1,5 +1,7 @@
 ﻿using DiagramToolkit.Shapes;
+using System.Diagnostics;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace DiagramToolkit.Tools
 {
@@ -58,7 +60,11 @@ namespace DiagramToolkit.Tools
             if (e.Button == MouseButtons.Left && canvas != null)
             {
                 canvas.DeselectAllObjects();
+                //if(selectedObject != null) { 
                 selectedObject = canvas.SelectObjectAt(e.X, e.Y);
+                //}
+               
+                
             }
            
         }

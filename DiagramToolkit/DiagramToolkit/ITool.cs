@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
+
 
 namespace DiagramToolkit
 {
@@ -16,6 +18,7 @@ namespace DiagramToolkit
         void ToolMouseDown(object sender, MouseEventArgs e);
         void ToolMouseUp(object sender, MouseEventArgs e);
         void ToolMouseMove(object sender, MouseEventArgs e);
-
+      //  void ToolMouseWheel(object sender, MouseWheelEventArgs e);
+        
     }
 }

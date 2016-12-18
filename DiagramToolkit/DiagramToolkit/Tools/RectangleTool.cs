@@ -56,6 +56,11 @@ namespace DiagramToolkit.Tools
                 mousedown = true;
                 this.rectangle = new Rectangle((int)e.X-width/2, (int)e.Y-height/2, width, height, selectedSvg);
                 this.canvas.AddDrawingObject(this.rectangle);
+                if (mousedown)
+                {
+                    undoredo.InsertInUnDoRedoForInsert(rectangle, canvas);
+                    mousedown = false;
+                }
             }
         }
 
@@ -89,15 +94,18 @@ namespace DiagramToolkit.Tools
                 {
 
                     this.rectangle.Select();
-                    if (mousedown)
-                    {
-                        undoredo.InsertInUnDoRedoForInsert(rectangle, canvas);
-                        mousedown = false;
-                    }
+                    
                 }
                 else if (e.Button == MouseButtons.Right)
                 {
                     canvas.RemoveDrawingObject(this.rectangle);
+                    mousedown = true;
+                    if (mousedown)
+                    {
+                        undoredo.InsertInUnDoRedoForDelete(rectangle, canvas);
+                        mousedown = false;
+                    }
+
                 }
             }
         }

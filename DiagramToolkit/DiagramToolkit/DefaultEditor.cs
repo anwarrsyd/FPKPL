@@ -9,7 +9,7 @@ namespace DiagramToolkit
         private List<ICanvas> canvases;
         private ICanvas selectedCanvas;
         private IToolbox toolbox;
-
+        public int canvas_count;
         public IToolbox Toolbox
         {
             get
@@ -27,6 +27,7 @@ namespace DiagramToolkit
         {
             Dock = DockStyle.Fill;
             canvases = new List<ICanvas>();
+            canvas_count = 1; 
 
             this.Selected += DefaultEditor_Selected;
         }
@@ -34,7 +35,7 @@ namespace DiagramToolkit
         private void DefaultEditor_Selected(object sender, TabControlEventArgs e)
         {
             this.selectedCanvas = (ICanvas)e.TabPage.Controls[0];
-            this.toolbox.ActiveTool = this.selectedCanvas.GetActiveTool();
+            //this.toolbox.ActiveTool = this.selectedCanvas.GetActiveTool();
         }
 
         public void AddCanvas(ICanvas canvas)
@@ -45,6 +46,7 @@ namespace DiagramToolkit
             this.Controls.Add(tabPage);
             this.SelectedTab = tabPage;
             this.selectedCanvas = canvas;
+            canvas_count++;
         }
 
         public ICanvas GetSelectedCanvas()
@@ -54,7 +56,12 @@ namespace DiagramToolkit
 
         public void RemoveCanvas(ICanvas canvas)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            this.canvases.Remove(canvas);
+            this.Controls.Remove(this.SelectedTab);
+            this.SelectedTab = (TabPage)this.Controls[0];
+            this.selectedCanvas = canvases[0];
+
         }
 
         public void RemoveSelectedCanvas()

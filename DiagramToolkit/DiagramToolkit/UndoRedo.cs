@@ -76,17 +76,19 @@ namespace DiagramToolkit
                 EnableDisableUndoRedoFeature(null, null);
             }
         }
-        /*
+        
 
-        public void InsertInUnDoRedoForDelete(FrameworkElement ApbOrDevice)
+        public void InsertInUnDoRedoForDelete(Rectangle rectangle, ICanvas canvas)
         {
-            ICommand cmd = new DeleteCommand(ApbOrDevice, Container);
+            ICommand cmd = new DeleteCommand(rectangle, canvas);
             undoCommands.Push(cmd); redoCommands.Clear();
             if (EnableDisableUndoRedoFeature != null)
             {
                 EnableDisableUndoRedoFeature(null, null);
             }
         }
+
+            /*
 
         public void InsertInUnDoRedoForMove(Point margin, FrameworkElement UIelement)
         {

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Opulos.Core.UI;
 using DiagramToolkit.ToolbarItems;
+using DiagramToolkit.Commands;
 
 namespace DiagramToolkit
 {
@@ -20,7 +21,9 @@ namespace DiagramToolkit
         IToolbar toolbar;
         IToolbox tlp;
         ICanvas canvas1;
+        ICanvas canvas2;
         UndoRedo undoRedo;
+        UndoRedo undoRedo2;
 
         //size form
         int tinggi = 600;
@@ -29,6 +32,7 @@ namespace DiagramToolkit
         public MainWindow()
         {
             undoRedo = new UndoRedo();
+            //undoRedo2 = new UndoRedo();
             InitUI();
         }
 
@@ -41,6 +45,8 @@ namespace DiagramToolkit
             ToolStripMenuItem file = new ToolStripMenuItem("File"); //generate menu tool
             ToolStripMenuItem edit = new ToolStripMenuItem("Edit");
             ToolStripMenuItem newFile = new ToolStripMenuItem("New");
+            ToolStripMenuItem RemoveFile = new ToolStripMenuItem("Remove");
+            RemoveFile.Click += RemoveFile_Click;
             newFile.Click += NewFile_Click; 
             ToolStripMenuItem exit = new ToolStripMenuItem("Exit");
             exit.Click += Exit_Click;
@@ -51,7 +57,16 @@ namespace DiagramToolkit
             toolContainer.ContentPanel.Controls.Add((Control)editor);
             canvas1 = new DefaultCanvas(undoRedo);
             canvas1.Name = "Main";
+
+            
+
+          //  canvas2 = new DefaultCanvas(undoRedo);
+            //canvas2.Name = "Main2";
+            
+
+
             editor.AddCanvas(canvas1);
+            //editor.AddCanvas(canvas2);
 
             // Generate Toolbar
             // Initializing toolbar
@@ -59,8 +74,8 @@ namespace DiagramToolkit
             ToolStripContainer toolStripContainer = new ToolStripContainer();
             toolStripContainer.Height = 32;
             toolStripContainer.TopToolStripPanel.Controls.Add((Control)this.toolbar);
-            UndoToolbarItem undoItem = new UndoToolbarItem(undoRedo, (DefaultCanvas)canvas1);
-            RedoToolbarItem redoItem = new RedoToolbarItem(undoRedo, (DefaultCanvas)canvas1);
+            UndoToolbarItem undoItem = new UndoToolbarItem(undoRedo, (DefaultCanvas)editor.GetSelectedCanvas());
+            RedoToolbarItem redoItem = new RedoToolbarItem(undoRedo, (DefaultCanvas)editor.GetSelectedCanvas());
 //            SendToBackToolbarItem sendtobackItem = new SendToBackToolbarItem(undoRedo, (DefaultCanvas)canvas1);
 //            BringToFrontToolbarItem bringtofrontItem = new BringToFrontToolbarItem(undoRedo, (DefaultCanvas)canvas1);
             toolbar.AddToolbarItem(undoItem);
@@ -78,6 +93,7 @@ namespace DiagramToolkit
             edit.DropDown.Items.Add(resizecanvas);
             resizecanvas.Click += Resizecanvas_Click;
             file.DropDown.Items.Add(newFile);
+            file.DropDown.Items.Add(RemoveFile);
             file.DropDown.Items.Add(exit);  
             MenuBar.Dock = DockStyle.Top;
 
@@ -166,8 +182,20 @@ namespace DiagramToolkit
 
         private void NewFile_Click(object sender, EventArgs e)
         {
-            this.Controls.Clear();
+            //this.Controls.Clear();
             //this.InitUI();
+
+            NewFileCommand newFile = new NewFileCommand(this.editor);
+            newFile.Execute();
+        }
+
+        private void RemoveFile_Click(object sender, EventArgs e)
+        {
+            //this.Controls.Clear();
+            //this.InitUI();
+
+            NewFileCommand newFile = new NewFileCommand(this.editor);
+            newFile.UnExecute();
         }
 
         private void Exit_Click(object sender, EventArgs e)
