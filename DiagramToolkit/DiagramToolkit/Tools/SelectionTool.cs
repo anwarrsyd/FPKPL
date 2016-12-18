@@ -61,6 +61,12 @@ namespace DiagramToolkit.Tools
             {
                 canvas.DeselectAllObjects();
                 selectedObject = canvas.SelectObjectAt(e.X, e.Y);
+                if(selectedObject.parentRectangle != null)
+                {
+                    try { selectedObject = selectedObject.parentRectangle; }
+                    catch { new NotImplementedException(); }
+                }
+                canvas.setActiveObject(selectedObject);
             }
            
         }
@@ -94,7 +100,7 @@ namespace DiagramToolkit.Tools
 
         public void ToolMouseDoubleClick(object sender, MouseEventArgs e)
         {
-            throw new NotImplementedException();
+            this.selectedObject.SendToBack();
         }
     }
 }

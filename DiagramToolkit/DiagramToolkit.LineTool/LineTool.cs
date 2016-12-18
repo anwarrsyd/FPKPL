@@ -93,7 +93,7 @@ namespace DiagramToolkit.LineTool
                 {
                     Point P = new Point();
                     lineSegment.Endpoint = new Point(e.X, e.Y);
-                    lineSegment.Select();
+                    lineSegment.iniSelect();
 
                     if (canvas.GetObjectAt(e.X, e.Y) is Vertex)
                     {

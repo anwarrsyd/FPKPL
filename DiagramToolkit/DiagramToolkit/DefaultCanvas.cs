@@ -11,6 +11,7 @@ namespace DiagramToolkit
     public class DefaultCanvas : Control, ICanvas
     {
         private ITool activeTool;
+        private DrawingObject activeObject;
         private List<DrawingObject> drawingObjects;
         private UndoRedo _undoRedo;
         public UndoRedo undoRedo
@@ -30,6 +31,15 @@ namespace DiagramToolkit
         {
             Init();
             this._undoRedo = undoRedo;
+        }
+        public DrawingObject getActiveObject()
+        {
+            return this.activeObject;
+        }
+        public void setActiveObject(DrawingObject obj)
+        {
+            this.activeObject = obj;
+            System.Diagnostics.Debug.WriteLine(this.activeObject.ID.ToString()+" ini aktif obyek");
         }
         private void Init()
         {
@@ -123,14 +133,14 @@ namespace DiagramToolkit
 
         public DrawingObject GetObjectAt(int x, int y)
         {
-            foreach (DrawingObject obj in drawingObjects)
+            for(int i =drawingObjects.Count-1; i>=0; i--)
             {
-                if (obj.Intersect(x, y))
+                if(drawingObjects[i].Intersect(x, y))
                 {
-                    return obj;
+                    return drawingObjects[i];
                 }
             }
-            return null;
+            return this.getActiveObject();
         }
 
         public DrawingObject SelectObjectAt(int x, int y)
@@ -138,7 +148,7 @@ namespace DiagramToolkit
             DrawingObject obj = GetObjectAt(x, y);
             if (obj != null)
             {
-                obj.Select();
+                obj.iniSelect();
             }
 
             return obj;
@@ -151,6 +161,15 @@ namespace DiagramToolkit
                 drawObj.Deselect();
             }
         }
-        
+        public void SendToBack(DrawingObject obj)
+        {
+            this.drawingObjects.Remove(obj);
+            this.drawingObjects.Insert(0, obj);
+        }
+        public void SendToFront(DrawingObject obj)
+        {
+            this.drawingObjects.Remove(obj);
+            this.drawingObjects.Add(obj);
+        }
     }
 }
