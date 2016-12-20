@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DiagramToolkit.Api;
+﻿using DiagramToolkit.Api;
 using DiagramToolkit.Api.Shapes;
-using DiagramToolkit;
 
 namespace DiagramToolkit.Commands
 {
@@ -25,6 +19,7 @@ namespace DiagramToolkit.Commands
         public void UnExecute()
         {
             this.parentObject.listChildObject.Add(this.childObject);
+            this.childObject.parentRectangle = parentObject;
         }
     }
 }

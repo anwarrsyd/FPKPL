@@ -73,7 +73,7 @@ namespace DiagramToolkit
             }
         }
 
-        public void InsetInUndoRedoForGroupingObject(ICommand cmd)
+        public void InsertCommand(ICommand cmd)
         {
             undoCommands.Push(cmd); redoCommands.Clear();
             if (EnableDisableUndoRedoFeature != null)

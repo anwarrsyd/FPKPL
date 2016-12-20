@@ -103,6 +103,8 @@ namespace DiagramToolkit
             exportToImages.Click += ExportToImages_Click;
             ToolStripMenuItem groupObject = new ToolStripMenuItem("Group current and previous object");
             groupObject.Click += GroupObject_Click;
+            ToolStripMenuItem unGroupObject = new ToolStripMenuItem("Ungroup Object");
+            unGroupObject.Click += UnGroupObject_Click;
 
             ToolStripMenuItem exit = new ToolStripMenuItem("Exit");
             exit.Click += Exit_Click;
@@ -146,6 +148,7 @@ namespace DiagramToolkit
             arrange.DropDown.Items.Add(sendToBack);
             arrange.DropDown.Items.Add(sendToFront);
             arrange.DropDown.Items.Add(groupObject);
+            arrange.DropDown.Items.Add(unGroupObject);
 
             MenuBar.Dock = DockStyle.Top;
             
@@ -218,11 +221,18 @@ namespace DiagramToolkit
             newSVGToolWireframe("post-with-image.svg");
         }
 
+        private void UnGroupObject_Click(object sender, EventArgs e)
+        {
+            UnGroupCommand command = new UnGroupCommand((DiagramToolkit.Api.Shapes.Rectangle)curCanvas.getActiveObject());
+            command.UnExecute();
+            undoRedo.InsertCommand(command);
+        }
+
         private void GroupObject_Click(object sender, EventArgs e)
         {
             GroupCommand grouping = new GroupCommand((DiagramToolkit.Api.Shapes.Rectangle)curCanvas.getActiveObject(), curCanvas.getprevActiveObject());
             grouping.UnExecute();
-            undoRedo.InsetInUndoRedoForGroupingObject(grouping);
+            undoRedo.InsertCommand(grouping);
         }
 
         private void SendToFront_Click(object sender, EventArgs e)

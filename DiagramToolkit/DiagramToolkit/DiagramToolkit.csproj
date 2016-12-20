@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Commands\GroupCommand.cs" />
     <Compile Include="Commands\TranslateCommand.cs" />
+    <Compile Include="Commands\UnGroupCommand.cs" />
     <Compile Include="CursorSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

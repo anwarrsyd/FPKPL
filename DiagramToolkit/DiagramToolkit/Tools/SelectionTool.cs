@@ -64,7 +64,19 @@ namespace DiagramToolkit.Tools
 
                 if (selectedObject != null)
                 {
-                    if (selectedObject.parentRectangle != null) { selectedObject = selectedObject.parentRectangle; }
+                    System.Diagnostics.Debug.WriteLine("hampir ini kena parent");
+                    if (selectedObject.parentRectangle != null)
+                    {
+                        while (selectedObject.parentRectangle != null)
+                        {
+                            selectedObject = selectedObject.parentRectangle;
+                        }
+                        System.Diagnostics.Debug.WriteLine("ini kena parent");
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("gak punya parent");
+                    }
                 }
                 canvas.setActiveObject(selectedObject);
             }
