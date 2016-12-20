@@ -1,23 +1,15 @@
 ﻿using Svg;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Opulos.Core.UI;
 using DiagramToolkit.ToolbarItems;
 using DiagramToolkit.Api;
 using DiagramToolkit.Api.Svg;
+using DiagramToolkit.Commands;
 using System.IO;
 using System.Reflection;
 using System.Diagnostics;
-using System.Windows.Media.Imaging;
-//using System.Windows.Media;
-using System.Windows.Controls;
 
 namespace DiagramToolkit
 {
@@ -27,7 +19,6 @@ namespace DiagramToolkit
         IEditor editor;
         IToolbar toolbar;
         IToolbox tlp;
-        ICanvas canvas1;
         IPlugin[] plugins;
         UndoRedo undoRedo;
         DefaultCanvas curCanvas;
@@ -93,11 +84,11 @@ namespace DiagramToolkit
 
         private void InitUI()
         {
+            //parent dari canvas
             editor = new DefaultEditor();
-            MenuStrip MenuBar = new MenuStrip(); //genereate menu bar
-            //MenuBar.BackColor = Color.FromArgb(52, 60, 70);
-            //MenuBar.ForeColor = Color.White;
-            ToolStripMenuItem file = new ToolStripMenuItem("File"); //generate menu tool
+            //genereate menu bar
+            MenuStrip MenuBar = new MenuStrip(); 
+            ToolStripMenuItem file = new ToolStripMenuItem("File");
             ToolStripMenuItem edit = new ToolStripMenuItem("Edit");
             ToolStripMenuItem arrange = new ToolStripMenuItem("Arrange");
             ToolStripMenuItem sendToBack = new ToolStripMenuItem("Send to back");
@@ -105,25 +96,28 @@ namespace DiagramToolkit
             ToolStripMenuItem sendToFront = new ToolStripMenuItem("Send to front");
             sendToFront.Click += SendToFront_Click;
             ToolStripMenuItem newFile = new ToolStripMenuItem("New");
+            newFile.Click += NewFile_Click;
             ToolStripMenuItem newplugin = new ToolStripMenuItem("Add Plugin");
+            newplugin.Click += Newplugin_Click;
             ToolStripMenuItem exportToImages = new ToolStripMenuItem("Export to Images");
-            newFile.Click += NewFile_Click; 
+            exportToImages.Click += ExportToImages_Click;
+            ToolStripMenuItem groupObject = new ToolStripMenuItem("Group current and previous object");
+            groupObject.Click += GroupObject_Click;
+
             ToolStripMenuItem exit = new ToolStripMenuItem("Exit");
             exit.Click += Exit_Click;
             ToolStripMenuItem undo = new ToolStripMenuItem("Undo");
             ToolStripMenuItem redo = new ToolStripMenuItem("Redo");
             ToolStripMenuItem resizecanvas = new ToolStripMenuItem("Resize Canvas");
+            resizecanvas.Click += Resizecanvas_Click;
+
             ToolStripContainer toolContainer = new ToolStripContainer();
             toolContainer.ContentPanel.Controls.Add((System.Windows.Forms.Control)editor);
-            //canvas1 = new DefaultCanvas(undoRedo);
-            //canvas1.Name = "Main";
-            //editor.AddCanvas(canvas1);
             curCanvas = new DefaultCanvas(undoRedo);
             curCanvas.Name = "Main";
             editor.AddCanvas(curCanvas);
 
             // Generate Toolbar
-            // Initializing toolbar
             toolbar = new DefaultToolbar();
             ToolStripContainer toolStripContainer = new ToolStripContainer();
             toolStripContainer.Height = 32;
@@ -133,25 +127,28 @@ namespace DiagramToolkit
             toolbar.AddToolbarItem(undoItem);
             toolbar.AddToolbarItem(redoItem);
             toolbar.AddSeparator();
-
             toolStripContainer.Dock = DockStyle.Top;
 
+            //meyusun menu bar
             MenuBar.Items.Add(file);
             MenuBar.Items.Add(edit);
             MenuBar.Items.Add(arrange);
+
             edit.DropDown.Items.Add(undo);
             edit.DropDown.Items.Add(redo);
             edit.DropDown.Items.Add(resizecanvas);
-            resizecanvas.Click += Resizecanvas_Click;
+            
             file.DropDown.Items.Add(newFile);
             file.DropDown.Items.Add(newplugin);
             file.DropDown.Items.Add(exportToImages);
             file.DropDown.Items.Add(exit);
+
             arrange.DropDown.Items.Add(sendToBack);
             arrange.DropDown.Items.Add(sendToFront);
+            arrange.DropDown.Items.Add(groupObject);
+
             MenuBar.Dock = DockStyle.Top;
-            newplugin.Click += Newplugin_Click;
-            exportToImages.Click += ExportToImages_Click;
+            
             //set size form
             this.Height = this.tinggi;
             this.Width = this.lebar;
@@ -173,12 +170,6 @@ namespace DiagramToolkit
             tlp.TabStop = true;
             tlp.MaximumSize = new Size(new Point(300));
 
-            //deklrasi button baru
-            //tools.rectangletool phone = new tools.rectangletool();
-            //phone.backgroundimage = new bitmap(resources.assets.phone);
-            //phone.height = tinggi;
-            //phone.width = lebar;
-            //phone.backgroundimagelayout = imagelayout.zoom;   
             Tools.SelectionTool pilih = new Tools.SelectionTool(undoRedo);
             pilih.Height = tinggi;
             pilih.Width = lebar;
@@ -227,9 +218,17 @@ namespace DiagramToolkit
             newSVGToolWireframe("post-with-image.svg");
         }
 
+        private void GroupObject_Click(object sender, EventArgs e)
+        {
+            GroupCommand grouping = new GroupCommand((DiagramToolkit.Api.Shapes.Rectangle)curCanvas.getActiveObject(), curCanvas.getprevActiveObject());
+            grouping.UnExecute();
+            undoRedo.InsetInUndoRedoForGroupingObject(grouping);
+        }
+
         private void SendToFront_Click(object sender, EventArgs e)
         {
             curCanvas.SendToFront(curCanvas.getActiveObject());
+            curCanvas.Repaint();
         }
 
         private void SendToBack_Click(object sender, EventArgs e)
@@ -275,7 +274,6 @@ namespace DiagramToolkit
         private void NewFile_Click(object sender, EventArgs e)
         {
             this.Controls.Clear();
-            //this.InitUI();
         }
 
         private void ExportToImages_Click(object sender, EventArgs e)
@@ -292,24 +290,6 @@ namespace DiagramToolkit
             {
                 bitmap.Save(dialog.FileName, System.Drawing.Imaging.ImageFormat.Png);
             }
-
-            //JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-            //String filename = "hasilExport";
-
-            //RenderTargetBitmap renderBitmap = new RenderTargetBitmap(lebar, tinggi, 96d, 96d, System.Windows.Media.PixelFormats.Pbgra32);
-            //// needed otherwise the image output is black
-            //canvas1.measure(new Size(lebar, tinggi));
-            //canvas1.Arrange(new Rect(new Size(lebar, tinggi)));
-            //renderBitmap.Render(canvas1);
-
-            ////JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-            //PngBitmapEncoder encoder = new PngBitmapEncoder();
-            //encoder.Frames.Add(BitmapFrame.Create(renderBitmap));
-
-            //using (FileStream file = File.Create(filename))
-            //{
-            //    encoder.Save(file);
-            //}
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -323,7 +303,6 @@ namespace DiagramToolkit
             rubahukuran.ShowDialog();
             int lebarr= rubahukuran.lebar;
             int tinggii = rubahukuran.tinggi;
-            //MessageBox.Show(lebarr.ToString() + " " + tinggii.ToString());
             mainPanel.Panel2.AutoScrollMinSize = new Size(tinggii,lebarr);
         }
 

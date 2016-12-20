@@ -1,14 +1,8 @@
 ﻿using DiagramToolkit.Api;
 using DiagramToolkit.Api.Shapes;
 using DiagramToolkit.Commands;
-
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace DiagramToolkit
 {
@@ -72,6 +66,15 @@ namespace DiagramToolkit
         public void InsertInUnDoRedoForInsert(Rectangle rectangle, ICanvas canvas)
         {
             ICommand cmd = new InsertCommand(rectangle, canvas);
+            undoCommands.Push(cmd); redoCommands.Clear();
+            if (EnableDisableUndoRedoFeature != null)
+            {
+                EnableDisableUndoRedoFeature(null, null);
+            }
+        }
+
+        public void InsetInUndoRedoForGroupingObject(ICommand cmd)
+        {
             undoCommands.Push(cmd); redoCommands.Clear();
             if (EnableDisableUndoRedoFeature != null)
             {

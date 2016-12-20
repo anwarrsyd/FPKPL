@@ -1,60 +1,19 @@
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe.config
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csprojResolveAssemblyReference.cache
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.CursorSet.resources
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.dialogresizecanvas.resources
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.IconSet.resources
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.MainWindow.resources
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Properties.Resources.resources
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.Assets.resources
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.AssetSvg.resources
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csproj.GenerateResource.Cache
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.pdb
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.Api.dll
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.dll
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.Api.pdb
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.pdb
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.xml
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
-C:\Users\Anwar Rosyidi\Documents\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
-<<<<<<< HEAD
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe.config
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csprojResolveAssemblyReference.cache
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.CursorSet.resources
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.dialogresizecanvas.resources
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.IconSet.resources
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.MainWindow.resources
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Properties.Resources.resources
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.Assets.resources
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.AssetSvg.resources
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csproj.GenerateResource.Cache
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.pdb
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.Api.dll
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.dll
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.Api.pdb
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.pdb
-E:\Ronald\Kuliah\Semester7\Konstruksi Perangkat Lunak\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.xml
-=======
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe.config
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.pdb
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.Api.dll
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.dll
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.Api.pdb
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.pdb
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.xml
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csprojResolveAssemblyReference.cache
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.CursorSet.resources
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.dialogresizecanvas.resources
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.IconSet.resources
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.MainWindow.resources
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Properties.Resources.resources
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.Assets.resources
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.AssetSvg.resources
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csproj.GenerateResource.Cache
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
-D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\fpfp\FPKPL\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
->>>>>>> 295d08c4d9ad30c889680b5616a4b55f91d5e813
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe.config
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.exe
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.pdb
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.exe
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.pdb
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.Api.dll
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.dll
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\bin\Debug\DiagramToolkit.Api.pdb
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.pdb
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\bin\Debug\Svg.xml
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csprojResolveAssemblyReference.cache
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.CursorSet.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.dialogresizecanvas.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.IconSet.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.MainWindow.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Properties.Resources.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.Assets.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.Resources.AssetSvg.resources
+D:\Documents\Kuliah\Kuliah smt 7\Konstruksi Perangkat Lunak\FPKPLv2\DiagramToolkit\DiagramToolkit\obj\Debug\DiagramToolkit.csproj.GenerateResource.Cache

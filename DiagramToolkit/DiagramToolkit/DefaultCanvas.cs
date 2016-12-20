@@ -12,6 +12,7 @@ namespace DiagramToolkit
     {
         private ITool activeTool;
         private DrawingObject activeObject;
+        private DrawingObject prevactiveObject;
         private List<DrawingObject> drawingObjects;
         private UndoRedo _undoRedo;
         public UndoRedo undoRedo
@@ -32,14 +33,26 @@ namespace DiagramToolkit
             Init();
             this._undoRedo = undoRedo;
         }
+        public DrawingObject getprevActiveObject()
+        {
+            return this.prevactiveObject;
+        }
         public DrawingObject getActiveObject()
         {
             return this.activeObject;
         }
         public void setActiveObject(DrawingObject obj)
         {
+            this.prevactiveObject = this.activeObject;
             this.activeObject = obj;
-            System.Diagnostics.Debug.WriteLine(this.activeObject.ID.ToString()+" ini aktif obyek");
+            if (this.prevactiveObject != null)
+            {
+                System.Diagnostics.Debug.WriteLine(this.prevactiveObject.ID.ToString() + " ini aktif obyek yang tadi");
+            }
+            if (this.activeObject != null)
+            {
+                System.Diagnostics.Debug.WriteLine(this.activeObject.ID.ToString() + " ini aktif obyek");
+            }
         }
         private void Init()
         {
@@ -140,7 +153,7 @@ namespace DiagramToolkit
                     return drawingObjects[i];
                 }
             }
-            return this.getActiveObject();
+            return null;
         }
 
         public DrawingObject SelectObjectAt(int x, int y)

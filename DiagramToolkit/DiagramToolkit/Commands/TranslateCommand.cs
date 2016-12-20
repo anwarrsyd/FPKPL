@@ -12,10 +12,9 @@ namespace DiagramToolkit.Commands
     class TranslateCommand : ICommand
     {
         private int xAmmount, yAmmount;
-        private Rectangle rectangle;
-        private Rectangle rectangle1;
+        private DrawingObject rectangle;
 
-        public TranslateCommand(int xAmmount, int yAmmount, Rectangle rectangle)
+        public TranslateCommand(int xAmmount, int yAmmount, DrawingObject rectangle)
         {
             this.xAmmount = xAmmount;
             this.yAmmount = yAmmount;
