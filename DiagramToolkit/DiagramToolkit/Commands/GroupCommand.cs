@@ -15,6 +15,7 @@ namespace DiagramToolkit.Commands
         public void Execute()
         {
             this.parentObject.listChildObject.Remove(this.childObject);
+            this.childObject.parentRectangle = null;
         }
         public void UnExecute()
         {

@@ -15,18 +15,28 @@ namespace DiagramToolkit.Commands
         }
         public void Execute()//regroup
         {
-            foreach(DrawingObject obj in this.allChild)
+            foreach (DrawingObject obj in allChild)
             {
+                if (allChild.Count > 0)
+                {
+                    UnGroupCommand cmd = new UnGroupCommand((Rectangle)obj);
+                    cmd.Execute();
+                }
                 obj.parentRectangle = this.ParentObject;
-                this.ParentObject.addComponent(obj);
+                ParentObject.addComponent(obj);
             }
         }
         public void UnExecute()//ungroup
         {
             foreach(DrawingObject obj in this.allChild)
             {
+                if (allChild.Count > 0)
+                {
+                    UnGroupCommand cmd = new UnGroupCommand((Rectangle)obj);
+                    cmd.UnExecute();
+                }
                 obj.parentRectangle = null;
-                ParentObject.listChildObject.Remove(obj);
+                ParentObject.removeComponent(obj);
             }
         }
     }

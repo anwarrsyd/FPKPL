@@ -82,16 +82,6 @@ namespace DiagramToolkit
             }
         }
         
-        public void InsertInUnDoRedoForDelete(Rectangle rectangle, ICanvas canvas)
-        {
-            ICommand cmd = new DeleteCommand(rectangle, Container);
-            undoCommands.Push(cmd); redoCommands.Clear();
-            if (EnableDisableUndoRedoFeature != null)
-            {
-                EnableDisableUndoRedoFeature(null, null);
-            }
-        }
-
         /*
         public void InsertInUnDoRedoForMove(Point margin, FrameworkElement UIelement)
         {

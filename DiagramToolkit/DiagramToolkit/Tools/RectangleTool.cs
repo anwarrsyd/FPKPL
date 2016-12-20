@@ -11,7 +11,6 @@ namespace DiagramToolkit.Tools
         private Rectangle rectangle;
         private String selectedSvg;
         private int width, height;
-        private UndoRedo undoredo;
         private bool mousedown;
 
         public Cursor iniCursor
@@ -41,33 +40,23 @@ namespace DiagramToolkit.Tools
             this.selectedSvg = selectedSvg;
         }
 
-        public RectangleTool(int width, int height, String selectedSvg, UndoRedo undoredo)
+        public RectangleTool(int width, int height, String selectedSvg)
         {
             Name = "Rectangle tool";
             this.selectedSvg = selectedSvg;
             this.width = width;
             this.height = height;
-            this.undoredo = undoredo;
         }
 
         public void ToolMouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (canvas.GetObjectAt(e.X, e.Y) == null)
-                {
-                    this.rectangle = new Rectangle((int)e.X - width / 2, (int)e.Y - height / 2, width, height, selectedSvg);
-                    this.canvas.AddDrawingObject(this.rectangle);
-                }
-                else
-                {
-                    this.rectangle = new Rectangle((int)e.X - width / 2, (int)e.Y - height / 2, width, height, selectedSvg);
-                    this.canvas.AddDrawingObject(this.rectangle);
-                }
+                this.rectangle = new Rectangle((int)e.X - width / 2, (int)e.Y - height / 2, width, height, selectedSvg);
+                this.canvas.AddDrawingObject(this.rectangle);
                 mousedown = true;
                 if (mousedown)
                 {
-                    undoredo.InsertInUnDoRedoForInsert(rectangle, canvas);
                     mousedown = false;
                 }
             }
@@ -89,16 +78,6 @@ namespace DiagramToolkit.Tools
                     //    undoredo.InsertInUnDoRedoForInsert(rectangle, canvas);
                     //    mousedown = false;
                     //}
-                }
-                else if (e.Button == MouseButtons.Right)
-                {
-                    canvas.RemoveDrawingObject(this.rectangle);
-                    mousedown = true;
-                    if (mousedown)
-                    {
-                        undoredo.InsertInUnDoRedoForDelete(rectangle, canvas);
-                        mousedown = false;
-                    }
                 }
             }
         }

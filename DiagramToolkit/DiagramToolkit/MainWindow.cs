@@ -107,6 +107,8 @@ namespace DiagramToolkit
             groupObject.Click += GroupObject_Click;
             ToolStripMenuItem unGroupObject = new ToolStripMenuItem("Ungroup Object");
             unGroupObject.Click += UnGroupObject_Click;
+            ToolStripMenuItem deleteObject = new ToolStripMenuItem("Delete seleceted object");
+            deleteObject.Click += DeleteObject_Click;
 
             ToolStripMenuItem exit = new ToolStripMenuItem("Exit");
             exit.Click += Exit_Click;
@@ -141,6 +143,7 @@ namespace DiagramToolkit
             edit.DropDown.Items.Add(undo);
             edit.DropDown.Items.Add(redo);
             edit.DropDown.Items.Add(resizecanvas);
+            edit.DropDown.Items.Add(deleteObject);
             
             file.DropDown.Items.Add(newFile);
             file.DropDown.Items.Add(newplugin);
@@ -231,6 +234,13 @@ namespace DiagramToolkit
             newSVGToolWireframe("user-feed.svg");
             newSVGToolWireframe("video-detail.svg");
             newSVGToolWireframe("post-with-image.svg");
+        }
+
+        private void DeleteObject_Click(object sender, EventArgs e)
+        {
+            DeleteCommand cmd = new DeleteCommand((DiagramToolkit.Api.Shapes.Rectangle)curCanvas.getActiveObject(), curCanvas);
+            undoRedo.InsertCommand(cmd);
+            cmd.UnExecute();
         }
 
         private void UnGroupObject_Click(object sender, EventArgs e)
@@ -348,7 +358,7 @@ namespace DiagramToolkit
 
         private void newSVGToolPhone(String selectedSvg) {
             string selectedSVG = selectedSvg;
-            Tools.RectangleTool svgTool = new Tools.RectangleTool(190, 400, selectedSVG,undoRedo);
+            Tools.RectangleTool svgTool = new Tools.RectangleTool(190, 400, selectedSVG);
             svgTool.BackgroundImage = SVGParser.GetBitmapFromSVG(selectedSVG);
             svgTool.Height = 100;
             svgTool.Width = 100;
@@ -359,7 +369,7 @@ namespace DiagramToolkit
         private void newSVGToolWireframe(String selectedSvg)
         {
             string selectedSVG = selectedSvg;
-            Tools.RectangleTool svgTool = new Tools.RectangleTool(164, 290, selectedSVG, undoRedo);
+            Tools.RectangleTool svgTool = new Tools.RectangleTool(164, 290, selectedSVG);
             svgTool.BackgroundImage = SVGParser.GetBitmapFromSVG(selectedSVG);
             svgTool.Height = 100;
             svgTool.Width = 100;

@@ -19,7 +19,7 @@ namespace DiagramToolkit.Api.Shapes
         {
             this.brush = new SolidBrush(Color.Black);
 
-            FontFamily fontFamily = new FontFamily("Roboto");
+            FontFamily fontFamily = new FontFamily("Arial");
             font = new Font(
                fontFamily,
                17,
