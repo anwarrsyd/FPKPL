@@ -1,15 +1,15 @@
 ﻿using Svg;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Opulos.Core.UI;
 using DiagramToolkit.ToolbarItems;
+using DiagramToolkit.Api;
+using DiagramToolkit.Api.Svg;
+using DiagramToolkit.Commands;
+using System.IO;
+using System.Reflection;
+using System.Diagnostics;
 
 namespace DiagramToolkit
 {
@@ -19,8 +19,9 @@ namespace DiagramToolkit
         IEditor editor;
         IToolbar toolbar;
         IToolbox tlp;
-        ICanvas canvas1;
+        IPlugin[] plugins;
         UndoRedo undoRedo;
+        DefaultCanvas curCanvas;
 
         //size form
         int tinggi = 600;
@@ -29,58 +30,125 @@ namespace DiagramToolkit
         public MainWindow()
         {
             undoRedo = new UndoRedo();
+            LoadPlugin();
             InitUI();
+        }
+
+        private void LoadPlugin()
+        {
+            string path = Application.StartupPath;
+
+            string[] pluginFiles = Directory.GetFiles(path, "*.DLL");
+            plugins = new IPlugin[pluginFiles.Length];
+
+            for (int i = 0; i < pluginFiles.Length; i++)
+            {
+                string args = pluginFiles[i].Substring(
+                    pluginFiles[i].LastIndexOf("\\") + 1,
+                    pluginFiles[i].IndexOf(".dll") -
+                    pluginFiles[i].LastIndexOf("\\") - 1);
+
+                Type type = null;
+
+                try
+                {
+                    Assembly asm = Assembly.Load(args);
+
+                    if (asm != null)
+                    {
+                        var pluginInterface = typeof(IPlugin);
+
+                        Type[] types = asm.GetTypes();
+
+                        foreach (Type t in types)
+                        {
+                            if (pluginInterface.IsAssignableFrom(t))
+                                type = t;
+                        }
+
+                    }
+
+                    if (type != null)
+                    {
+                        plugins[i] = (IPlugin)Activator.CreateInstance(type);
+                        //plugins[i].Host = this;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
         }
 
         private void InitUI()
         {
+            //parent dari canvas
             editor = new DefaultEditor();
-            MenuStrip MenuBar = new MenuStrip(); //genereate menu bar
-            //MenuBar.BackColor = Color.FromArgb(52, 60, 70);
-            //MenuBar.ForeColor = Color.White;
-            ToolStripMenuItem file = new ToolStripMenuItem("File"); //generate menu tool
+            //genereate menu bar
+            MenuStrip MenuBar = new MenuStrip(); 
+            ToolStripMenuItem file = new ToolStripMenuItem("File");
             ToolStripMenuItem edit = new ToolStripMenuItem("Edit");
+            ToolStripMenuItem arrange = new ToolStripMenuItem("Arrange");
+            ToolStripMenuItem sendToBack = new ToolStripMenuItem("Send to back");
+            sendToBack.Click += SendToBack_Click;
+            ToolStripMenuItem sendToFront = new ToolStripMenuItem("Send to front");
+            sendToFront.Click += SendToFront_Click;
             ToolStripMenuItem newFile = new ToolStripMenuItem("New");
-            newFile.Click += NewFile_Click; 
+            newFile.Click += NewFile_Click;
+            ToolStripMenuItem newplugin = new ToolStripMenuItem("Add Plugin");
+            newplugin.Click += Newplugin_Click;
+            ToolStripMenuItem exportToImages = new ToolStripMenuItem("Export to Images");
+            exportToImages.Click += ExportToImages_Click;
+            ToolStripMenuItem groupObject = new ToolStripMenuItem("Group current and previous object");
+            groupObject.Click += GroupObject_Click;
+
             ToolStripMenuItem exit = new ToolStripMenuItem("Exit");
             exit.Click += Exit_Click;
             ToolStripMenuItem undo = new ToolStripMenuItem("Undo");
             ToolStripMenuItem redo = new ToolStripMenuItem("Redo");
             ToolStripMenuItem resizecanvas = new ToolStripMenuItem("Resize Canvas");
+            resizecanvas.Click += Resizecanvas_Click;
+
             ToolStripContainer toolContainer = new ToolStripContainer();
-            toolContainer.ContentPanel.Controls.Add((Control)editor);
-            canvas1 = new DefaultCanvas(undoRedo);
-            canvas1.Name = "Main";
-            editor.AddCanvas(canvas1);
+            toolContainer.ContentPanel.Controls.Add((System.Windows.Forms.Control)editor);
+            curCanvas = new DefaultCanvas(undoRedo);
+            curCanvas.Name = "Main";
+            editor.AddCanvas(curCanvas);
 
             // Generate Toolbar
-            // Initializing toolbar
             toolbar = new DefaultToolbar();
             ToolStripContainer toolStripContainer = new ToolStripContainer();
             toolStripContainer.Height = 32;
-            toolStripContainer.TopToolStripPanel.Controls.Add((Control)this.toolbar);
-            UndoToolbarItem undoItem = new UndoToolbarItem(undoRedo, (DefaultCanvas)canvas1);
-            RedoToolbarItem redoItem = new RedoToolbarItem(undoRedo, (DefaultCanvas)canvas1);
-//            SendToBackToolbarItem sendtobackItem = new SendToBackToolbarItem(undoRedo, (DefaultCanvas)canvas1);
-//            BringToFrontToolbarItem bringtofrontItem = new BringToFrontToolbarItem(undoRedo, (DefaultCanvas)canvas1);
+            toolStripContainer.TopToolStripPanel.Controls.Add((System.Windows.Forms.Control)this.toolbar);
+            UndoToolbarItem undoItem = new UndoToolbarItem(undoRedo, curCanvas);
+            RedoToolbarItem redoItem = new RedoToolbarItem(undoRedo, curCanvas);
             toolbar.AddToolbarItem(undoItem);
             toolbar.AddToolbarItem(redoItem);
             toolbar.AddSeparator();
-//            toolbar.AddToolbarItem(sendtobackItem);
-//            toolbar.AddToolbarItem(bringtofrontItem);
-
             toolStripContainer.Dock = DockStyle.Top;
 
+            //meyusun menu bar
             MenuBar.Items.Add(file);
             MenuBar.Items.Add(edit);
+            MenuBar.Items.Add(arrange);
+
             edit.DropDown.Items.Add(undo);
             edit.DropDown.Items.Add(redo);
             edit.DropDown.Items.Add(resizecanvas);
-            resizecanvas.Click += Resizecanvas_Click;
+            
             file.DropDown.Items.Add(newFile);
-            file.DropDown.Items.Add(exit);  
-            MenuBar.Dock = DockStyle.Top;
+            file.DropDown.Items.Add(newplugin);
+            file.DropDown.Items.Add(exportToImages);
+            file.DropDown.Items.Add(exit);
 
+            arrange.DropDown.Items.Add(sendToBack);
+            arrange.DropDown.Items.Add(sendToFront);
+            arrange.DropDown.Items.Add(groupObject);
+
+            MenuBar.Dock = DockStyle.Top;
+            
             //set size form
             this.Height = this.tinggi;
             this.Width = this.lebar;
@@ -91,7 +159,7 @@ namespace DiagramToolkit
             acc.ContentMargin = new Padding(5, 5, 5, 5);
             acc.ContentPadding = new Padding(1);
             acc.Insets = new Padding(5);
-            acc.ControlBackColor = Color.White;
+            acc.ControlBackColor = System.Drawing.Color.White;
             acc.Width = 200;
 
             //deklarasi panel pertama
@@ -102,21 +170,6 @@ namespace DiagramToolkit
             tlp.TabStop = true;
             tlp.MaximumSize = new Size(new Point(300));
 
-            //deklrasi button baru
-            //tools.rectangletool phone = new tools.rectangletool();
-            //phone.backgroundimage = new bitmap(resources.assets.phone);
-            //phone.height = tinggi;
-            //phone.width = lebar;
-            //phone.backgroundimagelayout = imagelayout.zoom;
-            
-
-            Tools.LineTool lain = new Tools.LineTool();
-            lain.BackgroundImage = Resources.Assets.vector_diagonal_line_with_box_edges;
-            lain.Height = tinggi;
-            lain.Width = lebar;
-            lain.BackgroundImageLayout = ImageLayout.Zoom;
-            tlp.AddTool(lain);
-
             Tools.SelectionTool pilih = new Tools.SelectionTool(undoRedo);
             pilih.Height = tinggi;
             pilih.Width = lebar;
@@ -124,10 +177,16 @@ namespace DiagramToolkit
             pilih.BackgroundImage = Resources.Assets.cursor;
             pilih.BackgroundImageLayout = ImageLayout.Zoom;
             tlp.AddTool(pilih);
+            if (plugins != null)
+            {
+                for (int i = 0; i < this.plugins.Length; i++)
+                {
+                    this.tlp.Register(plugins[i]);
+                }
+            }
+            acc.Add((System.Windows.Forms.Control)tlp, "Wireframes", "Enter the client's information.", 0, true);//memasukkan panel pertama
 
-            acc.Add((Control)tlp, "Wireframes", "Enter the client's information.", 0, true);//memasukkan panel pertama
-
-            acc.Add(new TextBox { Dock = DockStyle.Fill, Multiline = true, BackColor = Color.White }, "Memo", "Additional Client Info", 1, true, contentBackColor: Color.Transparent);//menambahkan panel kedua
+            acc.Add(new System.Windows.Forms.TextBox { Dock = DockStyle.Fill, Multiline = true, BackColor = Color.White }, "Memo", "Additional Client Info", 1, true, contentBackColor: Color.Transparent);//menambahkan panel kedua
 
             acc.Dock = DockStyle.Fill;
           
@@ -135,7 +194,7 @@ namespace DiagramToolkit
             mainPanel.Panel1.Controls.Add(acc);
             mainPanel.FixedPanel = FixedPanel.Panel1;
             mainPanel.MinimumSize = new Size(300, 200);
-            mainPanel.Panel2.BackColor = Color.White;
+            mainPanel.Panel2.BackColor = System.Drawing.Color.White;
             toolContainer.Dock = DockStyle.Fill;
             mainPanel.Panel2.Controls.Add(toolContainer);
             mainPanel.SplitterWidth = 15;
@@ -159,6 +218,54 @@ namespace DiagramToolkit
             newSVGToolWireframe("post-with-image.svg");
         }
 
+        private void GroupObject_Click(object sender, EventArgs e)
+        {
+            GroupCommand grouping = new GroupCommand((DiagramToolkit.Api.Shapes.Rectangle)curCanvas.getActiveObject(), curCanvas.getprevActiveObject());
+            grouping.UnExecute();
+            undoRedo.InsetInUndoRedoForGroupingObject(grouping);
+        }
+
+        private void SendToFront_Click(object sender, EventArgs e)
+        {
+            curCanvas.SendToFront(curCanvas.getActiveObject());
+            curCanvas.Repaint();
+        }
+
+        private void SendToBack_Click(object sender, EventArgs e)
+        {
+            DrawingObject obj;
+            obj = curCanvas.getActiveObject();
+            curCanvas.SendToBack(obj);
+            curCanvas.Repaint();
+        }
+
+        private void Newplugin_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openDialog = new OpenFileDialog();
+            openDialog.Filter = "Plugin File(*.dll)|*.dll;";
+            openDialog.ShowDialog();
+            
+            var namaFile = Path.GetFileName(openDialog.FileName);
+            try {
+                string targetPath = Application.StartupPath;
+                string destFile = System.IO.Path.Combine(targetPath, namaFile);
+                System.IO.File.Copy(openDialog.FileName, destFile, true);
+                MessageBox.Show("Add Plugin Success Application Will Restart!");
+                this.Controls.Clear();
+                ProcessStartInfo Info = new ProcessStartInfo();
+                Info.Arguments = "/C ping 127.0.0.1 -n 2 && \"" + Application.ExecutablePath + "\"";
+                Info.WindowStyle = ProcessWindowStyle.Hidden;
+                Info.CreateNoWindow = true;
+                Info.FileName = "cmd.exe";
+                Process.Start(Info);
+                Application.Exit();
+            }
+            catch
+            {
+                MessageBox.Show("ERROR");
+            }
+        }
+
         private void UndoItem_Click(object sender, EventArgs e)
         {
             undoRedo.Undo(1);
@@ -167,12 +274,27 @@ namespace DiagramToolkit
         private void NewFile_Click(object sender, EventArgs e)
         {
             this.Controls.Clear();
-            //this.InitUI();
+        }
+
+        private void ExportToImages_Click(object sender, EventArgs e)
+        {
+            curCanvas.DeselectAllObjects();
+            Bitmap bitmap = new Bitmap(curCanvas.Width, curCanvas.Height);
+            curCanvas.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "PNG Image Files (*.png)|*.png";
+            dialog.DefaultExt = "png";
+            dialog.AddExtension = true;
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                bitmap.Save(dialog.FileName, System.Drawing.Imaging.ImageFormat.Png);
+            }
         }
 
         private void Exit_Click(object sender, EventArgs e)
         {
-                        this.Close();
+            this.Close();
         }
 
         private void Resizecanvas_Click(object sender, EventArgs e)
@@ -181,14 +303,13 @@ namespace DiagramToolkit
             rubahukuran.ShowDialog();
             int lebarr= rubahukuran.lebar;
             int tinggii = rubahukuran.tinggi;
-            //MessageBox.Show(lebarr.ToString() + " " + tinggii.ToString());
             mainPanel.Panel2.AutoScrollMinSize = new Size(tinggii,lebarr);
         }
 
         private void newSVGToolPhone(String selectedSvg) {
             string selectedSVG = selectedSvg;
             Tools.RectangleTool svgTool = new Tools.RectangleTool(190, 400, selectedSVG,undoRedo);
-            svgTool.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
+            svgTool.BackgroundImage = SVGParser.GetBitmapFromSVG(selectedSVG);
             svgTool.Height = 100;
             svgTool.Width = 100;
             svgTool.BackgroundImageLayout = ImageLayout.Zoom;
@@ -199,7 +320,7 @@ namespace DiagramToolkit
         {
             string selectedSVG = selectedSvg;
             Tools.RectangleTool svgTool = new Tools.RectangleTool(164, 290, selectedSVG, undoRedo);
-            svgTool.BackgroundImage = Svg.SVGParser.GetBitmapFromSVG(selectedSVG);
+            svgTool.BackgroundImage = SVGParser.GetBitmapFromSVG(selectedSVG);
             svgTool.Height = 100;
             svgTool.Width = 100;
             svgTool.BackgroundImageLayout = ImageLayout.Zoom;

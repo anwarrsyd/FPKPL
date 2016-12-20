@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DiagramToolkit.Shapes;
+
 using System.Threading.Tasks;
+using DiagramToolkit.Api;
+using DiagramToolkit.Api.Shapes;
 
 namespace DiagramToolkit.Commands
 {

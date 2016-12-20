@@ -1,4 +1,6 @@
-﻿using DiagramToolkit.Shapes;
+﻿
+using DiagramToolkit.Api;
+using DiagramToolkit.Api.Shapes;
 using System;
 using System.Collections.Generic;
 using System.Linq;

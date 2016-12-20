@@ -1,6 +1,7 @@
-﻿using DiagramToolkit.Shapes;
+﻿using DiagramToolkit.Api.Shapes;
 using System.Windows.Forms;
 using System;
+using DiagramToolkit.Api;
 
 namespace DiagramToolkit.Tools
 {
@@ -60,6 +61,12 @@ namespace DiagramToolkit.Tools
             {
                 canvas.DeselectAllObjects();
                 selectedObject = canvas.SelectObjectAt(e.X, e.Y);
+
+                if (selectedObject != null)
+                {
+                    if (selectedObject.parentRectangle != null) { selectedObject = selectedObject.parentRectangle; }
+                }
+                canvas.setActiveObject(selectedObject);
             }
            
         }
