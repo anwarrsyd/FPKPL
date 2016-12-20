@@ -238,7 +238,16 @@ namespace DiagramToolkit
 
         private void DeleteObject_Click(object sender, EventArgs e)
         {
-            DeleteCommand cmd = new DeleteCommand((DiagramToolkit.Api.Shapes.Rectangle)curCanvas.getActiveObject(), curCanvas);
+            DiagramToolkit.Api.Shapes.Rectangle dummy = new DiagramToolkit.Api.Shapes.Rectangle();
+            DeleteCommand cmd;
+            if (curCanvas.getActiveObject().Equals(dummy))
+            {
+                cmd = new DeleteCommand((DiagramToolkit.Api.Shapes.Rectangle)curCanvas.getActiveObject(), curCanvas);
+            }
+            else
+            {
+                cmd = new DeleteCommand(curCanvas.getActiveObject(), curCanvas);
+            }
             undoRedo.InsertCommand(cmd);
             cmd.UnExecute();
         }

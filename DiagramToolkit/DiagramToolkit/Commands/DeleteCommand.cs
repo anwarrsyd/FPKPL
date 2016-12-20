@@ -11,43 +11,67 @@ namespace DiagramToolkit.Commands
     class DeleteCommand : ICommand
     {
         private Rectangle rectangle;
+        private DrawingObject drawObj;
         private List<DrawingObject> listChild;
         private ICanvas canvas;
-
+        UndoRedo undoredo;
         public DeleteCommand(Rectangle rectangle, ICanvas canvas)
         {
             this.rectangle = rectangle;
             this.canvas = canvas;
             this.listChild = new List<DrawingObject>(rectangle.listChildObject);
+            undoredo = new UndoRedo();
+        }
+        public DeleteCommand(DrawingObject obj, ICanvas canvas)
+        {
+            this.drawObj = obj;
+            this.canvas = canvas;
+            undoredo = new UndoRedo();
         }
 
         public void Execute()
         {
-            canvas.AddDrawingObject(rectangle);
-            if (this.listChild.Count > 0)
+            if (rectangle != null)
             {
-                foreach(DrawingObject obj in this.listChild)
+                canvas.AddDrawingObject(rectangle);
+                if (this.listChild.Count > 0)
                 {
-                    DeleteCommand cmd = new DeleteCommand((Rectangle)obj, this.canvas);
-                    cmd.Execute();
-                    obj.parentRectangle = this.rectangle;
-                    rectangle.listChildObject.Add(obj);
+                    undoredo.Undo(1);
+                    foreach (DrawingObject obj in this.listChild)
+                    {
+                        DeleteCommand cmd = new DeleteCommand((Rectangle)obj, this.canvas);
+                        cmd.Execute();
+                        obj.parentRectangle = this.rectangle;
+                        rectangle.listChildObject.Add(obj);
+                    }
                 }
+            }
+            else
+            {
+                canvas.AddDrawingObject(drawObj);
             }
         }
 
         public void UnExecute()
         {
-            if (this.rectangle.listChildObject.Count > 0)
+            if (this.rectangle != null)
             {
-                foreach(DrawingObject obj in this.rectangle.listChildObject)
+                if (this.rectangle.listChildObject.Count > 0)
                 {
-                    DeleteCommand cmd = new DeleteCommand((Rectangle)obj, this.canvas);
-                    cmd.UnExecute();
+                    foreach (DrawingObject obj in this.rectangle.listChildObject)
+                    {
+                        DeleteCommand cmd = new DeleteCommand((Rectangle)obj, this.canvas);
+                        cmd.UnExecute();
+                        undoredo.InsertCommand(cmd);
+                    }
+                    this.rectangle.listChildObject.Clear();
                 }
-                this.rectangle.listChildObject.Clear();
+                this.canvas.RemoveDrawingObject(this.rectangle);
             }
-            this.canvas.RemoveDrawingObject(this.rectangle);
+            else
+            {
+                this.canvas.RemoveDrawingObject(drawObj);
+            }
         }
     }
 }
