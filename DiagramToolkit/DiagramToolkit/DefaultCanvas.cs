@@ -15,6 +15,13 @@ namespace DiagramToolkit
         private DrawingObject prevactiveObject;
         private List<DrawingObject> drawingObjects;
         private UndoRedo _undoRedo;
+        public bool checkObjectExist()
+        {
+            if (drawingObjects.Count > 0)
+                return true;
+            else
+                return false;
+        }
         public UndoRedo undoRedo
         {
             get { return _undoRedo; }

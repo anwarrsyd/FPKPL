@@ -25,5 +25,6 @@ namespace DiagramToolkit.Api
         void setActiveObject(DrawingObject obj);
         void SendToBack(DrawingObject obj);
         void SendToFront(DrawingObject obj);
+        bool checkObjectExist();
     }
 }

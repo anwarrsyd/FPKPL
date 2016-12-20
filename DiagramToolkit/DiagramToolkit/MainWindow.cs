@@ -304,6 +304,15 @@ namespace DiagramToolkit
 
         private void Exit_Click(object sender, EventArgs e)
         {
+            if (curCanvas.checkObjectExist())
+            {
+                DialogResult closeDialog = MessageBox.Show("Are you sure to close application?", "Close", MessageBoxButtons.YesNoCancel);
+                if (closeDialog == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                else return;
+            }
             this.Close();
         }
 
