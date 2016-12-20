@@ -1,20 +1,19 @@
-﻿
-using DiagramToolkit.Api;
-using DiagramToolkit.Api.Shapes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using DiagramToolkit.Api;
+using DiagramToolkit.Api.Shapes;
 
 namespace DiagramToolkit.Commands
 {
-    public class InsertCommand : ICommand
-
+    class DeleteCommand : ICommand
     {
         private Rectangle rectangle;
         private ICanvas canvas;
 
-        public InsertCommand(Rectangle rectangle, ICanvas canvas)
+        public DeleteCommand(Rectangle rectangle, ICanvas canvas)
         {
             this.rectangle = rectangle;
             this.canvas = canvas;
@@ -22,12 +21,12 @@ namespace DiagramToolkit.Commands
 
         public void Execute()
         {
-            canvas.RemoveDrawingObject(rectangle);
+            canvas.AddDrawingObject(rectangle);
         }
 
         public void UnExecute()
         {
-            canvas.AddDrawingObject(rectangle);
+            canvas.RemoveDrawingObject(rectangle);
         }
     }
 }

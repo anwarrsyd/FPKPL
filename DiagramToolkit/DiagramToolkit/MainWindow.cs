@@ -97,6 +97,8 @@ namespace DiagramToolkit
             sendToFront.Click += SendToFront_Click;
             ToolStripMenuItem newFile = new ToolStripMenuItem("New");
             newFile.Click += NewFile_Click;
+            ToolStripMenuItem removeFile = new ToolStripMenuItem("Remove current canvas");
+            removeFile.Click += RemoveFile_Click;
             ToolStripMenuItem newplugin = new ToolStripMenuItem("Add Plugin");
             newplugin.Click += Newplugin_Click;
             ToolStripMenuItem exportToImages = new ToolStripMenuItem("Export to Images");
@@ -143,6 +145,7 @@ namespace DiagramToolkit
             file.DropDown.Items.Add(newFile);
             file.DropDown.Items.Add(newplugin);
             file.DropDown.Items.Add(exportToImages);
+            file.DropDown.Items.Add(removeFile);
             file.DropDown.Items.Add(exit);
 
             arrange.DropDown.Items.Add(sendToBack);
@@ -283,11 +286,20 @@ namespace DiagramToolkit
 
         private void NewFile_Click(object sender, EventArgs e)
         {
-            this.Controls.Clear();
+            //this.Controls.Clear();
+            NewFileCommand newFile = new NewFileCommand(this.editor);
+            newFile.Execute();
+        }
+
+        private void RemoveFile_Click(object sender, EventArgs e)
+        {
+            NewFileCommand newFile = new NewFileCommand(this.editor);
+            newFile.Execute();
         }
 
         private void ExportToImages_Click(object sender, EventArgs e)
         {
+            curCanvas = (DefaultCanvas) editor.GetSelectedCanvas();
             curCanvas.DeselectAllObjects();
             Bitmap bitmap = new Bitmap(curCanvas.Width, curCanvas.Height);
             curCanvas.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));

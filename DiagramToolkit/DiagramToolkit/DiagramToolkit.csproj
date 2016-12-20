@@ -54,7 +54,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\DeleteCommand.cs" />
     <Compile Include="Commands\GroupCommand.cs" />
+    <Compile Include="Commands\NewFileCommand.cs" />
     <Compile Include="Commands\TranslateCommand.cs" />
     <Compile Include="Commands\UnGroupCommand.cs" />
     <Compile Include="CursorSet.Designer.cs">

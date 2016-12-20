@@ -65,6 +65,11 @@ namespace DiagramToolkit.Tools
                     this.canvas.AddDrawingObject(this.rectangle);
                 }
                 mousedown = true;
+                if (mousedown)
+                {
+                    undoredo.InsertInUnDoRedoForInsert(rectangle, canvas);
+                    mousedown = false;
+                }
             }
         }
 
@@ -78,17 +83,22 @@ namespace DiagramToolkit.Tools
             {
                 if (e.Button == MouseButtons.Left)
                 {
-
                     this.rectangle.iniSelect();
-                    if (mousedown)
-                    {
-                        undoredo.InsertInUnDoRedoForInsert(rectangle, canvas);
-                        mousedown = false;
-                    }
+                    //if (mousedown)
+                    //{
+                    //    undoredo.InsertInUnDoRedoForInsert(rectangle, canvas);
+                    //    mousedown = false;
+                    //}
                 }
                 else if (e.Button == MouseButtons.Right)
                 {
                     canvas.RemoveDrawingObject(this.rectangle);
+                    mousedown = true;
+                    if (mousedown)
+                    {
+                        undoredo.InsertInUnDoRedoForDelete(rectangle, canvas);
+                        mousedown = false;
+                    }
                 }
             }
         }
