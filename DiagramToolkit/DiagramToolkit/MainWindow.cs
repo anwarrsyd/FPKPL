@@ -183,6 +183,15 @@ namespace DiagramToolkit
             pilih.BackgroundImage = Resources.Assets.cursor;
             pilih.BackgroundImageLayout = ImageLayout.Zoom;
             tlp.AddTool(pilih);
+
+            Tools.TextTool txtTool = new Tools.TextTool();
+            txtTool.Height = tinggi;
+            txtTool.Width = lebar;
+            txtTool.Image = null;
+            txtTool.BackgroundImage = Resources.Assets.font;
+            txtTool.BackgroundImageLayout = ImageLayout.Zoom;
+            tlp.AddTool(txtTool);
+
             if (plugins != null)
             {
                 for (int i = 0; i < this.plugins.Length; i++)
