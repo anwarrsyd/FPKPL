@@ -240,7 +240,7 @@ namespace DiagramToolkit
         {
             DiagramToolkit.Api.Shapes.Rectangle dummy = new DiagramToolkit.Api.Shapes.Rectangle();
             DeleteCommand cmd;
-            if (curCanvas.getActiveObject().Equals(dummy))
+            if (curCanvas.getActiveObject() is DiagramToolkit.Api.Shapes.Rectangle)
             {
                 cmd = new DeleteCommand((DiagramToolkit.Api.Shapes.Rectangle)curCanvas.getActiveObject(), curCanvas);
             }

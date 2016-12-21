@@ -59,7 +59,6 @@ namespace DiagramToolkit.Api.Shapes
         {
             if ((xTest >= X && xTest <= X + textSize.Width) && (yTest >= Y && yTest <= Y + textSize.Height))
             {
-                //System.Diagnostics.Debug.WriteLine("Object " + ID + " is selected.");
                 return true;
             }
             return false;

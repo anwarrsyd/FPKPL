@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DiagramToolkit.Api;
 using DiagramToolkit.Api.Shapes;
+using System.Diagnostics;
 
 namespace DiagramToolkit.Commands
 {
@@ -39,11 +40,10 @@ namespace DiagramToolkit.Commands
                     undoredo.Undo(1);
                     foreach (DrawingObject obj in this.listChild)
                     {
-                        DeleteCommand cmd = new DeleteCommand((Rectangle)obj, this.canvas);
-                        cmd.Execute();
                         obj.parentRectangle = this.rectangle;
                         rectangle.listChildObject.Add(obj);
                     }
+                    
                 }
             }
             else

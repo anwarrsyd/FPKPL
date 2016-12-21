@@ -52,14 +52,6 @@ namespace DiagramToolkit
         {
             this.prevactiveObject = this.activeObject;
             this.activeObject = obj;
-            if (this.prevactiveObject != null)
-            {
-                System.Diagnostics.Debug.WriteLine(this.prevactiveObject.ID.ToString() + " ini aktif obyek yang tadi");
-            }
-            if (this.activeObject != null)
-            {
-                System.Diagnostics.Debug.WriteLine(this.activeObject.ID.ToString() + " ini aktif obyek");
-            }
         }
         private void Init()
         {
